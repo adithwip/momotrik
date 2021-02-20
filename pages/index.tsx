@@ -15,17 +15,6 @@ interface Props {
   allPosts: GetAllPostsResponse
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const queryClient = new QueryClient()
-  await queryClient.prefetchQuery('posts', () => getAllPostsFetcher())
-
-  return {
-    props: {
-      dehydratedState: dehydrate(queryClient)
-    }
-  }
-}
-
 const IndexPage: NextPage<Props> = () => {
   const { getAllPostsData } = useGetAllPosts()
 
@@ -49,5 +38,17 @@ const IndexPage: NextPage<Props> = () => {
     </Layout>
   )
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const queryClient = new QueryClient()
+  await queryClient.prefetchQuery('posts', () => getAllPostsFetcher())
+
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient)
+    }
+  }
+}
+
 
 export default IndexPage
