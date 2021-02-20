@@ -30,7 +30,9 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
         | <a href="/api/users">Users API</a>
       </nav>
     </header>
-    {children}
+    <section className="container mx-auto p-4">
+      {children}
+    </section>
     <footer>
       <hr />
       <span>I'm here to stay (Footer)</span>
