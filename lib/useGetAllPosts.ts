@@ -4,7 +4,6 @@ import { useQuery } from "react-query"
 
 import { fetchAPI } from './fetchAPI'
 
-
 const getAllPostsFetcher = async (): Promise<GetAllPostsResponse> => {
   const res = await fetchAPI({
     query: `
