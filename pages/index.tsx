@@ -5,17 +5,17 @@ import * as React from 'react'
 import { NextPage } from 'next'
 import { QueryClient } from "react-query"
 import { dehydrate } from "react-query/hydration"
+import sanitizeHtml from 'sanitize-html'
 
 import Layout from '../components/Layout'
-import { getAllPosts } from '../lib/getAllPosts'
-import { useGetAllPosts } from '../lib/useGetAllPosts'
+import { getAllPostsFetcher, useGetAllPosts } from '../lib/useGetAllPosts'
 interface Props {
   allPosts: GetAllPostsResponse
 }
 
 export const getStaticProps: GetStaticProps = async () => {
   const queryClient = new QueryClient()
-  await queryClient.prefetchQuery('posts', () => getAllPosts())
+  await queryClient.prefetchQuery('posts', () => getAllPostsFetcher())
 
   return {
     props: {
@@ -40,7 +40,7 @@ const IndexPage: NextPage<Props> = () => {
       {getAllPostsData.data?.posts.edges.map(({ node }, index) => (
         <React.Fragment key={index}>
           <h1>{node.title}</h1>
-          <p>{node.excerpt}</p>
+          <div dangerouslySetInnerHTML={{ __html: sanitizeHtml(node.excerpt) }} />
           <p>{node.date}</p>
         </React.Fragment>
       ))}
