@@ -3,11 +3,12 @@ import type { GetAllPostsResponse } from '../interfaces/lib/getAllPosts.interfac
 
 import * as React from 'react'
 import { NextPage } from 'next'
+import dynamic from 'next/dynamic'
 import { QueryClient } from "react-query"
 import { dehydrate } from "react-query/hydration"
 import sanitizeHtml from 'sanitize-html'
 
-import Layout from '../components/Layout'
+const Layout = dynamic(() => import('../components/Layout'))
 import { getAllPostsFetcher, useGetAllPosts } from '../lib/useGetAllPosts'
 
 interface Props {
