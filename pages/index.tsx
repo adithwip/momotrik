@@ -9,6 +9,7 @@ import sanitizeHtml from 'sanitize-html'
 
 import Layout from '../components/Layout'
 import { getAllPostsFetcher, useGetAllPosts } from '../lib/useGetAllPosts'
+
 interface Props {
   allPosts: GetAllPostsResponse
 }
@@ -29,20 +30,20 @@ const IndexPage: NextPage<Props> = () => {
 
   return (
     <Layout title="Home | Next.js + TypeScript Example">
-      <h1>Posts</h1>
+      <h1 className="text-2xl font-bold tracking-wide mb-8">Posts</h1>
       {getAllPostsData.isFetching ? (
-        <h1>Fetching data...</h1>
+        <h1 className="font-semibold mb-4">Fetching data...</h1>
       ) : null}
       {getAllPostsData.isError ? (
-        <h1>Error, gan!</h1>
+        <h1 className="font-semibold mb-4">Error, gan!</h1>
       ) : null}
 
       {getAllPostsData.data?.posts.edges.map(({ node }, index) => (
-        <React.Fragment key={index}>
-          <h1>{node.title}</h1>
-          <div dangerouslySetInnerHTML={{ __html: sanitizeHtml(node.excerpt) }} />
-          <p>{node.date}</p>
-        </React.Fragment>
+        <div className="bg-white shadow-lg rounded p-4 mb-4" key={index}>
+          <h1 className="text-xl font-bold text-indigo-600 tracking-wide mb-4">{node.title}</h1>
+          <div className="text-sm tracking-normal mb-4" dangerouslySetInnerHTML={{ __html: sanitizeHtml(node.excerpt) }} />
+          <p className="text-sm font-semibold tracking-wide mb-4">{node.date}</p>
+        </div>
       ))}
     </Layout>
   )
