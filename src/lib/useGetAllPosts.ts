@@ -1,8 +1,7 @@
-import type { GetAllPostsResponse } from '../interfaces/lib/getAllPosts.interface'
+import type { GetAllPostsResponse } from 'interfaces/lib/getAllPosts.interface'
 
 import { useQuery } from "react-query"
-
-import { fetchAPI } from './fetchAPI'
+import { fetchAPI } from 'lib/fetchAPI'
 
 /**
  * Exported for dehydrating state
@@ -31,7 +30,7 @@ export const getAllPostsFetcher = async (): Promise<GetAllPostsResponse> => {
       }
     `
   }
-  );
+  )
 
   return res.data.data
 }

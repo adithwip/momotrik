@@ -5,7 +5,8 @@ const WP_GRAPHQL_URL = process.env.NEXT_PUBLIC_WP_GRAPHQL_URL
 type Params = {
   query: string,
   variables?: {
-    [key: string]: string
+    id: string,
+    idType: string
   }
 }
 
