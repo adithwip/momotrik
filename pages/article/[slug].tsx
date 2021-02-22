@@ -2,10 +2,10 @@ import type { NextPage, GetStaticPaths, GetStaticProps } from 'next'
 import type { GetSinglePostResponse } from 'interfaces/lib/getSinglePost.interface'
 
 import dynamic from 'next/dynamic'
-import sanitizeHtml from 'sanitize-html'
 import { useRouter } from 'next/router'
 
 const Layout = dynamic(() => import('components/Layout'))
+const Article = dynamic(() => import('domain/article/Article'))
 
 import { getSinglePostFetcher } from 'lib/useGetSinglePost'
 import { getAllPostSlugsFetcher } from 'lib/useGetAllPostSlugs'
@@ -40,10 +40,7 @@ const ArticlePage: NextPage<Props> = ({ postData }) => {
     const { post } = postData
     return (
       <Layout title={`${post.title} | Momotrik`}>
-        <article>
-          <h1 className="text-2xl font-bold text-gray-900 mb-8">{post.title}</h1>
-          <div dangerouslySetInnerHTML={{ __html: sanitizeHtml(post.content) }} />
-        </article>
+        <Article postData={postData} />
       </Layout>
     )
   }
