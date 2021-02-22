@@ -1,21 +1,15 @@
-import type { GetStaticProps } from 'next'
-import type { GetAllPostsResponse } from 'interfaces/lib/getAllPosts.interface'
+import type { NextPage, GetStaticProps } from 'next'
 
-import * as React from 'react'
-import { NextPage } from 'next'
-import dynamic from 'next/dynamic'
 import { QueryClient } from "react-query"
 import { dehydrate } from "react-query/hydration"
 import sanitizeHtml from 'sanitize-html'
+import dynamic from 'next/dynamic'
+import Link from 'next/link'
 
 const Layout = dynamic(() => import('components/Layout'))
 import { getAllPostsFetcher, useGetAllPosts } from 'lib/useGetAllPosts'
 
-interface Props {
-  allPosts: GetAllPostsResponse
-}
-
-const IndexPage: NextPage<Props> = () => {
+const IndexPage: NextPage = () => {
   const { getAllPostsData } = useGetAllPosts()
 
   return (
@@ -29,10 +23,13 @@ const IndexPage: NextPage<Props> = () => {
       ) : null}
 
       {getAllPostsData.data?.posts.edges.map(({ node }) => (
-        <div className="bg-white shadow-lg rounded p-4 mb-4" key={node.id}>
-          <h1 className="text-xl font-bold text-indigo-600 tracking-wide mb-4">{node.title}</h1>
+        <div className="bg-white shadow-lg rounded-xl p-6 mb-6 max-w-2xl mx-auto" key={node.id}>
+          <h1 className="text-3xl font-bold text-indigo-600 tracking-wide mb-4">{node.title}</h1>
           <div className="text-sm tracking-normal mb-4" dangerouslySetInnerHTML={{ __html: sanitizeHtml(node.excerpt) }} />
           <p className="text-sm font-semibold tracking-wide mb-4">{node.date}</p>
+          <Link href={`/article/${encodeURIComponent(node.slug)}`}>
+            <a className="text-base font-semibold text-indigo-800 cursor-pointer">Read more</a>
+          </Link>
         </div>
       ))}
     </Layout>
