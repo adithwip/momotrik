@@ -51,7 +51,7 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
       we use max-w-screen-sm because we still not yet put any Ads.
       Once we put the Ads, change the max-width accordingly.
     */}
-    <section className="max-w-screen-sm mx-auto p-4">
+    <section className="max-w-screen-sm mx-auto px-4 py-6 md:py-8">
       {children}
     </section>
     <footer>
