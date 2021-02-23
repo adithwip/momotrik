@@ -28,7 +28,7 @@ const IndexPage: NextPage = () => {
           <div className="text-sm tracking-normal mb-4" dangerouslySetInnerHTML={{ __html: sanitizeHtml(node.excerpt) }} />
           <p className="text-sm font-semibold tracking-wide mb-4">{node.date}</p>
           <Link href={`/article/${encodeURIComponent(node.slug)}`}>
-            <a className="text-base font-semibold text-indigo-800 cursor-pointer">Read more</a>
+            <a className="text-base font-semibold text-indigo-800 cursor-pointer capitalize">more</a>
           </Link>
         </div>
       ))}
