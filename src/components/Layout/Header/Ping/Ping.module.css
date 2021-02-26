@@ -1,0 +1,4 @@
+.pingText {
+  @apply text-blue-500 font-mono font-bold mr-1;
+  font-size: 8px;
+}

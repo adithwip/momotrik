@@ -10,24 +10,28 @@ export const getAllPostsFetcher = async (): Promise<GetAllPostsResponse> => {
   const res = await fetchAPI({
     query: `
       query AllPosts {
-        posts(first: 20, where: { orderby: { field: DATE, order: DESC}}) {
+        posts(first: 20, where: {orderby: {field: DATE, order: DESC}}) {
           edges {
             node {
               id
               date
               title
               slug
-              excerpt
-              extraPostInfo {
-                authorExcerpt
-                thumbImage {
+              featuredImage {
+                node {
                   mediaItemUrl
+                }
+              }
+              author {
+                node {
+                  name
                 }
               }
             }
           }
         }
       }
+    
     `
   }
   )
