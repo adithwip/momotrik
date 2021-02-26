@@ -1,0 +1,5 @@
+.image {
+  @apply object-cover object-center;
+  height: 194px;
+  width: 100%;
+}

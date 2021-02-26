@@ -6,7 +6,7 @@ interface Posts {
   edges: Edge[]
 }
 
-interface Edge {
+export interface Edge {
   node: AllPostsNode
 }
 
