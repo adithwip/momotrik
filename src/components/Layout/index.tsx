@@ -3,6 +3,7 @@ import { ReactNode } from 'react'
 import Head from 'next/head'
 
 import Header from './Header'
+import Footer from './Footer'
 
 type Props = {
   children?: ReactNode
@@ -25,10 +26,7 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
     <div className="max-w-screen-sm mx-auto px-4 py-6 md:py-8">
       {children}
     </div>
-    <footer>
-      <hr />
-      <span>I'm here to stay (Footer)</span>
-    </footer>
+    <Footer />
   </>
 )
 
