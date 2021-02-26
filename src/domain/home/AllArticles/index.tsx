@@ -1,5 +1,6 @@
 import type { Edge } from 'interfaces/lib/getAllPosts.interface'
 
+import Link from 'next/link'
 import classnames from 'classnames'
 
 import { formatDate } from 'utils/formatDate'
@@ -32,9 +33,15 @@ const AllArticles = ({ data }: Props) => {
               className={styles.image}
               alt={`${node.title} Image`}
             />
-            <p className="text-xl text-center font-semibold tracking-wider leading-snug mt-5">
-              {node.title}
-            </p>
+
+            <Link href={`/article/${node.slug}`}>
+              <a>
+                <p className="text-xl text-center font-bold tracking-wider leading-snug mt-5">
+                  {node.title}
+                </p>
+              </a>
+            </Link>
+
             <p className="text-xs font-mono text-center text-blue-500 tracking-wider mt-2">
               {`${formatDate(node.date)} | ${node.author.node.name}`}
             </p>
