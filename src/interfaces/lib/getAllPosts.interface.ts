@@ -7,19 +7,30 @@ interface Posts {
 }
 
 interface Edge {
-  node: Node
+  node: AllPostsNode
 }
 
-interface Node {
+export interface AllPostsNode {
   id: string
   date: string
   title: string
   slug: string
-  excerpt: string
-  extraPostInfo: ExtraPostInfo
+  featuredImage?: FeaturedImage
+  author: Author
 }
 
-interface ExtraPostInfo {
-  authorExcerpt: any
-  thumbImage: any
+interface FeaturedImage {
+  node: FeaturedImageNode
+}
+
+interface FeaturedImageNode {
+  mediaItemUrl: string
+}
+
+export interface Author {
+  node: AuthorNode
+}
+
+export interface AuthorNode {
+  name: string
 }
