@@ -15,35 +15,32 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
-    <header className="sticky top-0 z-50 bg-white shadow-lg">
-      <div className="max-w-screen-lg mx-auto p-4 bg-white md:p-5">
-        <div className="flex justify-center items-center">
-          {/*
-            We need two images because of responsive needs
-            Since it's not possible to inject style (with classNames)
-            to Image component from Next.js (at the moment)
-          */}
+    <header className="sticky top-0 z-50 bg-white shadow-lg px-4">
+      <div className="flex justify-center items-center py-4">
+        <div className="flex flex-1 items-center">
           <Link href="/">
-            <a>
-              <div className="hidden md:flex justify-center items-center">
-                <Image
-                  alt="Momotrik Logo Header"
-                  src="/assets/logo/momotrik_logo_type_color_header.png"
-                  width={325}
-                  height={55}
-                />
-              </div>
-              <div className="md:hidden flex justify-center items-center">
-                <Image
-                  alt="Momotrik Logo Header"
-                  src="/assets/logo/momotrik_logo_type_color_header.png"
-                  width={163}
-                  height={28}
-                />
-              </div>
-            </a>
+            <Image
+              alt="Momotrik Logo Header"
+              src="/assets/logo/momotrik_logo_type_color_header.png"
+              width={163}
+              height={28}
+            />
           </Link>
         </div>
+        <button
+          type="button"
+          className="inline-flex items-center justify-center p-2 rounded-md hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-800 focus:ring-white"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+        >
+          <span className="sr-only">Open mobile header menu</span>
+          <Image
+            alt="Hamburger Icon"
+            src="/assets/icons/hamburger_menu_icon.svg"
+            width={24}
+            height={14}
+          />
+        </button>
       </div>
     </header>
     {/* 
