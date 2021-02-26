@@ -21,7 +21,7 @@ const HighlightedArticle = ({ data }: Props) => {
         {data.title}
       </p>
 
-      <p className="text-xs font-mono text-center text-gray-900 tracking-wider">
+      <p className="text-xs font-mono text-center text-blue-500 tracking-wider">
         {`${formatDate(data.date)} | ${data.author.node.name}`}
       </p>
     </article>

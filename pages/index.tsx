@@ -5,6 +5,7 @@ import { dehydrate } from "react-query/hydration"
 import dynamic from 'next/dynamic'
 
 import HighlightedArticle from 'domain/home/HighlightedArticle'
+import AllArticles from 'domain/home/AllArticles'
 
 const Layout = dynamic(() => import('components/Layout'))
 import { getAllPostsFetcher, useGetAllPosts } from 'lib/useGetAllPosts'
@@ -12,16 +13,18 @@ import { getAllPostsFetcher, useGetAllPosts } from 'lib/useGetAllPosts'
 const IndexPage: NextPage = () => {
   const { getAllPostsData } = useGetAllPosts()
 
-  
-  // console.log('getAllPostsData ?? ', getAllPostsData.data?.posts.edges)
-  console.log('isFetching ?? ', getAllPostsData.isFetching)
   const firstArticle = getAllPostsData.data?.posts.edges[0].node
-  // console.log('firstArticle ?? ', firstArticle)
+  const restOfTheArticle = getAllPostsData.data?.posts.edges.slice(1)
+
 
   return (
     <Layout title="Momotrik | Motor, Mobil, Listrik" updating={getAllPostsData.isFetching}>
       {firstArticle ? (
         <HighlightedArticle data={firstArticle} />
+      ) : null} {/* handle null with proper component // TODO */}
+
+      {restOfTheArticle ? (
+        <AllArticles data={restOfTheArticle} />
       ) : null}
     </Layout>
   )
