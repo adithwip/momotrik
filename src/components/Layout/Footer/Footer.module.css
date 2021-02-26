@@ -1,0 +1,9 @@
+.footer {
+  @apply bg-gray-900 p-11 pt-6 relative;
+  height: 420px;
+}
+
+.copyright {
+  @apply absolute transform -translate-x-1/2 -translate-y-1/2 left-1/2;
+  bottom: 32px;
+}
