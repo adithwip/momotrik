@@ -14,7 +14,7 @@ const Footer = () => {
         />
 
         <p className="text-white text-sm text-justify tracking-wide leading-normal mt-6">
-          Lorem ipsum dolor sit amet, consecterur adipscing. Lorem ipsum dolor sit amet, consecterur adipscing. Lorem ipsum dolor sit amet, consecterur adipscing.
+          Momotrik adalah media informasi yang membahas segala seluk beluk tentang mobil listrik, motor listrik, dan skuter listrik. Serta beragam hal tentang gaya hidup kendaraan listrik terbaru
         </p>
 
         <div className="flex justify-center items-center mt-8">
@@ -37,7 +37,7 @@ const Footer = () => {
 
       <div className={styles.copyright}>
         <p className="text-white text-sm tracking-wider">
-            &copy; 2021 Momotrik
+          &copy; 2021 Momotrik
         </p>
       </div>
     </footer>

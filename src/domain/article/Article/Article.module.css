@@ -5,14 +5,14 @@
 */
 
 .content {
-  @apply text-lg leading-relaxed;
+  @apply text-lg leading-relaxed pt-4;
 }
 
 .content p,
 .content ul,
 .content ol,
 .content blockquote {
-  @apply my-6;
+  @apply py-4 px-5;
 }
 
 .content a {
@@ -21,7 +21,7 @@
 
 .content ul,
 .content ol {
-  @apply pl-4;
+  @apply px-5 pl-10;
 }
 
 .content ul {
@@ -42,15 +42,15 @@
 }
 
 .content h2 {
-  @apply text-3xl mt-12 mb-4 leading-snug;
+  @apply text-3xl font-bold mt-12 mb-4 px-5 tracking-wide leading-snug;
 }
 
 .content h3 {
-  @apply text-2xl mt-8 mb-4 leading-snug;
+  @apply text-2xl font-bold mt-8 mb-4 px-5 tracking-wide leading-snug;
 }
 
 .content h4 {
-  @apply text-xl mt-6 mb-4 leading-snug;
+  @apply text-xl font-bold mt-6 mb-4 px-5 tracking-wide leading-snug;
 }
 
 .content pre {
@@ -61,8 +61,12 @@
   @apply text-sm;
 }
 
+.content figure {
+  @apply py-4
+}
+
 .content figcaption {
-  @apply text-center text-sm;
+  @apply text-center text-xs mt-2 px-8 italic font-mono;
 }
 
 .content blockquote {
@@ -79,4 +83,26 @@
 
 .content audio {
   @apply w-full;
+}
+
+
+/* Components Styles */
+.image {
+  @apply object-cover object-center;
+  height: 235px;
+  width: 100%;
+}
+
+.divider {
+  @apply px-5 w-full;
+}
+
+.divider div {
+  @apply border-b-2 border-gray-900 h-6;
+}
+
+.authorAvatar {
+  @apply object-cover object-center rounded-full;
+  height: 56px;
+  width: 56px;
 }

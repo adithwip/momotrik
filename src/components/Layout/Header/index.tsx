@@ -13,7 +13,7 @@ const Header = ({ updating }: Props) => {
       <div className="flex justify-center items-center py-4">
         <div className="flex flex-1 items-center">
           <Link href="/">
-            <a>
+            <a className="flex items-center">
               <Image
                 alt="Momotrik Logo Header"
                 src="/assets/logo/momotrik_logo_type_color_header.png"
