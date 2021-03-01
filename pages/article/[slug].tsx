@@ -50,11 +50,11 @@ const ArticlePage: NextPage<Props> = ({ postData }) => {
 
 /**
  * In Next.js if we want to statically generate a page with dynamic route (e.g [slug].tsx)
- * The best result based on performance is using buil-in getStaticPaths and getStaticProps
- * without intervention from other data fetching library like React Query.
+ * The best result based on performance is using the built-in getStaticPaths and getStaticProps
+ * without intervention from other data fetching library like React Query. (tested and compared)
  * 
  * So in this dynamic page, we use pure Next.js approach.
- * Without even worry about caching and data management,
+ * Without even worry about caching and data management (because it's basically static, duh!),
  * like we use in other non-dynamic-route page with React Query dehydratedState.
  */
 export const getStaticPaths: GetStaticPaths = async () => {

@@ -16,11 +16,37 @@ const Article = ({ postData }: Props) => {
     <main>
       <article>
         <header>
-          <h1 className="text-2xl text-gray-900 font-semibold leading-tight tracking-normal mb-3 md:text-4xl">{post.title}</h1>
-        </header>
-        <Date date={post.date} />
+          <h1 className="text-3xl text-center text-gray-900 font-bold leading-snug tracking-wider p-4 mb-3 mt-12">
+            {post.title}
+          </h1>
+          <img
+            src={post.featuredImage?.node.sourceUrl}
+            className={styles.image}
+            alt="Article Header Image"
+          />
+          <div className={styles.divider}>
+            <div />
+          </div>
 
-        
+
+          <div className="flex items-center px-5 mt-8">
+            <img
+              className={styles.authorAvatar}
+              src={post.author.node.avatar.url}
+              alt="Author Avatar Image"
+            />
+            <div className="flex flex-col ml-4">
+              <p className="text-sm font-mono font-bold text-gray-900 tracking-wider uppercase mb-2">
+                {post.author.node.name}
+              </p>
+              <Date date={post.date} />
+            </div>
+          </div>
+
+
+        </header>
+
+
         <div
           className={styles.content}
           dangerouslySetInnerHTML={{
@@ -59,7 +85,8 @@ const Article = ({ postData }: Props) => {
                   'srcset',
                   'sizes',
                   'data-recalc-dims'
-                ]
+                ],
+                figure: ['class']
               }
             })
           }} />
