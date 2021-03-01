@@ -8,11 +8,20 @@ export const getSinglePostFetcher = async (slug: string | string[] | undefined):
     query: `
       fragment PostFields on Post {
         title
+        excerpt
         slug
         date
         featuredImage {
           node {
             sourceUrl
+          }
+        }
+        author {
+          node {
+            name
+            avatar {
+              url
+            }
           }
         }
       }
