@@ -1,5 +1,5 @@
 .imageWrapper {
-  @apply relative h-48 w-full;
+  @apply relative h-48 w-full border-2 border-gray-900;
   @apply md:h-96;
 }
 
