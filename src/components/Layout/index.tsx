@@ -5,8 +5,11 @@ import Head from 'next/head'
 import Header from './Header'
 import Footer from './Footer'
 
+import config from 'config'
+
 type Props = {
-  children: ReactNode
+  children: ReactNode,
+  article?: boolean,
   title: string
   description?: string,
   previewImageUrl?: string,
@@ -16,28 +19,47 @@ type Props = {
 
 const Layout = ({
   children,
+  article = false,
   title,
   description,
   previewImageUrl,
   pathUrl,
   updating
 }: Props) => {
-  const url = `https://momotrik.com${pathUrl ? pathUrl : ''}`
+  const {
+    currentURL,
+    originalTitle,
+    originalImage,
+    originalDescription,
+    siteName
+  } = config
+  const url = `${currentURL}${pathUrl ? pathUrl : ''}`
 
   return (
     <>
       <Head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta name="description" content={description} />
+        <meta name="description" content={description ? description : originalDescription} />
+        <meta name="image" content={previewImageUrl ? previewImageUrl : originalImage} />
 
         {/* Open Graph */}
         <meta property="og:url" content={url} key="ogurl" />
-        <meta property="og:image" content={previewImageUrl} key="ogimage" />
-        <meta property="og:site_name" content="Momotrik" key="ogsitename" />
-        <meta property="og:type" content="article" key="ogtype" />
-        <meta property="og:title" content={title} key="ogtitle" />
-        <meta property="og:description" content={description} key="ogdesc" />
+        <meta property="og:image" content={previewImageUrl ? previewImageUrl : originalImage} key="ogimage" />
+        <meta property="og:site_name" content={siteName} key="ogsitename" />
+        {article ? (
+          <meta property="og:type" content="article" key="ogtype" />
+        ) : (
+            <meta property="og:type" content="website" key="ogtype" />
+          )}
+        <meta property="og:title" content={title ? title : originalTitle} key="ogtitle" />
+        <meta property="og:description" content={description ? description : originalDescription} key="ogdesc" />
+
+        {/* Twitter */}
+        <meta name="twitter:creator" content="momotrik" key="twhandle" />
+        <meta name="twitter:title" content={`${title ? title : originalTitle}`} key="twtitle" />
+        <meta name="twitter:description" content={`${description ? description : originalDescription}`} key="twdescription" />
+        <meta name="twitter:image" content={`${previewImageUrl ? previewImageUrl : originalImage}`} key="twimage" />
 
         <title>{title}</title>
       </Head>
