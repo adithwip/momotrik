@@ -41,13 +41,13 @@ const AllArticles = ({ data }: Props) => {
 
             <Link href={`/article/${node.slug}`}>
               <a>
-                <p className="text-xl text-center font-bold tracking-wider leading-snug mt-5">
+                <p className={styles.articleTitle}>
                   {node.title}
                 </p>
               </a>
             </Link>
 
-            <p className="text-xs font-mono text-center text-blue-500 tracking-wider mt-2">
+            <p className={styles.articleDate}>
               {`${formatDate(node.date)} | ${node.author.node.name}`}
             </p>
           </article>

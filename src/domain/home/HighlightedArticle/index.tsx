@@ -27,13 +27,13 @@ const HighlightedArticle = ({ data }: Props) => {
 
       <Link href={`/article/${data.slug}`}>
         <a>
-          <p className="text-2xl text-center font-bold tracking-wider leading-snug text-gray-900 px-5 pt-8 pb-6">
+          <p className={styles.articleTitle}>
             {data.title}
           </p>
         </a>
       </Link>
 
-      <p className="text-xs font-mono text-center text-blue-500 tracking-wider">
+      <p className={styles.articleDate}>
         {`${formatDate(data.date)} | ${data.author.node.name}`}
       </p>
     </article>
