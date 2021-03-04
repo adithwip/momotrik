@@ -9,7 +9,7 @@ interface Props {
 
 const Header = ({ updating }: Props) => {
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-gray-600 px-4">
+    <header className="sticky top-0 z-50 bg-white border-b-2 border-gray-600 px-4">
       <div className="flex justify-center items-center py-4">
         <div className="flex flex-1 items-center">
           <Link href="/">
