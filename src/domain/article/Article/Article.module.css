@@ -87,8 +87,8 @@
 
 
 /* Components Styles */
-.image {
-  @apply object-cover object-center;
+.featuredImageWrapper {
+  @apply relative;
   height: 235px;
   width: 100%;
 }
@@ -101,8 +101,8 @@
   @apply border-b-2 border-gray-900 h-6;
 }
 
-.authorAvatar {
-  @apply object-cover object-center rounded-full;
+.authorAvatarWrapper {
+  @apply relative rounded-full overflow-hidden border border-gray-900;
   height: 56px;
   width: 56px;
 }

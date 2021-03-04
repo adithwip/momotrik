@@ -1,5 +1,6 @@
 import type { Edge } from 'interfaces/lib/getAllPosts.interface'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import classnames from 'classnames'
 
@@ -28,11 +29,15 @@ const AllArticles = ({ data }: Props) => {
               "mb-12": isNotLastChild
             })}
           >
-            <img
-              src={node.featuredImage?.node.mediaItemUrl}
-              className={styles.image}
-              alt={`${node.title} Image`}
-            />
+            <div className={styles.imageWrapper}>
+              <Image
+                alt={`${node.title} Image`}
+                src={node!.featuredImage!.node.mediaItemUrl}
+                layout="fill"
+                objectFit="cover"
+                objectPosition="center"
+              />
+            </div>
 
             <Link href={`/article/${node.slug}`}>
               <a>
