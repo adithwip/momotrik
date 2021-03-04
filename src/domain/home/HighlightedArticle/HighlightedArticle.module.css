@@ -1,5 +1,5 @@
-.image {
-  @apply object-cover object-center;
+.imageWrapper {
+  @apply relative;
   height: 235px;
   width: 100%;
 }

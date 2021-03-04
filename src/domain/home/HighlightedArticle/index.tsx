@@ -1,5 +1,6 @@
 import type { AllPostsNode } from 'interfaces/lib/getAllPosts.interface'
 
+import Image from 'next/image'
 import Link from 'next/link'
 
 import { formatDate } from 'utils/formatDate'
@@ -13,11 +14,16 @@ interface Props {
 const HighlightedArticle = ({ data }: Props) => {
   return (
     <article className="py-12 border-b border-gray-900">
-      <img
-        src={data.featuredImage?.node.mediaItemUrl}
-        className={styles.image}
-        alt="Featured Article Image"
-      />
+      <div className={styles.imageWrapper}>
+        <Image
+          priority
+          alt="Featured Article Image"
+          src={data!.featuredImage!.node.mediaItemUrl}
+          layout="fill"
+          objectFit="cover"
+          objectPosition="center"
+        />
+      </div>
 
       <Link href={`/article/${data.slug}`}>
         <a>
