@@ -13,7 +13,7 @@ export const getSinglePostFetcher = async (slug: string | string[] | undefined):
         date
         featuredImage {
           node {
-            sourceUrl
+            mediaItemUrl
           }
         }
         author {

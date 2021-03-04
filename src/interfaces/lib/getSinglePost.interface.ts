@@ -17,7 +17,7 @@ interface FeaturedImage {
 }
 
 interface FeaturedImageNode {
-  sourceUrl: string
+  mediaItemUrl: string
 }
 
 interface Author {
