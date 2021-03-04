@@ -17,7 +17,7 @@ const Article = ({ postData }: Props) => {
     <main>
       <article>
         <header>
-          <h1 className="text-3xl text-center text-gray-900 font-bold leading-snug tracking-wider p-4 mb-3 mt-12">
+          <h1 className={styles.articleTitle}>
             {post.title}
           </h1>
 
