@@ -47,7 +47,7 @@ const Layout = ({
       we use max-w-screen-sm because we still not yet put any Ads.
       Once we put the Ads, change the max-width accordingly.
     */}
-      <div className="max-w-screen-sm mx-auto">
+      <div className="max-w-screen-sm min-h-screen mx-auto">
         {children}
       </div>
       <Footer />
