@@ -39,7 +39,12 @@ const ArticlePage: NextPage<Props> = ({ postData }) => {
   if (postData) {
     const { post } = postData
     return (
-      <Layout title={`${post.title} | Momotrik`}>
+      <Layout
+        title={`${post.title} | Momotrik`}
+        description={post.excerpt}
+        previewImageUrl={post.featuredImage.node.sourceUrl}
+        pathUrl={`/article/${post.slug}`}
+      >
         <Article postData={postData} />
       </Layout>
     )
