@@ -40,6 +40,7 @@ const ArticlePage: NextPage<Props> = ({ postData }) => {
     const { post } = postData
     return (
       <Layout
+        article
         title={`${post.title} | Momotrik`}
         description={post.excerpt}
         previewImageUrl={post.featuredImage.node.mediaItemUrl}
