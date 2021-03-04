@@ -19,7 +19,6 @@ class MyDocument extends Document {
   render() {
     const { isDevelopment } = this.props
 
-    console.log('isDevelopment ???? ', isDevelopment)
     return (
       <Html lang="id">
         <Head>
