@@ -1,5 +1,16 @@
 .imageWrapper {
-  @apply relative;
-  height: 235px;
-  width: 100%;
+  @apply relative h-48 w-full;
+  @apply md:h-96;
+}
+
+.articleTitle {
+  @apply text-2xl text-left font-semibold tracking-normal leading-tight text-gray-900; 
+  @apply px-5 pt-8 pb-6;
+  @apply md:text-center md:font-bold md:tracking-wider md:leading-snug;
+}
+
+.articleDate {
+  @apply text-xs font-mono text-left text-blue-500 tracking-wider;
+  @apply px-5;
+  @apply md:text-center;
 }

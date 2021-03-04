@@ -1,5 +1,16 @@
 .imageWrapper {
-  @apply relative;
-  height: 194px;
-  width: 100%;
+  @apply relative h-40 w-full;
+  @apply md:h-80;
+}
+
+.articleTitle {
+  @apply text-xl text-left font-semibold tracking-normal leading-tight text-gray-900;
+  @apply mt-5;
+  @apply md:text-center md:font-bold md:tracking-wider md:leading-snug;
+}
+
+.articleDate {
+  @apply text-xs font-mono text-left text-blue-500 tracking-wider;
+  @apply mt-4;
+  @apply md:text-center md:mt-2;
 }
