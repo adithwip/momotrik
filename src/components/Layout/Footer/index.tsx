@@ -13,9 +13,11 @@ const Footer = () => {
           height={24}
         />
 
-        <p className="text-white text-sm text-justify tracking-wide leading-normal mt-6">
-          Momotrik adalah media informasi yang membahas segala seluk beluk tentang mobil listrik, motor listrik, dan skuter listrik. Serta beragam hal tentang gaya hidup kendaraan listrik terbaru
-        </p>
+        <div className="max-w-sm mx-auto">
+          <p className="text-white text-sm text-justify tracking-wide leading-normal mt-6">
+            Momotrik adalah media informasi yang membahas segala seluk beluk tentang mobil listrik, motor listrik, dan skuter listrik. Serta beragam hal tentang gaya hidup kendaraan listrik terbaru
+          </p>
+        </div>
 
         <div className="flex justify-center items-center mt-8">
           <Image
