@@ -34,6 +34,7 @@ const Layout = ({
     siteName
   } = config
   const url = `${currentURL}${pathUrl ? pathUrl : ''}`
+  const twitterImageUrl = `http://${previewImageUrl?.replace(/^https?:\/\//,'')}`
 
   return (
     <>
@@ -59,7 +60,7 @@ const Layout = ({
         <meta name="twitter:creator" content="momotrik" key="twhandle" />
         <meta name="twitter:title" content={`${title ? title : originalTitle}`} key="twtitle" />
         <meta name="twitter:description" content={`${description ? description : originalDescription}`} key="twdescription" />
-        <meta name="twitter:image" content={`${previewImageUrl ? previewImageUrl : originalImage}`} key="twimage" />
+        <meta name="twitter:image" content={`${previewImageUrl ? twitterImageUrl : originalImage}`} key="twimage" />
 
         <title>{title}</title>
       </Head>

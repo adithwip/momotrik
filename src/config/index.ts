@@ -1,7 +1,7 @@
 export default {
   originalTitle: 'Momotrik',
   currentURL: 'https://momotrik.com',
-  originalImage: 'https://momotrikwp.wpcomstaging.com/wp-content/uploads/2021/02/Tesla-model-3-polisi.jpg', // Change it later! // TODO
+  originalImage: 'http://momotrikwp.wpcomstaging.com/wp-content/uploads/2021/02/Tesla-model-3-polisi.jpg', // Change it later! // TODO
   author: {
     name: 'Galih Kresnawan'
   },
