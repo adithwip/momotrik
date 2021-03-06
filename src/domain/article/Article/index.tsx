@@ -63,7 +63,6 @@ const Article = ({ postData }: Props) => {
 
         </header>
 
-
         <div
           className={styles.content}
           dangerouslySetInnerHTML={{
@@ -108,6 +107,10 @@ const Article = ({ postData }: Props) => {
             })
           }} />
       </article>
+
+      <div className="px-5 my-6">
+        <SocialMediaShareButton />
+      </div>
     </main>
   )
 }

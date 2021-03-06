@@ -29,18 +29,18 @@ const AllArticles = ({ data }: Props) => {
               "mb-12": isNotLastChild
             })}
           >
-            <div className={styles.imageWrapper}>
-              <Image
-                alt={`${node.title} Image`}
-                src={node!.featuredImage!.node.mediaItemUrl}
-                layout="fill"
-                objectFit="cover"
-                objectPosition="center"
-              />
-            </div>
-
             <Link href={`/article/${node.slug}`}>
               <a>
+                <div className={styles.imageWrapper}>
+                  <Image
+                    alt={`${node.title} Image`}
+                    src={node!.featuredImage!.node.mediaItemUrl}
+                    layout="fill"
+                    objectFit="cover"
+                    objectPosition="center"
+                  />
+                </div>
+
                 <p className={styles.articleTitle}>
                   {node.title}
                 </p>
