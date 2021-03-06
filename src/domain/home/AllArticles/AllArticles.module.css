@@ -10,7 +10,7 @@
 }
 
 .articleDate {
-  @apply text-xs font-mono text-left text-blue-500 tracking-wider;
+  @apply text-xs text-left text-blue-500 tracking-wider;
   @apply mt-4;
   @apply md:text-center md:mt-2;
 }

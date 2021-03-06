@@ -66,7 +66,7 @@
 }
 
 .content figcaption {
-  @apply text-center text-xs mt-2 px-8 italic font-mono;
+  @apply text-center text-xs mt-2 px-8 italic;
 }
 
 .content blockquote {
