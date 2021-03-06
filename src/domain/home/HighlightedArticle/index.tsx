@@ -14,19 +14,19 @@ interface Props {
 const HighlightedArticle = ({ data }: Props) => {
   return (
     <article className="py-12 border-b border-gray-900">
-      <div className={styles.imageWrapper}>
-        <Image
-          priority
-          alt="Featured Article Image"
-          src={data!.featuredImage!.node.mediaItemUrl}
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
-        />
-      </div>
-
       <Link href={`/article/${data.slug}`}>
         <a>
+          <div className={styles.imageWrapper}>
+            <Image
+              priority
+              alt="Featured Article Image"
+              src={data!.featuredImage!.node.mediaItemUrl}
+              layout="fill"
+              objectFit="cover"
+              objectPosition="center"
+            />
+          </div>
+
           <p className={styles.articleTitle}>
             {data.title}
           </p>
