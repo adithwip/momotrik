@@ -89,7 +89,7 @@
 /* Components Styles */
 .featuredImageWrapper {
   @apply relative h-60 w-full border-2 border-gray-900;
-  @apply md:h-80;
+  @apply xs:h-72 md:h-80;
 }
 
 .divider {
@@ -106,7 +106,7 @@
 }
 
 .articleTitle {
-  @apply text-2xl text-left font-semibold tracking-normal leading-tight text-gray-900;
+  @apply text-2xl text-left font-bold tracking-normal leading-tight text-gray-900 italic uppercase;
   @apply p-4 mb-3 mt-6;
   @apply md:text-3xl md:text-center md:font-bold md:tracking-normal md:leading-snug md:mt-12;
 }
