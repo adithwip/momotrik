@@ -1,0 +1,5 @@
+.button {
+  @apply inline-flex justify-center items-center w-full rounded-md border border-blue-300 shadow-sm bg-white text-sm font-medium text-blue-700;
+  @apply px-4 py-2;
+  @apply hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-blue-100 focus:ring-indigo-500;
+}

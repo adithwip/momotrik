@@ -4,6 +4,7 @@ import Image from 'next/image'
 import sanitizeHtml, { defaults } from 'sanitize-html'
 
 import Date from 'domain/article/Date'
+import SocialMediaShareButton from 'components/SocialMediaShareButton'
 import styles from './Article.module.css'
 
 type Props = {
@@ -56,6 +57,9 @@ const Article = ({ postData }: Props) => {
             </div>
           </div>
 
+          <div className="px-5 mt-6">
+            <SocialMediaShareButton />
+          </div>
 
         </header>
 
