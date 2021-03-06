@@ -37,30 +37,30 @@ const Article = ({ postData }: Props) => {
             <div />
           </div>
 
-
-          <div className="flex items-center px-5 mt-8">
-            <div className={styles.authorAvatarWrapper}>
-              <Image
-                priority
-                alt="Author Avatar Image"
-                src={post.author.node.avatar.url}
-                layout="fill"
-                objectFit="cover"
-                objectPosition="center"
-              />
+          <div className="flex flex-col md:flex md:flex-row md:justify-between md:items-center md:my-2">
+            <div className="flex items-center px-5 mt-8">
+              <div className={styles.authorAvatarWrapper}>
+                <Image
+                  priority
+                  alt="Author Avatar Image"
+                  src={post.author.node.avatar.url}
+                  layout="fill"
+                  objectFit="cover"
+                  objectPosition="center"
+                />
+              </div>
+              <div className="flex flex-col ml-4">
+                <p className="text-sm font-bold text-gray-900 tracking-normal italic uppercase mb-2">
+                  {post.author.node.name}
+                </p>
+                <Date date={post.date} />
+              </div>
             </div>
-            <div className="flex flex-col ml-4">
-              <p className="text-sm font-bold text-gray-900 tracking-wider uppercase mb-2">
-                {post.author.node.name}
-              </p>
-              <Date date={post.date} />
+
+            <div className="px-5 mt-6">
+              <SocialMediaShareButton />
             </div>
           </div>
-
-          <div className="px-5 mt-6">
-            <SocialMediaShareButton />
-          </div>
-
         </header>
 
         <div
