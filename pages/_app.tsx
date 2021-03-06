@@ -22,13 +22,16 @@ function MyApp({ Component, pageProps }: AppProps) {
    * Medium Article: https://medium.com/frontend-digest/using-nextjs-with-google-analytics-and-typescript-620ba2359dea
    */
   useEffect(() => {
-    const handleRouteChange = (url: URL) => {
-      gtag.pageview(url)
-    }
-    router.events.on('routeChangeComplete', handleRouteChange)
-
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange)
+    // Only trigger Google Analytics on production environment
+    if (process.env.NODE_ENV === 'production') {
+      const handleRouteChange = (url: URL) => {
+        gtag.pageview(url)
+      }
+      router.events.on('routeChangeComplete', handleRouteChange)
+  
+      return () => {
+        router.events.off('routeChangeComplete', handleRouteChange)
+      }
     }
 
   }, [router.events])
