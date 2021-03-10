@@ -4,7 +4,7 @@
 }
 
 .articleTitle {
-  @apply text-xl text-left font-semibold tracking-normal leading-tight text-gray-900 italic;
+  @apply text-xl text-left font-semibold tracking-normal leading-tight text-gray-900;
   @apply mt-5;
   @apply md:text-left md:font-bold md:tracking-normal md:leading-snug md:mt-0 md:p-5 md:pb-1;
 }
