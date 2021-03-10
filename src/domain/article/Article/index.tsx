@@ -50,7 +50,7 @@ const Article = ({ postData }: Props) => {
                 />
               </div>
               <div className="flex flex-col ml-4">
-                <p className="text-sm font-bold text-gray-900 tracking-normal italic uppercase mb-2">
+                <p className="text-sm font-bold text-gray-900 tracking-normal italic mb-2">
                   {post.author.node.name}
                 </p>
                 <Date date={post.date} />
