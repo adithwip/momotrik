@@ -12,7 +12,11 @@ module.exports = {
       'xs': '425px',
       ...defaultTheme.screens
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Cairo', ...defaultTheme.fontFamily.sans]
+      }
+    },
   },
   variants: {
     extend: {},

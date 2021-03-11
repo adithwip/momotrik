@@ -8,6 +8,7 @@ import { Hydrate } from "react-query/hydration";
 
 import * as gtag from 'utils/gtag'
 
+import '../global.css'
 import "tailwindcss/tailwind.css";
 
 const queryClient = new QueryClient()

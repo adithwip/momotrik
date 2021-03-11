@@ -23,6 +23,26 @@ class MyDocument extends Document {
       <Html lang="id">
         <Head>
 
+          {/* Custom fonts */}
+          <link
+            rel="preload"
+            href="/fonts/Cairo-Regular.woff2"
+            as="font"
+            crossOrigin=""
+          />
+          <link
+            rel="preload"
+            href="/fonts/Cairo-SemiBold.woff2"
+            as="font"
+            crossOrigin=""
+          />
+          <link
+            rel="preload"
+            href="/fonts/Cairo-Bold.woff2"
+            as="font"
+            crossOrigin=""
+          />
+
           {/* Only run all Google Analytics trackers in Production Environment */}
           {!isDevelopment && (
             <Fragment>
