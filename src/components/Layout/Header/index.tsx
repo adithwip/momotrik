@@ -3,6 +3,8 @@ import Link from 'next/link'
 
 import Ping from './Ping'
 
+import styles from './Header.module.css'
+
 interface Props {
   updating?: boolean
 }
@@ -14,12 +16,17 @@ const Header = ({ updating }: Props) => {
         <div className="flex flex-1 items-center">
           <Link href="/">
             <a className="flex items-center">
-              <Image
-                alt="Momotrik Logo Header"
-                src="/assets/logo/momotrik_logo_type_color_header.png"
-                width={163}
-                height={28}
-              />
+              <div className={styles.logoWrapper}>
+                <Image
+                  priority
+                  alt="Momotrik Logo Header"
+                  src="/assets/logo/momotrik_logo_type_color_header.png"
+                  layout="fill"
+                  objectFit="cover"
+                  objectPosition="center"
+                  quality={25}
+                />
+              </div>
             </a>
           </Link>
         </div>
@@ -33,12 +40,17 @@ const Header = ({ updating }: Props) => {
           aria-expanded="false"
         >
           <span className="sr-only">Open mobile header menu</span>
-          <Image
-            alt="Hamburger Icon"
-            src="/assets/icons/hamburger_menu_icon.svg"
-            width={24}
-            height={14}
-          />
+          <div className={styles.menuWrapper}>
+            <Image
+              priority
+              alt="Hamburger Icon"
+              src="/assets/icons/hamburger_menu_icon.svg"
+              layout="fill"
+              objectFit="cover"
+              objectPosition="center"
+              quality={25}
+            />
+          </div>
         </button>
       </div>
     </header>

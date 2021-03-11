@@ -7,3 +7,15 @@
   @apply absolute transform -translate-x-1/2 -translate-y-1/2 left-1/2;
   bottom: 32px;
 }
+
+.footerLogoWrapper {
+  @apply relative;
+  width: 140px;
+  height: 24px;
+}
+
+.igIconWrapper {
+  @apply relative;
+  height: 24px;
+  width: 24px;
+}

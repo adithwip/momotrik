@@ -6,12 +6,17 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className="flex flex-col justify-center items-center h-full">
-        <Image
-          alt="Momotrik Logo White Footer"
-          src="/assets/logo/momotrik_logo_type_white_footer.png"
-          width={140}
-          height={24}
-        />
+
+        <div className={styles.footerLogoWrapper}>
+          <Image
+            alt="Momotrik Logo White Footer"
+            src="/assets/logo/momotrik_logo_type_white_footer.png"
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center"
+            quality={25}
+          />
+        </div>
 
         <div className="max-w-sm mx-auto">
           <p className="text-white text-sm text-justify tracking-wide leading-normal mt-6">
@@ -20,12 +25,16 @@ const Footer = () => {
         </div>
 
         <div className="flex justify-center items-center mt-8">
-          <Image
-            alt="Instagram Icon White"
-            src="/assets/icons/instagram_white_glyph_icon.svg"
-            height={24}
-            width={24}
-          />
+          <div className={styles.igIconWrapper}>
+            <Image
+              alt="Instagram Icon White"
+              src="/assets/icons/instagram_white_glyph_icon.svg"
+              layout="fill"
+              objectFit="cover"
+              objectPosition="center"
+              quality={25}
+            />
+          </div>
           <a
             className="text-white text-sm underline tracking-wider ml-1"
             href="https://www.instagram.com/momotrik.id/"
