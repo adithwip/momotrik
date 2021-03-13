@@ -17,6 +17,7 @@ export const getAllPostsFetcher = async (): Promise<GetAllPostsResponse> => {
               date
               title
               slug
+              excerpt
               featuredImage {
                 node {
                   mediaItemUrl

@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import classnames from 'classnames'
 
+import { stripHtmlTags } from 'utils/stripHtmlTags'
 import { formatDate } from 'utils/formatDate'
 
 import styles from './AllArticles.module.css'
@@ -25,7 +26,7 @@ const AllArticles = ({ data }: Props) => {
         return (
           <article
             key={node.id}
-            className={classnames({
+            className={classnames(styles.articleWrapper, {
               "mb-12": isNotLastChild
             })}
           >
@@ -41,15 +42,21 @@ const AllArticles = ({ data }: Props) => {
                   />
                 </div>
 
-                <p className={styles.articleTitle}>
-                  {node.title}
-                </p>
+                <div className={styles.titleWrapper}>
+                  <p className={styles.articleTitle}>
+                    {node.title}
+                  </p>
+
+                  <p className={styles.articleDate}>
+                    {`${formatDate(node.date)} | ${node.author.node.name}`}
+                  </p>
+
+                  <p className={styles.excerpt}>
+                    {`${stripHtmlTags(node.excerpt).substring(0, 140)} ...`}
+                  </p>
+                </div>
               </a>
             </Link>
-
-            <p className={styles.articleDate}>
-              {`${formatDate(node.date)} | ${node.author.node.name}`}
-            </p>
           </article>
         )
       })}

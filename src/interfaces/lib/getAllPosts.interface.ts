@@ -15,6 +15,7 @@ export interface AllPostsNode {
   date: string
   title: string
   slug: string
+  excerpt: string
   featuredImage?: FeaturedImage
   author: Author
 }
