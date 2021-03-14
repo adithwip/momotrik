@@ -16,6 +16,7 @@ export interface AllPostsNode {
   title: string
   slug: string
   excerpt: string
+  isSticky?:boolean
   featuredImage?: FeaturedImage
   author: Author
 }

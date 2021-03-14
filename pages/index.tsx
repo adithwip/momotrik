@@ -9,11 +9,12 @@ const AllArticles = dynamic(() => import('domain/home/AllArticles'))
 const Layout = dynamic(() => import('components/Layout'))
 
 import { getAllPostsFetcher, useGetAllPosts } from 'lib/useGetAllPosts'
+import { getAllStickyPostsFetcher, useGetAllStickyPosts } from 'lib/useGetAllStickyPosts'
 
 const IndexPage: NextPage = () => {
   const { getAllPostsData } = useGetAllPosts()
+  const { getAllStickyPostsData } = useGetAllStickyPosts()
 
-  const firstArticle = getAllPostsData.data?.posts.edges[0].node
   const restOfTheArticle = getAllPostsData.data?.posts.edges.slice(1)
 
   return (
@@ -22,8 +23,8 @@ const IndexPage: NextPage = () => {
       description="Momotrik adalah media informasi yang membahas segala seluk beluk tentang mobil listrik, motor listrik, dan skuter listrik. Serta beragam hal tentang gaya hidup kendaraan listrik terbaru"
       updating={getAllPostsData.isFetching}
     >
-      {firstArticle ? (
-        <HighlightedArticle data={firstArticle} />
+      {getAllStickyPostsData.data ? (
+        <HighlightedArticle data={getAllStickyPostsData.data} />
       ) : null} {/* handle null with proper component // TODO */}
 
       {restOfTheArticle ? (
@@ -36,6 +37,7 @@ const IndexPage: NextPage = () => {
 export const getStaticProps: GetStaticProps = async () => {
   const queryClient = new QueryClient()
   await queryClient.prefetchQuery('posts', () => getAllPostsFetcher())
+  await queryClient.prefetchQuery('stickyPosts', () => getAllStickyPostsFetcher())
 
   return {
     props: {
