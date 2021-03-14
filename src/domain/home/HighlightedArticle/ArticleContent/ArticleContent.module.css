@@ -1,0 +1,12 @@
+.articleContent {
+  @apply absolute inset-0 z-10 h-full flex flex-col justify-end p-4;
+}
+
+.articleDate {
+  @apply text-sm text-left text-white tracking-wider mb-2;
+}
+
+.articleTitle {
+  @apply text-sm text-left font-semibold tracking-normal leading-snug text-white; 
+  @apply md:text-base md:font-bold md:tracking-wide md:leading-snug;
+}

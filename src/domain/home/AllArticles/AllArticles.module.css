@@ -20,7 +20,7 @@
 
 .titleWrapper {
   @apply absolute bottom-0 left-2 right-2;
-  @apply p-3 bg-white rounded-md shadow;
+  @apply p-3 bg-white rounded-md shadow-md;
   @apply md:p-6 md:left-4 md:right-4;
 }
 
