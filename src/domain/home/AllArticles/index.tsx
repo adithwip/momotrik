@@ -39,6 +39,7 @@ const AllArticles = ({ data }: Props) => {
                     layout="fill"
                     objectFit="cover"
                     objectPosition="center"
+                    quality={25}
                   />
                 </div>
 
