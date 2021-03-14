@@ -51,36 +51,40 @@ const HighlightedArticle = ({ data }: Props) => {
       <div className={styles.gridContainer}>
         {data.map(({ node }, index) => {
           return (
-            <div key={node.id} className={classnames(
-              styles.gridCard,
-              {
-                [styles.gridHighlight]: index === 0,
-                [styles.gridRest]: index !== 0,
-                [styles.grid1]: index === 0,
-                [styles.grid2]: index === 1,
-                [styles.grid3]: index === 2,
-                [styles.grid4]: index === 3,
-                [styles.grid5]: index === 4,
-                // I might be shame with this approach someday :(
-              }
+            <Link href={`/article/${node.slug}`}>
+              <a>
+                <div key={node.id} className={classnames(
+                  styles.gridCard,
+                  {
+                    [styles.gridHighlight]: index === 0,
+                    [styles.gridRest]: index !== 0,
+                    [styles.grid1]: index === 0,
+                    [styles.grid2]: index === 1,
+                    [styles.grid3]: index === 2,
+                    [styles.grid4]: index === 3,
+                    [styles.grid5]: index === 4,
+                    // I might be shame with this approach someday :(
+                  }
 
-            )}>
-              <Image
-                priority
-                alt="Featured Article Image Grid"
-                src={node!.featuredImage!.node.mediaItemUrl}
-                layout="fill"
-                objectFit="cover"
-                objectPosition="center"
-                quality={25}
-              />
+                )}>
+                  <Image
+                    priority
+                    alt="Featured Article Image Grid"
+                    src={node!.featuredImage!.node.mediaItemUrl}
+                    layout="fill"
+                    objectFit="cover"
+                    objectPosition="center"
+                    quality={25}
+                  />
 
-              <ArticleContent
-                date={node.date}
-                authorName={node.author.node.name}
-                title={node.title}
-              />
-            </div>
+                  <ArticleContent
+                    date={node.date}
+                    authorName={node.author.node.name}
+                    title={node.title}
+                  />
+                </div>
+              </a>
+            </Link>
           )
         })}
       </div>
