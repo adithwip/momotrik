@@ -15,7 +15,7 @@ interface Props {
 
 const AllArticles = ({ data }: Props) => {
   return (
-    <section className="px-5 pt-14 pb-20">
+    <section className="px-5 pt-10 pb-20 md:pt-14 md:max-w-screen-sm md:mx-auto">
       <p className="text-2xl text-center font-bold tracking-wider text-gray-900 mb-8">
         All Articles
       </p>
