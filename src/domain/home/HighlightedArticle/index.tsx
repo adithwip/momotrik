@@ -17,14 +17,14 @@ const HighlightedArticle = ({ data }: Props) => {
     <>
       {/* Mobile view */}
       <div className={styles.slider}>
-        {data.map(({ node }) => {
+        {data.map(({ node }, index) => {
           return (
             <Link href={`/article/${node.slug}`}>
               <a>
                 <article key={node.id} className={styles.articleCard}>
                   <div className={styles.imageWrapper}>
                     <Image
-                      priority
+                      priority={index === 0 ? true : false}
                       alt="Featured Article Image"
                       src={node!.featuredImage!.node.mediaItemUrl}
                       layout="fill"
