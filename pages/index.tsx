@@ -15,8 +15,6 @@ const IndexPage: NextPage = () => {
   const { getAllPostsData } = useGetAllPosts()
   const { getAllStickyPostsData } = useGetAllStickyPosts()
 
-  const restOfTheArticle = getAllPostsData.data?.posts.edges.slice(1)
-
   return (
     <Layout 
       title="Momotrik | Motor, Mobil, Listrik"
@@ -27,8 +25,8 @@ const IndexPage: NextPage = () => {
         <HighlightedArticle data={getAllStickyPostsData.data} />
       ) : null} {/* handle null with proper component // TODO */}
 
-      {restOfTheArticle ? (
-        <AllArticles data={restOfTheArticle} />
+      {getAllPostsData.data ? (
+        <AllArticles data={getAllPostsData.data.posts.edges} />
       ) : null}
     </Layout>
   )

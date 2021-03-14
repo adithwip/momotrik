@@ -7,6 +7,7 @@ import classnames from 'classnames'
 import ArticleContent from './ArticleContent'
 
 import styles from './HighlightedArticle.module.css'
+import React from 'react'
 
 interface Props {
   data: Edge[]
@@ -19,30 +20,32 @@ const HighlightedArticle = ({ data }: Props) => {
       <div className={styles.slider}>
         {data.map(({ node }, index) => {
           return (
-            <Link href={`/article/${node.slug}`}>
-              <a>
-                <article key={node.id} className={styles.articleCard}>
-                  <div className={styles.imageWrapper}>
-                    <Image
-                      priority={index === 0 ? true : false}
-                      alt="Featured Article Image"
-                      src={node!.featuredImage!.node.mediaItemUrl}
-                      layout="fill"
-                      objectFit="cover"
-                      objectPosition="center"
-                      quality={25}
+            <React.Fragment key={node.id}>
+              <Link href={`/article/${node.slug}`}>
+                <a>
+                  <article className={styles.articleCard}>
+                    <div className={styles.imageWrapper}>
+                      <Image
+                        priority={index === 0 ? true : false}
+                        alt="Featured Article Image"
+                        src={node!.featuredImage!.node.mediaItemUrl}
+                        layout="fill"
+                        objectFit="cover"
+                        objectPosition="center"
+                        quality={25}
+                      />
+                    </div>
+
+
+                    <ArticleContent
+                      date={node.date}
+                      authorName={node.author.node.name}
+                      title={node.title}
                     />
-                  </div>
-
-
-                  <ArticleContent
-                    date={node.date}
-                    authorName={node.author.node.name}
-                    title={node.title}
-                  />
-                </article>
-              </a>
-            </Link>
+                  </article>
+                </a>
+              </Link>
+            </React.Fragment>
           )
         })}
       </div>
