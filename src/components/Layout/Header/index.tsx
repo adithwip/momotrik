@@ -11,8 +11,8 @@ interface Props {
 
 const Header = ({ updating }: Props) => {
   return (
-    <header className="sticky top-0 z-50 bg-white border-b-2 border-gray-600 px-4">
-      <div className="flex justify-center items-center py-2 md:py-4">
+    <header className="sticky top-0 z-50 bg-gray-900 px-4">
+      <div className="flex justify-center items-center py-2 md:py-4 md:max-w-screen-lg md:mx-auto">
         <div className="flex flex-1 items-center">
           <Link href="/">
             <a className="flex items-center">
@@ -20,7 +20,7 @@ const Header = ({ updating }: Props) => {
                 <Image
                   priority
                   alt="Momotrik Logo Header"
-                  src="/assets/logo/momotrik_logo_type_color_header.png"
+                  src="/assets/logo/momotrik_header_logo_white_blue.png"
                   layout="fill"
                   objectFit="cover"
                   objectPosition="center"
