@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 
 import config from 'config'
 
@@ -6,16 +7,14 @@ type Props = {
   article?: boolean,
   title: string,
   description?: string,
-  previewImageUrl?: string,
-  pathUrl?: string,
+  previewImageUrl?: string
 }
 
 const SEO = ({
   article,
   title,
   description,
-  previewImageUrl,
-  pathUrl,
+  previewImageUrl
 }: Props) => {
   const {
     currentURL,
@@ -24,8 +23,9 @@ const SEO = ({
     originalDescription,
     siteName
   } = config
+  const router = useRouter()
 
-  const url = `${currentURL}${pathUrl ? pathUrl : ''}`
+  const url = `${currentURL}${router.asPath}`
   const twitterImageUrl = `http://${previewImageUrl?.replace(/^https?:\/\//, '')}`
 
   return (
@@ -52,6 +52,8 @@ const SEO = ({
       <meta name="twitter:title" content={`${title ? title : originalTitle}`} key="twtitle" />
       <meta name="twitter:description" content={`${description ? description : originalDescription}`} key="twdescription" />
       <meta name="twitter:image" content={`${previewImageUrl ? twitterImageUrl : originalImage}`} key="twimage" />
+
+      <link rel="canonical" href={url} />
 
       {/* Favicon */}
       <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />

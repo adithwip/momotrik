@@ -44,7 +44,6 @@ const ArticlePage: NextPage<Props> = ({ postData }) => {
         title={`${post.title} | Momotrik`}
         description={post.excerpt}
         previewImageUrl={post.featuredImage.node.mediaItemUrl}
-        pathUrl={`/article/${post.slug}`}
       >
         <Article postData={postData} />
       </Layout>
