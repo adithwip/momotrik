@@ -25,7 +25,7 @@
 }
 
 .excerpt {
-  @apply text-xs text-gray-700;
+  @apply text-xs text-gray-700 line-clamp-3;
   @apply mt-4;
-  @apply md:text-sm;
+  @apply md:text-sm md:line-clamp-4;
 }

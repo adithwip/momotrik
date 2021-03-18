@@ -16,6 +16,7 @@
     "sanitize-html": "2.3.2"
   },
   "devDependencies": {
+    "@tailwindcss/line-clamp": "0.2.0",
     "@types/classnames": "2.2.11",
     "@types/gtag.js": "^0.0.4",
     "@types/node": "14.14.34",

@@ -53,7 +53,7 @@ const AllArticles = ({ data }: Props) => {
                   </p>
 
                   <p className={styles.excerpt}>
-                    {`${stripHtmlTags(node.excerpt).substring(0, 140)} ...`}
+                    {stripHtmlTags(node.excerpt)}
                   </p>
                 </div>
               </a>
