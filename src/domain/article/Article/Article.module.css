@@ -62,7 +62,12 @@
 }
 
 .content figure {
-  @apply py-4
+  @apply py-4;
+}
+
+.content img {
+  @apply overflow-hidden bg-gray-200 shadow-md mx-auto;
+  @apply md:rounded-md;
 }
 
 .content figcaption {
@@ -88,8 +93,8 @@
 
 /* Components Styles */
 .featuredImageWrapper {
-  @apply relative h-60 w-full border-2 border-gray-900;
-  @apply xs:h-72 md:h-80;
+  @apply relative h-60 w-full overflow-hidden bg-gray-200 shadow-md;
+  @apply xs:h-72 md:h-80 md:rounded-lg;
 }
 
 .divider {

@@ -41,6 +41,7 @@ const ArticlePage: NextPage<Props> = ({ postData }) => {
     return (
       <Layout
         article
+        screen="md"
         title={`${post.title} | Momotrik`}
         description={post.excerpt}
         previewImageUrl={post.featuredImage.node.mediaItemUrl}

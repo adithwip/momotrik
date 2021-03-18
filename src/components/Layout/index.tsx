@@ -12,6 +12,7 @@ type Props = {
   previewImageUrl?: string,
   pathUrl?: string,
   updating?: boolean,
+  screen?: 'md' | 'lg'
 }
 
 const Layout = ({
@@ -20,8 +21,8 @@ const Layout = ({
   title,
   description,
   previewImageUrl,
-  pathUrl,
-  updating
+  updating,
+  screen = 'lg'
 }: Props) => {
   return (
     <>
@@ -30,7 +31,6 @@ const Layout = ({
         title={title}
         description={description}
         previewImageUrl={previewImageUrl}
-        pathUrl={pathUrl}
       />
       <Header updating={updating} />
       {/* 
@@ -38,7 +38,7 @@ const Layout = ({
       we use max-w-screen-sm because we still not yet put any Ads.
       Once we put the Ads, change the max-width accordingly.
     */}
-      <div className="max-w-screen-sm min-h-screen mx-auto md:max-w-screen-lg">
+      <div className={`max-w-screen-sm min-h-screen mx-auto md:max-w-screen-${screen}`}>
         {children}
       </div>
       <Footer />
