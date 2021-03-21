@@ -6,11 +6,13 @@ import dynamic from 'next/dynamic'
 
 const HighlightedArticle = dynamic(() => import('domain/home/HighlightedArticle'))
 const ArticlesAndAside = dynamic(() => import('domain/home/ArticlesAndAside'))
+const PopularPosts = dynamic(() => import('domain/home/PopularPosts'))
 const Layout = dynamic(() => import('components/Layout'))
 
 import { getAllPostsFetcher } from 'lib/useGetAllPosts'
 import { getAllStickyPostsFetcher, useGetAllStickyPosts } from 'lib/useGetAllStickyPosts'
 import { getTrendingPostsFetcher } from 'lib/useGetTrendingPosts'
+import { getPopularPostsFetcher } from 'lib/useGetPopularPosts'
 
 const IndexPage: NextPage = () => {
   const { getAllStickyPostsData } = useGetAllStickyPosts()
@@ -26,6 +28,7 @@ const IndexPage: NextPage = () => {
       ) : null} {/* handle null with proper component // TODO */}
 
       <ArticlesAndAside />
+      <PopularPosts />
     </Layout>
   )
 }
@@ -35,6 +38,7 @@ export const getStaticProps: GetStaticProps = async () => {
   await queryClient.prefetchQuery('posts', () => getAllPostsFetcher())
   await queryClient.prefetchQuery('stickyPosts', () => getAllStickyPostsFetcher())
   await queryClient.prefetchQuery('trending', () => getTrendingPostsFetcher())
+  await queryClient.prefetchQuery('popular', () => getPopularPostsFetcher())
 
   return {
     props: {
