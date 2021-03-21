@@ -12,6 +12,10 @@ module.exports = {
       'xs': '425px',
       ...defaultTheme.screens
     },
+    flex: {
+      '2': '2 2 0%',
+      ...defaultTheme.flex      
+    },
     extend: {
       fontFamily: {
         sans: ['Cairo', ...defaultTheme.fontFamily.sans]
