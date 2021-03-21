@@ -26,7 +26,6 @@ const Articles = ({ data }: Props) => {
             key={index}
           >
             <AsideArticleCard
-              index={index}
               slug={node.slug}
               mediaItemUrl={node.featuredImage.node.mediaItemUrl}
               title={node.title}

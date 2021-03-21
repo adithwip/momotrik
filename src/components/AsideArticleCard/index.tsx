@@ -6,7 +6,6 @@ import { formatDate } from 'utils/formatDate'
 import styles from './AsideArticleCard.module.css'
 
 interface Props {
-  index: number,
   slug: string,
   mediaItemUrl: string,
   title: string,
@@ -15,7 +14,6 @@ interface Props {
 }
 
 const AsideArticleCard = ({
-  index,
   slug,
   mediaItemUrl,
   title,
@@ -28,7 +26,6 @@ const AsideArticleCard = ({
         <a>
           <div className={styles.imageWrapper}>
             <Image
-              priority={index === 0}
               alt={title}
               src={mediaItemUrl}
               layout="fill"

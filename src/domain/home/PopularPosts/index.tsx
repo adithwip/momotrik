@@ -22,7 +22,6 @@ const PopularPosts = () => {
           return (
             <div className={styles.asideCardWrapper} key={index}>
               <AsideArticleCard
-                index={index}
                 slug={node.slug}
                 mediaItemUrl={node.featuredImage.node.mediaItemUrl}
                 title={node.title}
