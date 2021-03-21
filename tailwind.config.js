@@ -8,17 +8,20 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    screens: {
-      'xs': '425px',
-      ...defaultTheme.screens
-    },
-    flex: {
-      '2': '2 2 0%',
-      ...defaultTheme.flex      
-    },
     extend: {
       fontFamily: {
         sans: ['Cairo', ...defaultTheme.fontFamily.sans]
+      },
+      minWidth: {
+        'unset': 'unset',
+        '1/4': '25%',
+        '300': '300px'
+      },
+      flex: {
+        '2': '2 2 0%'
+      },
+      screens: {
+        'xs': '425px'
       }
     },
   },
