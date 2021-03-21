@@ -7,16 +7,16 @@ import classnames from 'classnames'
 import { stripHtmlTags } from 'utils/stripHtmlTags'
 import { formatDate } from 'utils/formatDate'
 
-import styles from './AllArticles.module.css'
+import styles from './Articles.module.css'
 
 interface Props {
   data: Edge[]
 }
 
-const AllArticles = ({ data }: Props) => {
+const Articles = ({ data }: Props) => {
   return (
-    <section className="px-5 pt-10 pb-20 md:pt-14 md:max-w-screen-sm md:mx-auto">
-      <p className="text-2xl text-center font-bold tracking-wider text-gray-900 mb-8">
+    <section className="px-5 pt-10 pb-20 md:flex-2">
+      <p className="text-2xl font-bold tracking-wider text-gray-900 mb-8">
         All Articles
       </p>
 
@@ -65,4 +65,4 @@ const AllArticles = ({ data }: Props) => {
   )
 }
 
-export default AllArticles
+export default Articles

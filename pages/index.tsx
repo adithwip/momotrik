@@ -5,29 +5,27 @@ import { dehydrate } from "react-query/hydration"
 import dynamic from 'next/dynamic'
 
 const HighlightedArticle = dynamic(() => import('domain/home/HighlightedArticle'))
-const AllArticles = dynamic(() => import('domain/home/AllArticles'))
+const ArticlesAndAside = dynamic(() => import('domain/home/ArticlesAndAside'))
 const Layout = dynamic(() => import('components/Layout'))
 
-import { getAllPostsFetcher, useGetAllPosts } from 'lib/useGetAllPosts'
+import { getAllPostsFetcher } from 'lib/useGetAllPosts'
 import { getAllStickyPostsFetcher, useGetAllStickyPosts } from 'lib/useGetAllStickyPosts'
+import { getTrendingPostsFetcher } from 'lib/useGetTrendingPosts'
 
 const IndexPage: NextPage = () => {
-  const { getAllPostsData } = useGetAllPosts()
   const { getAllStickyPostsData } = useGetAllStickyPosts()
 
   return (
-    <Layout 
+    <Layout
       title="Momotrik | Motor, Mobil, Listrik"
       description="Momotrik adalah media informasi yang membahas segala seluk beluk tentang mobil listrik, motor listrik, dan skuter listrik. Serta beragam hal tentang gaya hidup kendaraan listrik terbaru"
-      updating={getAllPostsData.isFetching}
+      updating={getAllStickyPostsData.isFetching}
     >
       {getAllStickyPostsData.data ? (
         <HighlightedArticle data={getAllStickyPostsData.data} />
       ) : null} {/* handle null with proper component // TODO */}
 
-      {getAllPostsData.data ? (
-        <AllArticles data={getAllPostsData.data.posts.edges} />
-      ) : null}
+      <ArticlesAndAside />
     </Layout>
   )
 }
@@ -36,6 +34,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const queryClient = new QueryClient()
   await queryClient.prefetchQuery('posts', () => getAllPostsFetcher())
   await queryClient.prefetchQuery('stickyPosts', () => getAllStickyPostsFetcher())
+  await queryClient.prefetchQuery('trending', () => getTrendingPostsFetcher())
 
   return {
     props: {
