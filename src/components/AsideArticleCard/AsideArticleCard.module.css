@@ -1,0 +1,13 @@
+.imageWrapper {
+  @apply relative h-44 w-full rounded-md overflow-hidden bg-gray-200;
+}
+
+.articleTitle {
+  @apply text-lg text-left font-semibold tracking-normal leading-tight text-gray-900;
+  @apply pt-5;
+}
+
+.articleDate {
+  @apply text-xs text-left text-blue-700 tracking-wider;
+  @apply mt-3;
+}
