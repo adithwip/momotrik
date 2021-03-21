@@ -27,8 +27,6 @@ export const fetchAPI = async ({ query, variables }: Params) => {
     return res
 
   } catch (error) {
-    console.error('Error details: ', error);
-    console.error('Params details: ', query, variables);
     throw new Error('Failed to fetch API');
   }
 }
