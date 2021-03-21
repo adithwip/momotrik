@@ -1,12 +1,9 @@
 import type { Edge } from 'interfaces/lib/getTrendingPosts.interface'
 
-import Image from 'next/image'
-import Link from 'next/link'
+import dynamic from 'next/dynamic'
 import classnames from 'classnames'
 
-import { formatDate } from 'utils/formatDate'
-
-import styles from './Aside.module.css'
+const AsideArticleCard = dynamic(() => import('components/AsideArticleCard'))
 
 interface Props {
   data: Edge[] | undefined
@@ -23,36 +20,20 @@ const Articles = ({ data }: Props) => {
         const isNotLastChild = index !== arr.length - 1
 
         return (
-          <article
-            key={node.id}
-            className={classnames({
-              "mb-10": isNotLastChild
-            })}
+          <div className={classnames({
+            "mb-10": isNotLastChild
+          })}
+            key={index}
           >
-            <Link href={`/article/${node.slug}`}>
-              <a>
-                <div className={styles.imageWrapper}>
-                  <Image
-                    priority={index === 0}
-                    alt={node.title}
-                    src={node.featuredImage.node.mediaItemUrl}
-                    layout="fill"
-                    objectFit="cover"
-                    objectPosition="center"
-                    quality={25}
-                  />
-                </div>
-
-                <p className={styles.articleTitle}>
-                  {node.title}
-                </p>
-
-                <p className={styles.articleDate}>
-                  {`${formatDate(node.date)} | ${node.author.node.name}`}
-                </p>
-              </a>
-            </Link>
-          </article>
+            <AsideArticleCard
+              index={index}
+              slug={node.slug}
+              mediaItemUrl={node.featuredImage.node.mediaItemUrl}
+              title={node.title}
+              date={node.date}
+              authorName={node.author.node.name}
+            />
+          </div>
         )
       }) : null}
     </aside>
