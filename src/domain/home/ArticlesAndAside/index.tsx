@@ -1,5 +1,7 @@
-import Articles from './Articles'
-import Aside from './Aside'
+import dynamic from 'next/dynamic'
+
+const Articles = dynamic(() => import('./Articles'))
+const Aside = dynamic(() => import('./Aside'))
 
 import { useGetAllPosts } from 'lib/useGetAllPosts'
 import { useGetTrendingPosts } from 'lib/useGetTrendingPosts'
