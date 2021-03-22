@@ -85,7 +85,7 @@ const Footer = ({ trendingPostsData }: Props) => {
                     <div className={styles.smallArticleCardImageWrapper}>
                       <Image
                         alt={node.title}
-                        src={node.featuredImage.node.mediaItemUrl}
+                        src={node!.featuredImage!.node.mediaItemUrl}
                         layout="fill"
                         objectFit="cover"
                         objectPosition="center"
