@@ -1,19 +1,19 @@
 import type { GetTrendingPostsResponse } from 'interfaces/lib/getTrendingPosts.interface'
 
-import { useQuery } from 'react-query'
+import { useQuery } from "react-query"
 import { fetchAPI } from 'lib/fetchAPI'
 
-export const getTrendingPostsFetcher = async (): Promise<GetTrendingPostsResponse> => {
+export const getRecentPostsFetcher = async (): Promise<GetTrendingPostsResponse> => {
   const res = await fetchAPI({
     query: `
-      query MyQuery {
-        posts(where: {categoryId: 1515}, first: 5) {
+      query AllPosts {
+        posts(first: 3, where: {orderby: {field: DATE, order: DESC}}) {
           edges {
             node {
               id
               date
-              slug
               title
+              slug
               featuredImage {
                 node {
                   mediaItemUrl
@@ -34,11 +34,11 @@ export const getTrendingPostsFetcher = async (): Promise<GetTrendingPostsRespons
   return res.data.data
 }
 
-export const useGetTrendingPosts = () => {
-  const { data, isError, isFetching } = useQuery('trending', () => getTrendingPostsFetcher())
+export const useGetRecentPosts = () => {
+  const { data, isError, isFetching } = useQuery('recent', () => getRecentPostsFetcher())
 
   return {
-    getTrendingPostsData: {
+    getRecentPostsData: {
       data,
       isError,
       isFetching

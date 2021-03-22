@@ -1,21 +1,33 @@
 .footer {
-  @apply bg-gray-900 p-11 pt-6 relative;
-  height: 420px;
-}
-
-.copyright {
-  @apply absolute transform -translate-x-1/2 -translate-y-1/2 left-1/2;
-  bottom: 32px;
+  @apply bg-gray-900;
+  /* height: 500px; */
 }
 
 .footerLogoWrapper {
-  @apply relative;
+  @apply relative mx-auto md:mx-0;
   width: 140px;
   height: 24px;
 }
 
 .igIconWrapper {
   @apply relative;
-  height: 24px;
-  width: 24px;
+  height: 18px;
+  width: 18px;
+}
+
+.fbIconWrapper {
+  @apply relative;
+  height: 17px;
+  width: 10px;
+}
+
+.smallArticleCardImageWrapper {
+  @apply relative bg-gray-300 rounded overflow-hidden;
+  min-height: 94px;
+  min-width: 94px;
+}
+
+.articleDate {
+  @apply text-xs text-white tracking-wider;
+  @apply mt-3;
 }

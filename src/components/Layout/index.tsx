@@ -4,6 +4,8 @@ import Header from './Header'
 import Footer from './Footer'
 import SEO from './SEO'
 
+import { useGetRecentPosts } from 'lib/useGetRecentPosts'
+
 type Props = {
   children: ReactNode,
   article?: boolean,
@@ -24,6 +26,8 @@ const Layout = ({
   updating,
   screen = 'lg'
 }: Props) => {
+  const { getRecentPostsData } = useGetRecentPosts()
+
   return (
     <>
       <SEO
@@ -41,7 +45,7 @@ const Layout = ({
       <div className={`max-w-screen-sm min-h-screen mt-12 md:mt-16 mx-auto md:max-w-screen-${screen}`}>
         {children}
       </div>
-      <Footer />
+      <Footer trendingPostsData={getRecentPostsData.data?.posts.edges} />
     </>
 
   )
