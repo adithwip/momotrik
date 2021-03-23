@@ -1,15 +1,16 @@
 .articleWrapper {
-  @apply relative pb-20;
+  @apply relative md:pb-20;
   @apply md:pb-24;
 }
 
 .imageWrapper {
-  @apply relative h-80 w-full rounded-md overflow-hidden bg-gray-200;
+  @apply relative h-72 w-full rounded-md overflow-hidden bg-gray-200;
+  @apply md:h-80;
 }
 
 .articleTitle {
-  @apply text-base text-left font-semibold tracking-normal leading-tight text-gray-900;
-  @apply md:text-xl;
+  @apply text-base text-left font-semibold tracking-normal leading-normal text-gray-900;
+  @apply md:text-xl md:leading-tight;
 }
 
 .articleDate {
@@ -18,13 +19,13 @@
 }
 
 .titleWrapper {
-  @apply absolute bottom-0 left-2 right-2;
-  @apply p-3 bg-white rounded-md shadow-md;
-  @apply md:p-6 md:left-4 md:right-4;
+  @apply absolute bottom-2 left-2 right-2;
+  @apply p-3 bg-white rounded shadow-md;
+  @apply md:p-5 md:bottom-0 md:left-4 md:right-4;
 }
 
 .excerpt {
-  @apply text-xs text-gray-700 line-clamp-3;
+  @apply hidden text-xs text-gray-700;
   @apply mt-4;
-  @apply md:text-sm md:line-clamp-4;
+  @apply md:flex md:text-sm md:line-clamp-3;
 }
