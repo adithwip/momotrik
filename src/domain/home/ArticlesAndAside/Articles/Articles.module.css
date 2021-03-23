@@ -4,8 +4,7 @@
 }
 
 .imageWrapper {
-  @apply relative h-64 w-full rounded-md overflow-hidden bg-gray-200;
-  @apply xs:h-72 md:h-80;
+  @apply relative h-80 w-full rounded-md overflow-hidden bg-gray-200;
 }
 
 .articleTitle {
