@@ -14,7 +14,8 @@ type Props = {
   previewImageUrl?: string,
   pathUrl?: string,
   updating?: boolean,
-  screen?: 'md' | 'lg'
+  screen?: 'md' | 'lg',
+  slug?: string
 }
 
 const Layout = ({
@@ -24,7 +25,8 @@ const Layout = ({
   description,
   previewImageUrl,
   updating,
-  screen = 'lg'
+  screen = 'lg',
+  slug
 }: Props) => {
   const { getRecentPostsData } = useGetRecentPosts()
 
@@ -45,7 +47,10 @@ const Layout = ({
       <div className={`max-w-screen-sm min-h-screen mt-12 md:mt-16 mx-auto md:max-w-screen-${screen}`}>
         {children}
       </div>
-      <Footer trendingPostsData={getRecentPostsData.data?.posts.edges} />
+      <Footer
+        slug={slug}
+        trendingPostsData={getRecentPostsData.data?.posts.edges}
+      />
     </>
 
   )

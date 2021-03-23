@@ -2,16 +2,22 @@ import type { Edge } from 'interfaces/lib/getRecentPosts.interface'
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { Fragment } from 'react'
 
 import { formatDate } from 'utils/formatDate'
 
 import styles from './Footer.module.css'
 
 interface Props {
-  trendingPostsData: Edge[] | undefined
+  trendingPostsData: Edge[] | undefined,
+  slug?: string
 }
 
-const Footer = ({ trendingPostsData }: Props) => {
+const Footer = ({ trendingPostsData, slug }: Props) => {
+  const filteredTrendingPostsData = trendingPostsData?.filter(({ node }) => {
+    return node.slug !== slug
+  })
+
   return (
     <footer className={styles.footer}>
       <div className="flex flex-col md:flex-row justify-between max-w-screen md:max-w-screen-lg mx-auto py-16 px-5 h-full">
@@ -77,33 +83,42 @@ const Footer = ({ trendingPostsData }: Props) => {
         </div>
 
         <div className="flex-1 flex-col order-first mb-12 pb-12 border-b border-white md:border-transparent md:mb-0 md:order-1 md:ml-20 md:pb-0">
-          {trendingPostsData ? trendingPostsData.map(({ node }) => {
-            return (
-              <Link href={`/article/${node.slug}`}>
-                <a>
-                  <article className="flex items-center mb-4">
-                    <div className={styles.smallArticleCardImageWrapper}>
-                      <Image
-                        alt={node.title}
-                        src={node!.featuredImage!.node.mediaItemUrl}
-                        layout="fill"
-                        objectFit="cover"
-                        objectPosition="center"
-                        quality={15}
-                      />
+          {filteredTrendingPostsData ? filteredTrendingPostsData.map(({ node }, index, arr) => {
+            
+            // Prevent the current post to available in recent posts cards
+            // And prevent to have more than 3 cards
+            if (arr.length === 4 && index === 3) {
+              return
+            }
 
-                    </div>
-                    <div className="flex flex-col pl-5">
-                      <p className="text-sm text-white font-bold leading-normal line-clamp-3">
-                        {node.title}
-                      </p>
-                      <p className={styles.articleDate}>
-                        {`${formatDate(node.date)} | ${node.author.node.name}`}
-                      </p>
-                    </div>
-                  </article>
-                </a>
-              </Link>
+            return (
+              <Fragment key={index}>
+                <Link href={`/article/${node.slug}`}>
+                  <a>
+                    <article className="flex items-center mb-4">
+                      <div className={styles.smallArticleCardImageWrapper}>
+                        <Image
+                          alt={node.title}
+                          src={node!.featuredImage!.node.mediaItemUrl}
+                          layout="fill"
+                          objectFit="cover"
+                          objectPosition="center"
+                          quality={15}
+                        />
+
+                      </div>
+                      <div className="flex flex-col pl-5">
+                        <p className="text-sm text-white font-bold leading-normal line-clamp-3">
+                          {node.title}
+                        </p>
+                        <p className={styles.articleDate}>
+                          {`${formatDate(node.date)} | ${node.author.node.name}`}
+                        </p>
+                      </div>
+                    </article>
+                  </a>
+                </Link>
+              </Fragment>
             )
           }) : null}
           {/* // TODO */}

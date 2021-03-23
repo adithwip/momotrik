@@ -7,7 +7,7 @@ export const getRecentPostsFetcher = async (): Promise<GetTrendingPostsResponse>
   const res = await fetchAPI({
     query: `
       query AllPosts {
-        posts(first: 3, where: {orderby: {field: DATE, order: DESC}}) {
+        posts(first: 4, where: {orderby: {field: DATE, order: DESC}}) {
           edges {
             node {
               id
