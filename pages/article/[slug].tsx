@@ -7,11 +7,11 @@ import { useRouter } from 'next/router'
 const Layout = dynamic(() => import('components/Layout'))
 const Article = dynamic(() => import('domain/article/Article'))
 
+import { stripHtmlTags } from 'utils/stripHtmlTags'
 import { getSinglePostFetcher } from 'lib/useGetSinglePost'
 import { getAllPostSlugsFetcher } from 'lib/useGetAllPostSlugs'
 
 type Props = {
-  slug?: string,
   postData: GetSinglePostResponse
 }
 
@@ -43,7 +43,7 @@ const ArticlePage: NextPage<Props> = ({ postData }) => {
         article
         screen="md"
         title={`${post.title} | Momotrik`}
-        description={post.excerpt}
+        description={stripHtmlTags(post.excerpt)}
         previewImageUrl={post.featuredImage.node.mediaItemUrl}
         slug={post.slug}
       >
@@ -70,6 +70,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = allPosts.posts.edges.map(({ node }) => ({
     params: { slug: node.slug }
   }))
+
+  console.log(paths)
 
   return {
     paths,
