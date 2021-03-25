@@ -2,9 +2,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import Ping from './Ping'
+import NavItem from './NavItem'
 
 import styles from './Header.module.css'
-
 interface Props {
   updating?: boolean
 }
@@ -33,9 +33,16 @@ const Header = ({ updating }: Props) => {
         {updating ? (
           <Ping />
         ) : null}
+
+        <nav className="hidden md:block">
+          <div className="flex items-center space-x-4">
+            <NavItem label="Mobil" href={`/category/mobil-listrik`} />
+          </div>
+        </nav>
+
         <button
           type="button"
-          className="inline-flex items-center justify-center p-2 rounded-md hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-blue-800 focus:ring-white"
+          className={styles.hamburgerMenu}
           aria-controls="mobile-menu"
           aria-expanded="false"
         >
