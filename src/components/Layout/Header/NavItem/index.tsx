@@ -1,8 +1,14 @@
 import Link from 'next/link'
 
+
 interface Props {
   label: string,
-  href: string
+  href: {
+    pathname: string,
+    query: {
+      [key: string]: string
+    }
+  }
 }
 
 import styles from './NavItem.module.css'

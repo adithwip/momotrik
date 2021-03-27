@@ -71,8 +71,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
     params: { slug: node.slug }
   }))
 
-  console.log(paths)
-
   return {
     paths,
     fallback: true

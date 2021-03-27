@@ -3,7 +3,7 @@ import type { Edge } from 'interfaces/lib/getTrendingPosts.interface'
 import dynamic from 'next/dynamic'
 import classnames from 'classnames'
 
-const AsideArticleCard = dynamic(() => import('components/AsideArticleCard'))
+const AsideArticleCard = dynamic(() => import('components/Cards/AsideArticleCard'))
 
 interface Props {
   data: Edge[] | undefined
