@@ -5,7 +5,7 @@ import classnames from 'classnames'
 
 import styles from './PopularPosts.module.css'
 
-const AsideArticleCard = dynamic(() => import('components/AsideArticleCard'))
+const AsideArticleCard = dynamic(() => import('components/Cards/AsideArticleCard'))
 
 const PopularPosts = () => {
   const { getPopularPostsData: { data } } = useGetPopularPosts()

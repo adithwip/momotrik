@@ -11,11 +11,11 @@ interface Props {
 
 const Header = ({ updating }: Props) => {
   return (
-    <header className="fixed top-0 w-full z-50 bg-gray-900 px-4">
+    <nav className="fixed top-0 w-full z-50 bg-gray-900 px-4">
       <div className="flex justify-center items-center py-2 md:py-4 md:max-w-screen-lg md:mx-auto">
         <div className="flex flex-1 items-center">
           <Link href="/">
-            <a className="flex items-center">
+            <a>
               <div className={styles.logoWrapper}>
                 <Image
                   priority
@@ -34,11 +34,22 @@ const Header = ({ updating }: Props) => {
           <Ping />
         ) : null}
 
-        <nav className="hidden md:block">
+        <div className="hidden md:block">
           <div className="flex items-center space-x-4">
-            <NavItem label="Mobil" href={`/category/mobil-listrik`} />
+            <NavItem label="Mobil" href={{
+              pathname: '/category/[name]',
+              query: {
+                name: 'mobil-listrik'
+              }
+            }} />
+            <NavItem label="Motor" href={{
+              pathname: '/category/[name]',
+              query: {
+                name: 'motor-listrik'
+              }
+            }} />
           </div>
-        </nav>
+        </div>
 
         <button
           type="button"
@@ -60,7 +71,7 @@ const Header = ({ updating }: Props) => {
           </div>
         </button>
       </div>
-    </header>
+    </nav>
   )
 }
 
