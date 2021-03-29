@@ -1,0 +1,4 @@
+.mainLayout {
+  @apply relative;
+  top: 4rem;
+}

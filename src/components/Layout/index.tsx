@@ -1,10 +1,13 @@
 import { ReactNode } from 'react'
+import classnames from 'classnames'
 
 import Header from './Header'
 import Footer from './Footer'
 import SEO from './SEO'
 
 import { useGetRecentPosts } from 'lib/useGetRecentPosts'
+
+import styles from './Layout.module.css'
 
 type Props = {
   children: ReactNode,
@@ -44,7 +47,10 @@ const Layout = ({
       we use max-w-screen-sm because we still not yet put any Ads.
       Once we put the Ads, change the max-width accordingly.
     */}
-      <div className={`max-w-screen-sm min-h-screen mt-12 md:mt-16 mx-auto md:max-w-screen-${screen}`}>
+      <div className={classnames(
+        styles.mainLayout,
+        `max-w-screen-sm min-h-screen mx-auto md:max-w-screen-${screen}`
+      )}>
         {children}
       </div>
       <Footer
