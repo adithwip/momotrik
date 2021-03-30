@@ -1,4 +1,3 @@
 .mainLayout {
-  @apply relative;
-  top: 4rem;
+  @apply relative mt-16;
 }
