@@ -9,24 +9,24 @@
   },
   "dependencies": {
     "axios": "0.21.1",
-    "next": "10.0.9",
+    "next": "10.1.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-query": "3.13.0",
+    "react-query": "3.13.6",
     "sanitize-html": "2.3.3"
   },
   "devDependencies": {
     "@tailwindcss/line-clamp": "0.2.0",
     "@types/classnames": "2.2.11",
     "@types/gtag.js": "^0.0.4",
-    "@types/node": "14.14.35",
+    "@types/node": "14.14.37",
     "@types/react": "17.0.3",
     "@types/react-dom": "17.0.3",
-    "@types/sanitize-html": "1.27.1",
+    "@types/sanitize-html": "1.27.2",
     "autoprefixer": "10.2.5",
-    "postcss": "8.2.8",
-    "tailwindcss": "2.0.4",
-    "typescript": "4.2.3"
+    "postcss": "8.2.10",
+    "tailwindcss": "2.1.1",
+    "typescript": "4.2.4"
   },
   "license": "MIT"
 }
