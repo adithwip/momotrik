@@ -2,5 +2,5 @@
 
 This is the repository of Momotrik Front-end code.
 Momotrik is a magazine site that covers all related topics about electric vehicles.
-Using Next JS, TypeScript, React Query, and WordPress as headless CMS. This tech stacks make it possible to make Momotrik site run very fast.
+Using Next JS, TypeScript, React Query, WordPress as headless CMS (with GraphQL), and deployed on Vercel. This tech stacks make it possible to make Momotrik site run very fast.
 While keep the convenience for the writer in WordPress environment. This site will be maintained and improved with features that will give readers better user experiences and also make this site worthy enough to place ads inside.
