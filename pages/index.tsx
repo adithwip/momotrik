@@ -1,4 +1,4 @@
-import type { NextPage, GetServerSideProps } from 'next'
+import type { NextPage, GetStaticProps } from 'next'
 
 import { QueryClient } from "react-query"
 import { dehydrate } from "react-query/hydration"
@@ -33,7 +33,7 @@ const IndexPage: NextPage = () => {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const queryClient = new QueryClient()
   await queryClient.prefetchQuery('posts', () => getAllPostsFetcher())
   await queryClient.prefetchQuery('stickyPosts', () => getAllStickyPostsFetcher())
