@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://momotrik.com/sitemap.xml
+Allow: /*
