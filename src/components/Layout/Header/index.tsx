@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { Fragment, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
@@ -7,6 +7,7 @@ const Ping = dynamic(() => import('./Ping'))
 const NavItem = dynamic(() => import('./NavItem'))
 const Menu = dynamic(() => import('./Menu'))
 
+import navlinks from 'config/navlinks'
 import styles from './Header.module.css'
 interface Props {
   updating?: boolean
@@ -42,18 +43,18 @@ const Header = ({ updating }: Props) => {
 
           <div className="hidden md:block">
             <div className="flex items-center space-x-4">
-              <NavItem label="Mobil" href={{
-                pathname: '/category/[name]',
-                query: {
-                  name: 'mobil-listrik'
-                }
-              }} />
-              <NavItem label="Motor" href={{
-                pathname: '/category/[name]',
-                query: {
-                  name: 'motor-listrik'
-                }
-              }} />
+              {navlinks.map(link => {
+                return (
+                  <Fragment key={link.queryName}>
+                    <NavItem label={link.label} href={{
+                      pathname: link.pathname,
+                      query: {
+                        name: link.queryName
+                      }
+                    }} />
+                  </Fragment>
+                )
+              })}
             </div>
           </div>
 

@@ -1,12 +1,20 @@
+const pathname = '/category/[name]'
+
 export default [
   {
-    pathname: '/category/[name]',
+    pathname,
     queryName: 'mobil-listrik',
     label: 'Mobil'
   },
   {
-    pathname: '/category/[name]',
+    pathname,
     queryName: 'motor-listrik',
     label: 'Motor'
   },
+  {
+    pathname,
+    queryName: 'featured',
+    label: 'Featured'
+  },
+
 ]
