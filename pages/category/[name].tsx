@@ -23,7 +23,7 @@ const CategoryPage: NextPage<Props> = ({ postData }) => {
   if (postData) {
     return (
       <Layout
-        title={`Category | Momotrik`}
+        title={`${router.query.name} | Momotrik`}
         description="Artikel berdasarkan kategori pilihan."
       >
         <ArticlesGrid postData={postData.posts.edges} />
