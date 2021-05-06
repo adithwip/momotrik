@@ -7,4 +7,4 @@ Using Next JS, TypeScript, React Query, WordPress as headless CMS (with GraphQL)
 While keep the convenience for the writer in WordPress environment. This site will be maintained and improved with features that will give readers better user experiences and also make this site worthy enough to place ads inside.
 
 
-Deployment: 3
+Deployment: 4
