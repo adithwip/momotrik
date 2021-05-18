@@ -1,6 +1,7 @@
 import { Fragment, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import dynamic from 'next/dynamic'
 
 const Ping = dynamic(() => import('./Ping'))
@@ -14,7 +15,15 @@ interface Props {
 }
 
 const Header = ({ updating }: Props) => {
+  const router = useRouter()
   const [show, setShow] = useState(false)
+  const [searchTerm, setSearchTerm] = useState('')
+
+  const handleSearch = (e: React.FormEvent<HTMLFormElement>): void => {
+    e.preventDefault()
+
+    router.push(`/search?q=${searchTerm}`)
+  }
 
   return (
     <>
@@ -41,8 +50,9 @@ const Header = ({ updating }: Props) => {
             <Ping />
           ) : null}
 
-          <div className="hidden md:block">
-            <div className="flex items-center space-x-4">
+          {/* Only showed on Desktop view */}
+          <div className="hidden md:block md:flex-1">
+            <div className="flex items-center space-x-4 justify-center">
               {navlinks.map(link => {
                 return (
                   <Fragment key={link.queryName}>
@@ -58,6 +68,45 @@ const Header = ({ updating }: Props) => {
             </div>
           </div>
 
+          <div className="hidden md:block md:flex-1">
+            <div className="flex justify-end text-white">
+              <form
+                className="flex relative justify-center items-center"
+                onSubmit={handleSearch}
+              >
+                <input
+                  className={styles.search}
+                  type="search"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  aria-label="Search article in momotrik"
+                />
+
+                <button
+                  type="submit"
+                  className={styles.searchButton}
+                  aria-controls="search"
+                  aria-expanded="false"
+                >
+                  <span className="sr-only">Search article in momotrik</span>
+                  <div className={styles.searchWrapper}>
+                    <Image
+                      priority
+                      alt="Search Icon"
+                      src="/assets/icons/search_icon.svg"
+                      layout="fill"
+                      objectFit="cover"
+                      objectPosition="center"
+                    />
+                  </div>
+                </button>
+              </form>
+            </div>
+          </div>
+
+          {/* Only showed on Desktop view */}
+
+          {/* Only showed on mobile view */}
           <button
             onClick={() => setShow(true)}
             type="button"
@@ -77,6 +126,7 @@ const Header = ({ updating }: Props) => {
               />
             </div>
           </button>
+          {/* Only showed on mobile view */}
 
         </div>
       </nav>

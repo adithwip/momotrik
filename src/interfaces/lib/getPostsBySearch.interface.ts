@@ -1,4 +1,4 @@
-export interface GetPostsByCategoryNameResponse {
+export interface GetPostsBySearchResponse {
   posts: Posts
 }
 
@@ -7,16 +7,16 @@ interface Posts {
 }
 
 export interface Edge {
-  node: PostsByCategoryNode
+  node: PostsBySearchNode
 }
 
-export interface PostsByCategoryNode {
+export interface PostsBySearchNode {
   id: string
-  date: string
   title: string
-  slug: string
   excerpt: string
-  featuredImage?: FeaturedImage
+  slug: string
+  date: string
+  featuredImage: FeaturedImage
   author: Author
 }
 
@@ -28,10 +28,10 @@ interface FeaturedImageNode {
   mediaItemUrl: string
 }
 
-export interface Author {
+interface Author {
   node: AuthorNode
 }
 
-export interface AuthorNode {
+interface AuthorNode {
   name: string
 }
