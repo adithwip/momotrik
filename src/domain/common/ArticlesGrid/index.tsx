@@ -13,7 +13,7 @@ interface Props {
 
 const ArticlesGrid = ({ postData }: Props) => {
   return (
-    <main className="flex flex-wrap p-5">
+    <main className="flex flex-wrap py-5 px-2">
       {postData.map(({ node }: { node: PostsByCategoryNode | PostsBySearchNode }) => {
         return (
           <Fragment key={node.id}>

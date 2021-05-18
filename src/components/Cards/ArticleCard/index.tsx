@@ -47,17 +47,32 @@ const ArticleCard = ({
           </div>
 
           <div className={styles.titleWrapper}>
-            <p className={styles.articleTitle}>
-              {title}
-            </p>
+            <div className="flex">
+              <div className={styles.mobileImageWrapper}>
+                <Image
+                  alt={`${title} Image`}
+                  src={mediaItemUrl}
+                  layout="fill"
+                  objectFit="cover"
+                  objectPosition="center"
+                  quality={25}
+                />
+              </div>
 
-            <p className={styles.articleDate}>
-              {`${formatDate(date)} | ${authorName}`}
-            </p>
+              <div className="flex flex-col flex-1 p-2 pl-4 md:p-0 md:pl-0">
+                <p className={styles.articleTitle}>
+                  {title}
+                </p>
 
-            <p className={styles.excerpt}>
-              {stripHtmlTags(excerpt)}
-            </p>
+                <p className={styles.articleDate}>
+                  {`${formatDate(date)} | ${authorName}`}
+                </p>
+
+                <p className={styles.excerpt}>
+                  {stripHtmlTags(excerpt)}
+                </p>
+              </div>
+            </div>
           </div>
         </a>
       </Link>

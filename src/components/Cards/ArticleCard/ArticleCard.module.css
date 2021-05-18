@@ -4,12 +4,17 @@
 }
 
 .imageWrapper {
-  @apply relative h-72 w-full rounded-md overflow-hidden bg-gray-200;
-  @apply md:h-80;
+  @apply relative w-full rounded-md overflow-hidden bg-gray-200 hidden;
+  @apply md:h-80 md:block;
+}
+
+.mobileImageWrapper {
+  @apply relative h-auto w-28 overflow-hidden bg-gray-200;
+  @apply md:hidden;
 }
 
 .articleTitle {
-  @apply text-base text-left font-semibold tracking-normal leading-normal text-gray-900;
+  @apply text-sm text-left font-semibold tracking-normal leading-normal text-gray-900;
   @apply md:text-xl md:leading-tight;
 }
 
@@ -19,9 +24,9 @@
 }
 
 .titleWrapper {
-  @apply absolute bottom-2 left-2 right-2;
-  @apply p-3 bg-white rounded shadow-md;
-  @apply md:p-5 md:bottom-0 md:left-4 md:right-4;
+  @apply bottom-2 left-2 right-2 overflow-hidden;
+  @apply bg-white rounded shadow-md;
+  @apply md:p-5 md:bottom-0 md:left-4 md:right-4 md:absolute;
 }
 
 .excerpt {
