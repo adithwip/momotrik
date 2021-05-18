@@ -15,3 +15,18 @@
   @apply hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-blue-800 focus:ring-white;
   @apply md:hidden;
 }
+
+.searchWrapper {
+  @apply relative;
+  width: 20px;
+  height: 20px;
+}
+
+.search {
+  @apply flex-1 appearance-none w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-md rounded-l text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent;
+}
+
+.searchButton {
+  @apply bg-white py-2 px-4 rounded-r;
+  @apply hover:bg-gray-100; 
+}

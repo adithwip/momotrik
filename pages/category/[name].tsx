@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 
 const Layout = dynamic(() => import('components/Layout'))
-const ArticlesGrid = dynamic(() => import('domain/category/ArticlesGrid'))
+const ArticlesGrid = dynamic(() => import('domain/common/ArticlesGrid'))
 
 import { getPostsByCategoryNameFetcher } from 'lib/useGetPostsByCategoryName'
 
