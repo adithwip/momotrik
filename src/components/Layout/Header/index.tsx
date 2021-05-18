@@ -79,6 +79,7 @@ const Header = ({ updating }: Props) => {
                   type="search"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
+                  placeholder="Cari artikel..."
                   aria-label="Search article in momotrik"
                 />
 
@@ -108,14 +109,33 @@ const Header = ({ updating }: Props) => {
 
           {/* Only showed on mobile view */}
           <button
+            onClick={() => router.push(`/search`)}
+            type="button"
+            className={styles.mobileNavigationMenu}
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+          >
+            <span className="sr-only">Mobile search for article searching</span>
+            <div className={styles.mobileSearchWrapper}>
+              <Image
+                priority
+                alt="Mobile Search Icon"
+                src="/assets/icons/search_icon_white.svg"
+                layout="fill"
+                objectFit="cover"
+                objectPosition="center"
+              />
+            </div>
+          </button>
+          <button
             onClick={() => setShow(true)}
             type="button"
-            className={styles.hamburgerMenu}
+            className={styles.mobileNavigationMenu}
             aria-controls="mobile-menu"
             aria-expanded="false"
           >
             <span className="sr-only">Open mobile header menu</span>
-            <div className={styles.menuWrapper}>
+            <div className={styles.hamburgerMenuWrapper}>
               <Image
                 priority
                 alt="Hamburger Icon"
