@@ -1,10 +1,11 @@
-import type { Edge } from 'interfaces/lib/getAllPosts.interface'
+import type { AllPostsEdge } from 'interfaces/lib/getAllPosts.interface'
 
 import { Fragment } from 'react'
+import Link from 'next/link'
 
 import ArticleCard from 'components/Cards/ArticleCard'
 interface Props {
-  data: Edge[]
+  data: AllPostsEdge[]
 }
 
 const Articles = ({ data }: Props) => {
@@ -20,6 +21,7 @@ const Articles = ({ data }: Props) => {
         return (
           <Fragment key={node.id}>
             <ArticleCard
+              isHiddenOnDesktopView={index > 14}
               isNotLastChild={isNotLastChild}
               slug={node.slug}
               title={node.title}
@@ -27,11 +29,19 @@ const Articles = ({ data }: Props) => {
               date={node.date}
               authorName={node.author.node.name}
               excerpt={node.excerpt}
-              />
+            />
           </Fragment>
         )
       })}
-    </section>
+
+      <div className="w-full text-center mt-12 md:mt-0">
+        <Link href="/all-posts">
+          <a className="text-2xl font-bold">
+            Lihat semua artikel
+        </a>
+        </Link>
+      </div>
+    </section >
   )
 }
 

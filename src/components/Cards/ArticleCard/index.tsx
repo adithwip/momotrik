@@ -6,8 +6,8 @@ import { stripHtmlTags } from 'utils/stripHtmlTags'
 import { formatDate } from 'utils/formatDate'
 
 import styles from './ArticleCard.module.css'
-
 interface Props {
+  isHiddenOnDesktopView?: boolean,
   isNotLastChild?: boolean,
   isGrid?: boolean,
   slug: string,
@@ -19,6 +19,7 @@ interface Props {
 }
 
 const ArticleCard = ({
+  isHiddenOnDesktopView = false,
   isNotLastChild = false,
   isGrid = false,
   slug,
@@ -30,7 +31,8 @@ const ArticleCard = ({
 }: Props) => {
   return (
     <article className={classnames(styles.articleWrapper, {
-      "mb-12": isNotLastChild,
+      "md:hidden": isHiddenOnDesktopView,
+      "mb-6 md:mb-12": isNotLastChild,
       "w-full md:min-w-300 md:max-w-300 m-2": isGrid
     })}>
       <Link href={`/article/${slug}`}>
