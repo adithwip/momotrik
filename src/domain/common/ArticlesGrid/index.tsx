@@ -3,18 +3,19 @@ import type {
   Edge as GetPostsBySearchEdge,
   PostsBySearchNode
 } from 'interfaces/lib/getPostsBySearch.interface'
+import type { AllPostsEdge, AllPostsNode } from 'interfaces/lib/getAllPosts.interface'
 
 import { Fragment } from 'react'
 
 import ArticleCard from 'components/Cards/ArticleCard'
 interface Props {
-  postData: Edge[] | GetPostsBySearchEdge[]
+  postData: Edge[] | GetPostsBySearchEdge[] | AllPostsEdge[]
 }
 
 const ArticlesGrid = ({ postData }: Props) => {
   return (
     <main className="flex flex-wrap py-5 px-2">
-      {postData.map(({ node }: { node: PostsByCategoryNode | PostsBySearchNode }) => {
+      {postData.map(({ node }: { node: PostsByCategoryNode | PostsBySearchNode | AllPostsNode }) => {
         return (
           <Fragment key={node.id}>
             <ArticleCard
@@ -25,7 +26,7 @@ const ArticlesGrid = ({ postData }: Props) => {
               date={node.date}
               authorName={node.author.node.name}
               excerpt={node.excerpt}
-              />
+            />
           </Fragment>
         )
       })}

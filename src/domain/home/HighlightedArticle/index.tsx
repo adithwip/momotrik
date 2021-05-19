@@ -1,4 +1,4 @@
-import type { Edge } from 'interfaces/lib/getAllPosts.interface'
+import type { AllPostsEdge } from 'interfaces/lib/getAllPosts.interface'
 
 import Image from 'next/image'
 import Link from 'next/link'
@@ -10,7 +10,7 @@ import styles from './HighlightedArticle.module.css'
 import React from 'react'
 
 interface Props {
-  data: Edge[]
+  data: AllPostsEdge[]
 }
 
 const HighlightedArticle = ({ data }: Props) => {
