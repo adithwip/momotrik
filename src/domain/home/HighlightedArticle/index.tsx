@@ -6,8 +6,10 @@ import classnames from 'classnames'
 
 import ArticleContent from './ArticleContent'
 
+import { formatDate } from 'utils/formatDate'
+import { stripHtmlTags } from 'utils/stripHtmlTags'
+
 import styles from './HighlightedArticle.module.css'
-import React from 'react'
 
 interface Props {
   data: AllPostsEdge[]
@@ -17,11 +19,11 @@ const HighlightedArticle = ({ data }: Props) => {
   return (
     <>
       {/* Mobile view */}
-      <div className={styles.slider}>
+      <div className={styles.mobileHightlight}>
         {data.map(({ node }, index) => {
-          return (
-            <React.Fragment key={node.id}>
-              <Link href={`/article/${node.slug}`}>
+          if (index === 0) {
+            return (
+              <Link key={node.id} href={`/article/${node.slug}`}>
                 <a>
                   <article className={styles.articleCard}>
                     <div className={styles.imageWrapper}>
@@ -36,16 +38,48 @@ const HighlightedArticle = ({ data }: Props) => {
                       />
                     </div>
 
-
-                    <ArticleContent
-                      date={node.date}
-                      authorName={node.author.node.name}
-                      title={node.title}
-                    />
+                    <p className={styles.articleDate}>
+                      {`${formatDate(node.date)} | ${node.author.node.name}`}
+                    </p>
+                    <p className="text-xl text-gray-900 font-bold leading-normal line-clamp-3">
+                      {node.title}
+                    </p>
+                    <p className={styles.excerpt}>
+                      {stripHtmlTags(node.excerpt)}
+                    </p>
                   </article>
                 </a>
               </Link>
-            </React.Fragment>
+            )
+          }
+
+          return (
+            <Link href={`/article/${node.slug}`}>
+              <a>
+                <article className="flex items-center mb-4">
+                  <div className={styles.smallArticleCardImageWrapper}>
+                    <Image
+                      alt={node.title}
+                      src={node!.featuredImage!.node.mediaItemUrl}
+                      layout="fill"
+                      objectFit="cover"
+                      objectPosition="center"
+                      quality={15}
+                    />
+
+                  </div>
+                  <div className="flex flex-col pl-5">
+                    <p className="text-sm text-gray-900 font-bold leading-normal line-clamp-3">
+                      {node.title}
+                    </p>
+                    <p className={styles.articleDate}>
+                      {`${formatDate(node.date)} | ${node.author.node.name}`}
+                    </p>
+
+                  </div>
+                </article>
+              </a>
+            </Link>
           )
         })}
       </div>

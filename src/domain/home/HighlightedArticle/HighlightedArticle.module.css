@@ -1,26 +1,22 @@
 .imageWrapper {
   @apply bg-gray-700;
-  @apply relative h-48 w-full;
+  @apply relative h-56 w-full;
   @apply xs:h-72 md:h-96;
 }
 
-.slider {
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  @apply overflow-x-auto overflow-y-auto flex flex-nowrap w-full px-4 pb-0 pt-10;
+.mobileHightlight {
+  @apply p-5;
   @apply md:hidden;
 }
 
 .articleCard {
-  scroll-snap-align: center;
   min-width: 300px;
-  @apply relative rounded overflow-hidden;
-  @apply mr-4;
+  @apply rounded overflow-hidden mb-10;
 }
 
-.articleCard:after {
+.imageWrapper:after {
   content: "";
-  background: linear-gradient(0deg, rgba(17,24,39,0.8995973389355743) 0%, rgba(17,24,39,0.7959558823529411) 17%, rgba(255,255,255,0) 100%);
+  background: linear-gradient(0deg, rgba(17,24,39,0.8995973389355743) 0%, rgba(17,24,39,0.7959558823529411) 15%, rgba(255,255,255,0) 100%);
   @apply absolute inset-0;
 }
 
@@ -55,3 +51,20 @@
 .grid3 { grid-area: grid-3; }
 .grid4 { grid-area: grid-4; }
 .grid5 { grid-area: grid-5; }
+
+/* Remove soon */
+.smallArticleCardImageWrapper {
+  @apply relative bg-gray-300 rounded overflow-hidden;
+  min-height: 94px;
+  min-width: 94px;
+}
+
+.articleDate {
+  @apply text-xs text-gray-900 tracking-wider;
+  @apply mt-5;
+}
+
+.excerpt {
+  @apply text-base text-gray-700;
+  @apply mt-2 line-clamp-3;
+}

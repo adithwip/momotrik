@@ -93,6 +93,8 @@ const Footer = ({ trendingPostsData, slug }: Props) => {
 
             return (
               <Fragment key={index}>
+                {/* // TODO
+                Make it reusable */}
                 <Link href={`/article/${node.slug}`}>
                   <a>
                     <article className="flex items-center mb-4">
