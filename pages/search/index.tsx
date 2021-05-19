@@ -7,7 +7,7 @@ import { isBrowser, isMobile } from 'react-device-detect'
 
 const Layout = dynamic(() => import('components/Layout'))
 const ArticlesGrid = dynamic(() => import('domain/common/ArticlesGrid'))
-const SearchError = dynamic(() => import('domain/search/SearchError'))
+const GeneralFeedback = dynamic(() => import('components/GeneralFeedback'))
 const MobileSearch = dynamic(() => import('domain/search/MobileSearch'))
 
 import { useGetPostsBySearch } from 'lib/useGetPostsBySearch'
@@ -24,9 +24,9 @@ const SearchPage: NextPage = () => {
     if (isEmpty(query) || isEmpty(query.q) || isError) {
       if (isBrowser) {
         return (
-          // TODO
-          <SearchError
-            errorMessage="Silahkan cari artikel dengan keyword."
+          <GeneralFeedback
+            isError
+            message="Silahkan cari artikel dengan keyword."
           />
         )
       }
@@ -40,9 +40,8 @@ const SearchPage: NextPage = () => {
 
     if (isFetching) {
       return (
-        // TODO
-        <SearchError
-          errorMessage="Sedang memuat artikel yang dicari..."
+        <GeneralFeedback
+          message="Sedang memuat artikel yang dicari..."
         />
       )
     }
@@ -50,8 +49,9 @@ const SearchPage: NextPage = () => {
     if (data) {
       if (isEmpty(data.posts.edges)) {
         return (
-          <SearchError
-            errorMessage="Oops, coba cari keyword lain."
+          <GeneralFeedback
+            isError
+            message="Oops, coba cari keyword lain."
           />
         )
       }
@@ -60,7 +60,6 @@ const SearchPage: NextPage = () => {
         <ArticlesGrid postData={data.posts.edges} />
       )
     }
-
   }
 
 
