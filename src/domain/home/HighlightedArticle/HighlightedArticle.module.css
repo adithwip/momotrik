@@ -1,5 +1,5 @@
 .imageWrapper {
-  @apply bg-gray-700;
+  @apply bg-gray-700 rounded overflow-hidden;
   @apply relative h-56 w-full;
   @apply xs:h-72 md:h-96;
 }
@@ -11,7 +11,7 @@
 
 .articleCard {
   min-width: 300px;
-  @apply rounded overflow-hidden mb-10;
+  @apply mb-10;
 }
 
 .imageWrapper:after {
