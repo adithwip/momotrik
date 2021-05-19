@@ -3,10 +3,10 @@ export interface GetAllPostsResponse {
 }
 
 interface Posts {
-  edges: Edge[]
+  edges: AllPostsEdge[]
 }
 
-export interface Edge {
+export interface AllPostsEdge {
   node: AllPostsNode
 }
 

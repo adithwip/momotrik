@@ -8,7 +8,8 @@ type Params = {
     id?: string | string[] | undefined,
     idType?: string,
     categoryName?: string | string[] | undefined,
-    search?: string | string[] | undefined
+    search?: string | string[] | undefined,
+    count?: number | undefined
   }
 }
 
