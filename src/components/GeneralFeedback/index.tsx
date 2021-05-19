@@ -1,12 +1,14 @@
 import Image from 'next/image'
+import classnames from 'classnames'
 
 interface Props {
-  errorMessage: string
+  message: string,
+  isError?: boolean
 }
 
-import styles from './SearchError.module.css'
+import styles from './GeneralFeedback.module.css'
 
-const SearchError = ({ errorMessage }: Props) => {
+const GeneralFeedback = ({ message, isError = false }: Props) => {
   return (
     <div className="w-full h-screen flex flex-col justify-center items-center">
 
@@ -21,11 +23,13 @@ const SearchError = ({ errorMessage }: Props) => {
         />
       </div>
 
-      <p className="text-lg font-bold tracking-normal leading-normal">
-        {errorMessage}
+      <p className={classnames("text-lg font-bold tracking-normal leading-normal", {
+        "text-red-600": isError
+      })}>
+        {message}
       </p>
     </div>
   )
 }
 
-export default SearchError
+export default GeneralFeedback
