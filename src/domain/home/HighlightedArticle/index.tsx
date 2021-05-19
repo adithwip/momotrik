@@ -28,7 +28,7 @@ const HighlightedArticle = ({ data }: Props) => {
                   <article className={styles.articleCard}>
                     <div className={styles.imageWrapper}>
                       <Image
-                        priority={index === 0 ? true : false}
+                        priority
                         alt="Featured Article Image"
                         src={node!.featuredImage!.node.mediaItemUrl}
                         layout="fill"
@@ -41,7 +41,7 @@ const HighlightedArticle = ({ data }: Props) => {
                     <p className={styles.articleDate}>
                       {`${formatDate(node.date)} | ${node.author.node.name}`}
                     </p>
-                    <p className="text-xl text-gray-900 font-bold leading-normal line-clamp-3">
+                    <p className="text-xl text-gray-900 font-bold leading-normal line-clamp-3 mt-2">
                       {node.title}
                     </p>
                     <p className={styles.excerpt}>
@@ -59,6 +59,7 @@ const HighlightedArticle = ({ data }: Props) => {
                 <article className="flex items-center mb-4">
                   <div className={styles.smallArticleCardImageWrapper}>
                     <Image
+                      priority={ index == 1 || index === 2 }
                       alt={node.title}
                       src={node!.featuredImage!.node.mediaItemUrl}
                       layout="fill"
