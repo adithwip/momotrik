@@ -7,6 +7,7 @@ import dynamic from 'next/dynamic'
 const HighlightedArticle = dynamic(() => import('domain/home/HighlightedArticle'))
 const ArticlesAndAside = dynamic(() => import('domain/home/ArticlesAndAside'))
 const PopularPosts = dynamic(() => import('domain/home/PopularPosts'))
+const TrendingArticlesMobile = dynamic(() => import('domain/home/TrendingArticlesMobile'))
 const Layout = dynamic(() => import('components/Layout'))
 
 import { getAllPostsFetcher } from 'lib/useGetAllPosts'
@@ -27,6 +28,7 @@ const IndexPage: NextPage = () => {
         <HighlightedArticle data={getAllStickyPostsData.data} />
       ) : null} {/* handle null with proper component // TODO */}
 
+      <TrendingArticlesMobile />
       <ArticlesAndAside />
       <PopularPosts />
     </Layout>

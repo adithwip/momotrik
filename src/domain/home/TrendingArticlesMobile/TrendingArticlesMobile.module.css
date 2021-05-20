@@ -1,0 +1,21 @@
+.slider {
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  @apply overflow-x-auto overflow-y-hidden flex flex-nowrap w-full;
+}
+
+.cardWrapper {
+  scroll-snap-align: center;
+  @apply min-w-300 mr-4;
+}
+
+.smallArticleCardImageWrapper {
+  @apply relative bg-gray-300 rounded overflow-hidden;
+  min-height: 94px;
+  min-width: 94px;
+}
+
+.articleDate {
+  @apply text-xs text-gray-900 tracking-wider;
+  @apply mt-5;
+}
