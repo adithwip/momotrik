@@ -54,6 +54,8 @@ const HighlightedArticle = ({ data }: Props) => {
           }
 
           return (
+            // // TODO
+            // Make it reusable, please! Dear me!
             <Link href={`/article/${node.slug}`}>
               <a>
                 <article className="flex items-center mb-4">
