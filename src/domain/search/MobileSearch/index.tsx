@@ -21,6 +21,7 @@ const MobileSearch = () => {
         className="flex relative justify-center items-center"
       >
         <input
+          required
           className={styles.search}
           type="search"
           value={searchTerm}
