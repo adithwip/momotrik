@@ -17,7 +17,7 @@ const ArticlesGrid = ({ postData }: Props) => {
     <main className="flex flex-wrap py-5 px-2">
       {postData.map(({ node }: { node: PostsByCategoryNode | PostsBySearchNode | AllPostsNode }) => {
         return (
-          <Fragment key={node.id}>
+          <Fragment key={node.slug}>
             <ArticleCard
               isGrid
               slug={node.slug}

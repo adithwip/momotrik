@@ -20,9 +20,10 @@ const Articles = ({ data }: Props) => {
         const isNotLastChild = index !== arr.length - 1
 
         return (
-          <div className={classnames({
-            "mb-10": isNotLastChild
-          })}
+          <div
+            className={classnames({
+              "mb-10": isNotLastChild
+            })}
             key={index}
           >
             <AsideArticleCard
