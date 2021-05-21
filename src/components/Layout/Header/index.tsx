@@ -75,6 +75,7 @@ const Header = ({ updating }: Props) => {
                 onSubmit={handleSearch}
               >
                 <input
+                  required
                   className={styles.search}
                   type="search"
                   value={searchTerm}
