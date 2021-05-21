@@ -23,7 +23,7 @@ const HighlightedArticle = ({ data }: Props) => {
         {data.map(({ node }, index) => {
           if (index === 0) {
             return (
-              <Link key={node.id} href={`/article/${node.slug}`}>
+              <Link key={index} href={`/article/${node.slug}`}>
                 <a>
                   <article className={styles.articleCard}>
                     <div className={styles.imageWrapper}>
@@ -91,7 +91,7 @@ const HighlightedArticle = ({ data }: Props) => {
       <div className={styles.gridContainer}>
         {data.map(({ node }, index) => {
           return (
-            <div key={node.id} className={classnames(
+            <div key={index} className={classnames(
               styles.gridCard,
               {
                 [styles.gridHighlight]: index === 0,

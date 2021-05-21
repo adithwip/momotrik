@@ -17,9 +17,9 @@ const TrendingArticlesMobile = () => {
       </p>
 
       <div className={styles.slider}>
-        {data ? data.posts.edges.map(({ node }) => {
+        {data ? data.posts.edges.map(({ node }, index) => {
           return (
-            <Link href={`/article/${node.slug}`}>
+            <Link key={index} href={`/article/${node.slug}`}>
               <a className={styles.cardWrapper}>
                 <article className="flex items-center mb-4">
                   <div className={styles.smallArticleCardImageWrapper}>

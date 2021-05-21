@@ -19,7 +19,7 @@ const Articles = ({ data }: Props) => {
         const isNotLastChild = index !== arr.length - 1
 
         return (
-          <Fragment key={node.id}>
+          <Fragment key={node.id + index}>
             <ArticleCard
               isHiddenOnDesktopView={index > 14}
               isNotLastChild={isNotLastChild}

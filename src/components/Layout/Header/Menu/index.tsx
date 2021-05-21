@@ -71,9 +71,9 @@ const Menu = ({ show = false, onClose }: Props) => {
               </div>
             </button>
           </div>
-          {navlinks.map((link) => {
+          {navlinks.map((link, index) => {
             return (
-              <Fragment key={link.queryName}>
+              <Fragment key={link.queryName + index}>
                 <NavItem label={link.label} href={{
                   pathname: link.pathname,
                   query: {

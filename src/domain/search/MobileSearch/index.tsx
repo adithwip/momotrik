@@ -15,7 +15,7 @@ const MobileSearch = () => {
   }
 
   return (
-    <div className="w-full h-screen flex flex-col px-4 pb-4 pt-10">
+    <div className="w-full h-screen px-4 pb-4 pt-10 md:hidden">
       <form
         onSubmit={handleSearch}
         className="flex relative justify-center items-center"
