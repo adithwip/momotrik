@@ -1,5 +1,6 @@
 import type { NextPage, GetStaticProps } from 'next'
 
+import * as React from 'react'
 import { QueryClient } from "react-query"
 import { dehydrate } from "react-query/hydration"
 import dynamic from 'next/dynamic'
@@ -20,6 +21,7 @@ const AllPostsPage: NextPage<Props> = ({ count }) => {
     isFetching,
     isError
   } } = useGetAllPosts(count)
+  const MemoizedArticlesGrid = React.memo(ArticlesGrid)
 
   const renderComponent = () => {
     if (isError || !data) {
@@ -31,7 +33,7 @@ const AllPostsPage: NextPage<Props> = ({ count }) => {
     }
 
     return (
-      <ArticlesGrid postData={data?.posts.edges} />
+      <MemoizedArticlesGrid postData={data?.posts.edges} />
     )
   }
 

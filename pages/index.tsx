@@ -1,5 +1,6 @@
 import type { NextPage, GetStaticProps } from 'next'
 
+import * as React from 'react'
 import { QueryClient } from "react-query"
 import { dehydrate } from "react-query/hydration"
 import dynamic from 'next/dynamic'
@@ -17,6 +18,7 @@ import { getPopularPostsFetcher } from 'lib/useGetPopularPosts'
 
 const IndexPage: NextPage = () => {
   const { getAllStickyPostsData } = useGetAllStickyPosts()
+  const MemoizedHighlightedArticle = React.memo(HighlightedArticle)
 
   return (
     <Layout
@@ -25,7 +27,7 @@ const IndexPage: NextPage = () => {
       updating={getAllStickyPostsData.isFetching}
     >
       {getAllStickyPostsData.data ? (
-        <HighlightedArticle data={getAllStickyPostsData.data} />
+        <MemoizedHighlightedArticle data={getAllStickyPostsData.data} />
       ) : null} {/* handle null with proper component // TODO */}
       <div className="flex flex-col">
         <TrendingArticlesMobile />

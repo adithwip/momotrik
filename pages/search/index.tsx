@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 
+import * as React from 'react'
 import { useRouter } from 'next/router'
 import dynamic from 'next/dynamic'
 
@@ -16,7 +17,7 @@ const SearchPage: NextPage = () => {
     data,
     isFetching,
   } } = useGetPostsBySearch(query.q)
-
+  const MemoizedArticlesGrid = React.memo(ArticlesGrid)
 
   return (
     <Layout
@@ -32,7 +33,7 @@ const SearchPage: NextPage = () => {
       )}
 
       {data ? (
-        <ArticlesGrid postData={data.posts.edges} />
+        <MemoizedArticlesGrid postData={data.posts.edges} />
       ) : (
         <MobileSearch />
       )}

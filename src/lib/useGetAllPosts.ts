@@ -44,7 +44,9 @@ export const getAllPostsFetcher = async (count?: Count): Promise<GetAllPostsResp
 }
 
 export const useGetAllPosts = (count?: Count) => {
-  const { data, isError, isFetching } = useQuery('posts', () => getAllPostsFetcher(count))
+  const { data, isError, isFetching } = useQuery('posts', () => getAllPostsFetcher(count), {
+    staleTime: 5 * 60 * 1000
+  })
 
   return {
     getAllPostsData: {

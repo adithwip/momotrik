@@ -45,7 +45,9 @@ export const getAllStickyPostsFetcher = async (): Promise<AllPostsEdge[]> => {
 }
 
 export const useGetAllStickyPosts = () => {
-  const { data, isError, isFetching } = useQuery('stickyPosts', () => getAllStickyPostsFetcher())
+  const { data, isError, isFetching } = useQuery('stickyPosts', () => getAllStickyPostsFetcher(), {
+    staleTime: 5 * 60 * 1000
+  })
 
   return {
     getAllStickyPostsData: {

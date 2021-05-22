@@ -35,7 +35,9 @@ export const getPopularPostsFetcher = async (): Promise<GetPopularPostsResponse>
 }
 
 export const useGetPopularPosts = () => {
-  const { data, isError, isFetching } = useQuery('popular', () => getPopularPostsFetcher())
+  const { data, isError, isFetching } = useQuery('popular', () => getPopularPostsFetcher(), {
+    staleTime: 5 * 60 * 1000
+  })
 
   return {
     getPopularPostsData: {

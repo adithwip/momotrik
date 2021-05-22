@@ -43,7 +43,8 @@ export const getPostsByCategoryNameFetcher = async (categoryName: CategoryName):
 export const useGetPostsByCategoryName = (categoryName: CategoryName) => {
   const { data, isError, isFetching, isLoading } = useQuery(
     ["postsByCategoryName", categoryName],
-    () => getPostsByCategoryNameFetcher(categoryName)
+    () => getPostsByCategoryNameFetcher(categoryName),
+    { staleTime: 5 * 60 * 1000 }
   )
 
   return {

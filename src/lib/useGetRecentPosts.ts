@@ -35,7 +35,9 @@ export const getRecentPostsFetcher = async (): Promise<GetTrendingPostsResponse>
 }
 
 export const useGetRecentPosts = () => {
-  const { data, isError, isFetching } = useQuery('recent', () => getRecentPostsFetcher())
+  const { data, isError, isFetching } = useQuery('recent', () => getRecentPostsFetcher(), {
+    staleTime: 5 * 60 * 1000
+  })
 
   return {
     getRecentPostsData: {

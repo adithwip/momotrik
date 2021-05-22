@@ -45,7 +45,8 @@ export const getSinglePostFetcher = async (slug: string | string[] | undefined):
 export const useGetSinglePost = (slug: string) => {
   const { data, isError, isFetching, isLoading } = useQuery(
     ["post", slug],
-    () => getSinglePostFetcher(slug)
+    () => getSinglePostFetcher(slug),
+    { staleTime: 5 * 60 * 1000 }
   )
 
   return {
