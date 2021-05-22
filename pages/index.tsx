@@ -27,10 +27,11 @@ const IndexPage: NextPage = () => {
       {getAllStickyPostsData.data ? (
         <HighlightedArticle data={getAllStickyPostsData.data} />
       ) : null} {/* handle null with proper component // TODO */}
-
-      <TrendingArticlesMobile />
-      <ArticlesAndAside />
-      <PopularPosts />
+      <div className="flex flex-col">
+        <TrendingArticlesMobile />
+        <ArticlesAndAside />
+        <PopularPosts />
+      </div>
     </Layout>
   )
 }

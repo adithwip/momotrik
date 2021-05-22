@@ -5,14 +5,14 @@ import classnames from 'classnames'
 
 import styles from './PopularPosts.module.css'
 
-const AsideArticleCard = dynamic(() => import('components/Cards/AsideArticleCard'))
+const HighlightCard = dynamic(() => import('components/Cards/HighlightCard'))
 
 const PopularPosts = () => {
   const { getPopularPostsData: { data } } = useGetPopularPosts()
 
   return (
-    <aside className="mb-16">
-      <p className="text-2xl font-bold tracking-wider text-gray-900 mb-8 px-5 md:px-0">
+    <aside className="pl-5 pr-2 md:mb-16">
+      <p className="text-2xl font-bold tracking-wider text-gray-900 mb-8">
         Popular
       </p>
 
@@ -21,9 +21,9 @@ const PopularPosts = () => {
 
           return (
             <div className={styles.asideCardWrapper} key={index}>
-              <AsideArticleCard
+              <HighlightCard
                 slug={node.slug}
-                mediaItemUrl={node.featuredImage.node.mediaItemUrl}
+                imageSrc={node.featuredImage.node.mediaItemUrl}
                 title={node.title}
                 date={node.date}
                 authorName={node.author.node.name}

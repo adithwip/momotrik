@@ -1,0 +1,23 @@
+.card {
+  @apply relative rounded-md h-80 overflow-hidden;
+  @apply md:h-56;
+}
+
+.card:after {
+  content: "";
+  background: linear-gradient(0deg, rgba(17,24,39,0.8995973389355743) 0%, rgba(17,24,39,0.7959558823529411) 17%, rgba(255,255,255,0) 100%);
+  @apply absolute inset-0;
+}
+
+.articleContent {
+  @apply absolute inset-0 z-10 h-full flex flex-col justify-end p-4;
+}
+
+.articleDate {
+  @apply text-sm text-left text-white tracking-wider mb-2;
+}
+
+.articleTitle {
+  @apply text-sm text-left font-semibold tracking-normal leading-snug text-white; 
+  @apply md:text-base md:font-bold md:tracking-wide md:leading-snug;
+}

@@ -11,9 +11,9 @@ const TrendingArticlesMobile = () => {
   const { getTrendingPostsData: { data } } = useGetTrendingPosts()
 
   return (
-    <section className="pl-5 pr-2 md:hidden">
+    <section className="pl-5 pr-2 mt-4 mb-8 md:hidden">
       <p className="text-2xl font-bold tracking-wider text-gray-900 mb-8">
-        Trending Articles 📈
+        Trending Articles
       </p>
 
       <div className={styles.slider}>
