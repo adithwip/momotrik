@@ -48,17 +48,18 @@ class MyDocument extends Document {
             <Fragment>
               {/* Google AdSense script */}
               <script
-                async
+                defer
                 data-ad-client="ca-pub-3226350239455992"
                 src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
               />
 
               {/* Global site tag (gtag.js) - Google Analytics */}
               <script
-                async
+                defer
                 src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
               />
               <script
+                defer
                 dangerouslySetInnerHTML={{
                   __html: `
                     window.dataLayer = window.dataLayer || [];
