@@ -1,6 +1,5 @@
 import type { AllPostsEdge } from 'interfaces/lib/getAllPosts.interface'
 
-import { Fragment } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import classnames from 'classnames'
