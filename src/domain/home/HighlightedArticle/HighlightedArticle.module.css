@@ -10,7 +10,6 @@
 }
 
 .articleCard {
-  min-width: 300px;
   @apply mb-10;
 }
 

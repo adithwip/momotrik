@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import dynamic from 'next/dynamic'
 
-const Ping = dynamic(() => import('./Ping'))
+const RefreshSpin = dynamic(() => import('./RefreshSpin'))
 const NavItem = dynamic(() => import('./NavItem'))
 const Menu = dynamic(() => import('./Menu'))
 
@@ -28,7 +28,7 @@ const Header = ({ updating }: Props) => {
   return (
     <>
       <nav className="fixed top-0 w-full z-50 bg-gray-900 px-4">
-        <div className="flex justify-center items-center py-2 md:py-4 md:max-w-screen-lg md:mx-auto">
+        <div className="relative flex justify-center items-center py-2 md:py-4 md:max-w-screen-lg md:mx-auto">
           <div className="flex flex-1 items-center">
             <Link href="/">
               <a>
@@ -47,7 +47,7 @@ const Header = ({ updating }: Props) => {
             </Link>
           </div>
           {updating ? (
-            <Ping />
+            <RefreshSpin />
           ) : null}
 
           {/* Only showed on Desktop view */}

@@ -6,7 +6,7 @@
 }
 
 .asideCardWrapper {
-  min-width: 260px;
+  min-width: 240px;
   scroll-snap-align: center;
   @apply mr-4;
   @apply md:w-1/4 md:min-w-unset md:mx-2;
