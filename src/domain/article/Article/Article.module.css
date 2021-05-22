@@ -67,7 +67,7 @@
 
 .content img {
   @apply overflow-hidden bg-gray-200 shadow-md mx-auto;
-  @apply md:rounded-md;
+  @apply md:rounded-lg;
 }
 
 .content figcaption {

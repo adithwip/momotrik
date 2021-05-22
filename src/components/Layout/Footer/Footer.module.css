@@ -22,7 +22,7 @@
 }
 
 .smallArticleCardImageWrapper {
-  @apply relative bg-gray-300 rounded overflow-hidden;
+  @apply relative bg-gray-300 rounded-lg overflow-hidden;
   min-height: 94px;
   min-width: 94px;
 }

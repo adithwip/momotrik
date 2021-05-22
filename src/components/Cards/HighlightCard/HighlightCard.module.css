@@ -1,5 +1,5 @@
 .card {
-  @apply relative rounded-md h-80 overflow-hidden;
+  @apply relative rounded-lg h-80 overflow-hidden;
   @apply md:h-56;
 }
 
