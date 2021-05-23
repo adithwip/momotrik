@@ -1,7 +1,7 @@
 .slider {
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  @apply overflow-x-auto overflow-y-hidden flex flex-nowrap w-full;
+  @apply overflow-x-auto overflow-y-hidden rounded-lg flex flex-nowrap w-full;
 }
 
 .cardWrapper {
@@ -11,8 +11,8 @@
 
 .smallArticleCardImageWrapper {
   @apply relative bg-gray-300 rounded-lg overflow-hidden;
-  min-height: 94px;
-  min-width: 94px;
+  min-height: 100px;
+  min-width: 100px;
 }
 
 .articleDate {

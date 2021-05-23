@@ -21,7 +21,7 @@ const TrendingArticlesMobile = () => {
           return (
             <Link key={index} href={`/article/${node.slug}`}>
               <a className={styles.cardWrapper}>
-                <article className="flex items-center mb-4">
+                <article className="flex items-center">
                   <div className={styles.smallArticleCardImageWrapper}>
                     <Image
                       alt={node.title}

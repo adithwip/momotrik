@@ -1,7 +1,7 @@
 .slider {
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  @apply overflow-x-auto overflow-y-hidden flex flex-nowrap w-full md:px-0;
+  @apply overflow-x-auto overflow-y-hidden rounded-lg flex flex-nowrap w-full md:px-0;
   @apply md:overflow-hidden;
 }
 
