@@ -62,7 +62,7 @@
 }
 
 .content figure {
-  @apply py-4;
+  @apply p-4 md:py-4;
 }
 
 .content img {
@@ -89,6 +89,24 @@
 .content audio {
   @apply w-full;
 }
+
+.content figure ul {
+  @apply flex overflow-x-auto overflow-y-hidden gap-x-4 p-0 rounded-lg;
+}
+
+.content figure ul li{
+  @apply list-none;
+}
+
+.content figure ul li figure {
+  @apply p-0;
+}
+
+.content figure ul li figure img {
+  @apply object-cover object-center min-w-300 h-60 rounded-lg;
+  @apply md:min-w-480 md:h-72;
+}
+
 
 
 /* Components Styles */
