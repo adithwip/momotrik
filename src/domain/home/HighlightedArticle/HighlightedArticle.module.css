@@ -1,5 +1,5 @@
 .imageWrapper {
-  @apply bg-gray-700 rounded-lg overflow-hidden;
+  @apply bg-gray-700 rounded-lg shadow overflow-hidden;
   @apply relative h-56 w-full;
   @apply xs:h-72 md:h-96;
 }
@@ -53,7 +53,7 @@
 
 /* Remove soon */
 .smallArticleCardImageWrapper {
-  @apply relative bg-gray-300 rounded-lg overflow-hidden;
+  @apply relative bg-gray-300 rounded-lg shadow overflow-hidden;
   min-height: 94px;
   min-width: 94px;
 }

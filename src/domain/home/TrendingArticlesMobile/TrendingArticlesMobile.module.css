@@ -1,7 +1,7 @@
 .slider {
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  @apply overflow-x-auto overflow-y-hidden rounded-lg flex flex-nowrap gap-4 w-full;
+  @apply overflow-x-auto overflow-y-hidden rounded-lg flex flex-nowrap gap-6 w-full;
 }
 
 .cardWrapper {
@@ -10,7 +10,7 @@
 }
 
 .smallArticleCardImageWrapper {
-  @apply relative bg-gray-300 rounded-lg overflow-hidden;
+  @apply relative bg-gray-300 rounded-lg border border-gray-100 overflow-hidden;
   min-height: 100px;
   min-width: 100px;
 }

@@ -27,7 +27,7 @@ const Header = ({ updating }: Props) => {
 
   return (
     <>
-      <nav className="fixed top-0 w-full z-50 bg-gray-900 px-4">
+      <nav className="fixed top-0 w-full z-50 bg-black px-4">
         <div className="relative flex justify-center items-center py-2 md:py-4 md:max-w-screen-lg md:mx-auto">
           <div className="flex flex-1 items-center">
             <Link href="/">

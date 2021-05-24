@@ -22,7 +22,7 @@ const TrendingArticlesMobile = () => {
             <Link key={index} href={`/article/${node.slug}`}>
               <a className={styles.cardWrapper}>
                 <article className="flex items-center">
-                  <div className="flex flex-col pr-5">
+                  <div className="flex flex-col pr-2 border-gray-400">
                     <p className="text-sm text-gray-900 font-bold leading-normal line-clamp-3">
                       {node.title}
                     </p>

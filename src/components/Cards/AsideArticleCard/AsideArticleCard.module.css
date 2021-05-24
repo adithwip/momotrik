@@ -8,6 +8,6 @@
 }
 
 .articleDate {
-  @apply text-xs text-left text-blue-700 tracking-wider;
+  @apply text-xs text-left text-gray-900 tracking-wider;
   @apply mt-3;
 }

@@ -1,6 +1,5 @@
 .footer {
-  @apply bg-gray-900;
-  /* height: 500px; */
+  @apply bg-black;
 }
 
 .footerLogoWrapper {

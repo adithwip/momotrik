@@ -9,7 +9,7 @@
 }
 
 .mobileImageWrapper {
-  @apply relative h-auto w-28 rounded-lg overflow-hidden bg-gray-200;
+  @apply relative h-auto w-28 rounded-lg shadow overflow-hidden bg-gray-200;
   @apply md:hidden;
 }
 
@@ -24,7 +24,7 @@
 }
 
 .titleWrapper {
-  @apply bottom-2 left-2 right-2 overflow-hidden;
+  @apply bottom-2 left-2 right-2;
   @apply bg-white rounded;
   @apply md:p-5 md:bottom-0 md:left-4 md:right-4 md:absolute md:shadow-md;
 }
