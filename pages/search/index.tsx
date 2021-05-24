@@ -21,9 +21,9 @@ const SearchPage: NextPage = () => {
 
   return (
     <Layout
-      title={`Search Article | ${query.q}`}
+      title={`Search Article | ${query.q ?? 'Search Page'}`}
       description="Artikel berdasarkan search"
-      updating={isFetching}
+      updating={query.q ? isFetching : false} // Only show spinner if query is not undefined
     >
       {data?.posts.edges.length === 0 && (
         <GeneralFeedback
