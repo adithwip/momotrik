@@ -1,12 +1,12 @@
 .slider {
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  @apply overflow-x-auto overflow-y-hidden rounded-lg flex flex-nowrap w-full;
+  @apply overflow-x-auto overflow-y-hidden rounded-lg flex flex-nowrap gap-4 w-full;
 }
 
 .cardWrapper {
   scroll-snap-align: center;
-  @apply min-w-300 mr-4;
+  @apply min-w-300 rounded-lg;
 }
 
 .smallArticleCardImageWrapper {

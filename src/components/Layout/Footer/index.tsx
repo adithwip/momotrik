@@ -84,7 +84,7 @@ const Footer = ({ trendingPostsData, slug }: Props) => {
 
         <div className="flex-1 flex-col order-first mb-12 pb-12 border-b border-white md:border-transparent md:mb-0 md:order-1 md:ml-20 md:pb-0">
           {filteredTrendingPostsData ? filteredTrendingPostsData.map(({ node }, index, arr) => {
-            
+
             // Prevent the current post to available in recent posts cards
             // And prevent to have more than 3 cards
             if (arr.length === 4 && index === 3) {
@@ -98,6 +98,15 @@ const Footer = ({ trendingPostsData, slug }: Props) => {
                 <Link href={`/article/${node.slug}`}>
                   <a>
                     <article className="flex items-center mb-4">
+                      <div className="flex flex-col pr-5">
+                        <p className="text-sm text-white font-bold leading-normal line-clamp-3">
+                          {node.title}
+                        </p>
+                        <p className={styles.articleDate}>
+                          {`${formatDate(node.date)} | ${node.author.node.name}`}
+                        </p>
+                      </div>
+
                       <div className={styles.smallArticleCardImageWrapper}>
                         <Image
                           alt={node.title}
@@ -108,14 +117,6 @@ const Footer = ({ trendingPostsData, slug }: Props) => {
                           quality={15}
                         />
 
-                      </div>
-                      <div className="flex flex-col pl-5">
-                        <p className="text-sm text-white font-bold leading-normal line-clamp-3">
-                          {node.title}
-                        </p>
-                        <p className={styles.articleDate}>
-                          {`${formatDate(node.date)} | ${node.author.node.name}`}
-                        </p>
                       </div>
                     </article>
                   </a>

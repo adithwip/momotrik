@@ -50,18 +50,7 @@ const ArticleCard = ({
 
           <div className={styles.titleWrapper}>
             <div className="flex">
-              <div className={styles.mobileImageWrapper}>
-                <Image
-                  alt={`${title} Image`}
-                  src={mediaItemUrl}
-                  layout="fill"
-                  objectFit="cover"
-                  objectPosition="center"
-                  quality={25}
-                />
-              </div>
-
-              <div className="flex flex-col flex-1 p-2 pl-4 md:p-0 md:pl-0">
+              <div className="flex flex-col flex-1 p-2 pr-4 md:p-0 md:pl-0">
                 <p className={styles.articleTitle}>
                   {title}
                 </p>
@@ -74,6 +63,17 @@ const ArticleCard = ({
                   {stripHtmlTags(excerpt)}
                 </p>
               </div>
+              <div className={styles.mobileImageWrapper}>
+                <Image
+                  alt={`${title} Image`}
+                  src={mediaItemUrl}
+                  layout="fill"
+                  objectFit="cover"
+                  objectPosition="center"
+                  quality={25}
+                />
+              </div>
+
             </div>
           </div>
         </a>

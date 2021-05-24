@@ -1,7 +1,6 @@
 import { formatDate } from 'utils/formatDate'
 
 import styles from './ArticleContent.module.css'
-
 interface Props {
   date: string,
   authorName: string,
