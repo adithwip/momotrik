@@ -49,11 +49,15 @@ const SEO = ({
       <meta property="og:locale" content="id_ID" />
 
       {/* Twitter */}
-      <meta name="twitter:creator" content="momotrik" key="twhandle" />
+      <meta name="twitter:creator" content="@momotrik" key="twhandle" />
       <meta name="twitter:title" content={`${title ? title : originalTitle}`} key="twtitle" />
       <meta name="twitter:description" content={`${description ? description : originalDescription}`} key="twdescription" />
       <meta name="twitter:image" content={`${previewImageUrl ? twitterImageUrl : originalImage}`} key="twimage" />
       <meta name="twitter:card" content="summary_large_image" key="twcard" />
+      {/* disallow Twitter from using your site's info for personalization purposes */}
+      <meta name="twitter:dnt" content="on" />
+
+
 
       <link rel="canonical" href={url} />
 
