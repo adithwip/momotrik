@@ -71,8 +71,8 @@ const Header = ({ updating }: Props) => {
           <div className="hidden md:block md:flex-1">
             <div className="flex justify-end text-white">
               <form
-                className="flex relative justify-center items-center"
                 onSubmit={handleSearch}
+                className="flex relative justify-center items-center"
               >
                 <input
                   required

@@ -1,3 +1,16 @@
 .search {
-  @apply flex-1 appearance-none w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-900 shadow-md rounded text-lg focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent;
+  @apply flex-1 appearance-none w-full py-2 pl-4 pr-16 shadow-md rounded text-lg;
+  @apply bg-white text-gray-700 placeholder-gray-900;
+  @apply focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent;
+}
+
+.searchButton {
+  @apply absolute inset-y-0 right-0 bg-gray-100 py-2 px-4 rounded-r;
+  @apply hover:bg-gray-100; 
+}
+
+.searchWrapper {
+  @apply relative;
+  width: 20px;
+  height: 20px;
 }
