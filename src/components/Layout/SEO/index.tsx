@@ -46,12 +46,14 @@ const SEO = ({
       )}
       <meta property="og:title" content={title ? title : originalTitle} key="ogtitle" />
       <meta property="og:description" content={description ? description : originalDescription} key="ogdesc" />
+      <meta property="og:locale" content="id_ID" />
 
       {/* Twitter */}
       <meta name="twitter:creator" content="momotrik" key="twhandle" />
       <meta name="twitter:title" content={`${title ? title : originalTitle}`} key="twtitle" />
       <meta name="twitter:description" content={`${description ? description : originalDescription}`} key="twdescription" />
       <meta name="twitter:image" content={`${previewImageUrl ? twitterImageUrl : originalImage}`} key="twimage" />
+      <meta name="twitter:card" content="summary_large_image" key="twcard" />
 
       <link rel="canonical" href={url} />
 
@@ -73,6 +75,9 @@ const SEO = ({
       <meta name="msapplication-TileColor" content="#ffffff" />
       <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
       <meta name="theme-color" content="#ffffff" />
+
+      <meta name="theme-color" content="#000000" />
+      <meta name="format-detection" content="telephone=no" />
 
       <title>{title}</title>
     </Head>

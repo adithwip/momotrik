@@ -29,18 +29,21 @@ class MyDocument extends Document {
             href="/fonts/Cairo-Regular.woff2"
             as="font"
             crossOrigin=""
+            type="font/woff2"
           />
           <link
             rel="preload"
             href="/fonts/Cairo-SemiBold.woff2"
             as="font"
             crossOrigin=""
+            type="font/woff2"
           />
           <link
             rel="preload"
             href="/fonts/Cairo-Bold.woff2"
             as="font"
             crossOrigin=""
+            type="font/woff2"
           />
 
           {/* Only run all Google Analytics trackers in Production Environment */}
