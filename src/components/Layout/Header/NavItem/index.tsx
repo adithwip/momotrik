@@ -5,8 +5,8 @@ interface Props {
   label: string,
   href: {
     pathname: string,
-    query: {
-      [key: string]: string
+    query?: {
+      [key: string]: string | null
     }
   }
 }
@@ -14,8 +14,10 @@ interface Props {
 import styles from './NavItem.module.css'
 
 const NavItem = ({ label, href }: Props) => {
+const finalHref = href.query?.name ? href : href.pathname
+
   return (
-    <Link href={href}>
+    <Link href={finalHref}>
       <a className={styles.navItem}>
         {label}
       </a>

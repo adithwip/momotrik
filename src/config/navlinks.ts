@@ -16,5 +16,9 @@ export default [
     queryName: 'featured',
     label: 'Featured'
   },
-
+  {
+    pathname: '/about',
+    queryName: null,
+    label: 'About'
+  },
 ]
