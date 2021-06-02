@@ -53,9 +53,9 @@ const Header = ({ updating }: Props) => {
           {/* Only showed on Desktop view */}
           <div className="hidden md:block md:flex-1">
             <div className="flex items-center space-x-4 justify-center">
-              {navlinks.map((link, index) => {
+              {navlinks.map((link) => {
                 return (
-                  <Fragment key={link.queryName + index}>
+                  <Fragment key={link.label}>
                     <NavItem label={link.label} href={{
                       pathname: link.pathname,
                       query: {
