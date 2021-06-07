@@ -27,6 +27,12 @@ const Header = ({ updating }: Props) => {
 
   return (
     <>
+      {/* Prevent body scrolling when Menu is shown in Mobile view */}
+      <style jsx global>{`
+        body {
+          overflow: ${show ? 'hidden' : 'visible'};
+        }
+      `}</style>
       <nav className="fixed top-0 w-full z-50 bg-black px-4">
         <div className="relative flex justify-center items-center py-2 md:py-4 md:max-w-screen-lg md:mx-auto">
           <div className="flex flex-1 items-center">
