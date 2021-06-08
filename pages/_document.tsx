@@ -46,7 +46,7 @@ class MyDocument extends Document {
             type="font/woff2"
           />
 
-          {/* Only run all Google Analytics trackers in Production Environment */}
+          {/* Only run all Google Analytics and Ads trackers in Production Environment */}
           {!isDevelopment && (
             <Fragment>
               {/* Google AdSense script */}
@@ -54,6 +54,13 @@ class MyDocument extends Document {
                 async
                 data-ad-client="ca-pub-3226350239455992"
                 src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+              />
+              <script
+                dangerouslySetInnerHTML={{
+                  __html: `
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                  `
+                }}
               />
 
               {/* Global site tag (gtag.js) - Google Analytics */}
