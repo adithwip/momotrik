@@ -19,7 +19,7 @@ const HighlightedArticle = ({ data }: Props) => {
   return (
     <>
       {/* Mobile view */}
-      <div className={styles.mobileHightlight}>
+      <section className={styles.mobileHightlight}>
         {data.map(({ node }, index) => {
           if (index === 0) {
             return (
@@ -92,10 +92,10 @@ const HighlightedArticle = ({ data }: Props) => {
             </Link>
           )
         })}
-      </div>
+      </section>
 
       {/* Desktop view */}
-      <div className={styles.gridContainer}>
+      <section className={styles.gridContainer}>
         {data.map(({ node }, index) => {
           return (
             <div key={index} className={classnames(
@@ -134,7 +134,7 @@ const HighlightedArticle = ({ data }: Props) => {
             </div>
           )
         })}
-      </div>
+      </section>
     </>
   )
 }
