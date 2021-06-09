@@ -53,9 +53,9 @@ const HighlightedArticle = ({ data }: Props) => {
             )
           }
 
+          // TODO
+          // Make it reusable, please! Dear me!
           return (
-            // // TODO
-            // Make it reusable, please! Dear me!
             <Link key={node.id} href={`/article/${node.slug}`}>
               <a>
                 <article className="flex items-center mb-4">
@@ -97,21 +97,34 @@ const HighlightedArticle = ({ data }: Props) => {
       {/* Desktop view */}
       <section className={styles.gridContainer}>
         {data.map(({ node }, index) => {
-          return (
-            <div key={index} className={classnames(
-              styles.gridCard,
-              {
-                [styles.gridHighlight]: index === 0,
-                [styles.gridRest]: index !== 0,
-                [styles.grid1]: index === 0,
-                [styles.grid2]: index === 1,
-                [styles.grid3]: index === 2,
-                [styles.grid4]: index === 3,
-                [styles.grid5]: index === 4,
-                // I might be shame with this approach someday :(
-              }
+          if (index === 0) {
+            return (
+              <div key={node.id} className={classnames('row-span-2', styles.gridCard)}>
+                <Link href={`/article/${node.slug}`}>
+                  <a>
+                    <Image
+                      priority
+                      alt="Featured Article Image Grid"
+                      src={node!.featuredImage!.node.mediaItemUrl}
+                      layout="fill"
+                      objectFit="cover"
+                      objectPosition="center"
+                      quality={25}
+                    />
 
-            )}>
+                    <ArticleContent
+                      date={node.date}
+                      authorName={node.author.node.name}
+                      title={node.title}
+                    />
+                  </a>
+                </Link>
+              </div>
+            )
+          }
+
+          return (
+            <div key={node.id} className={styles.gridCard}>
               <Link href={`/article/${node.slug}`}>
                 <a>
                   <Image

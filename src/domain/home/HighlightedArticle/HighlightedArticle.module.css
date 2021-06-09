@@ -20,19 +20,8 @@
 }
 
 .gridContainer {
-  @apply hidden px-5 pt-10 pb-0;
-  @apply md:grid md:gap-4 md:grid-cols-3 md:grid-rows-2 md:pt-14;
-  grid-template-areas:
-    "grid-1 grid-2 grid-3"
-    "grid-1 grid-4 grid-5";
-}
-
-.gridHighlight {
-  @apply bg-gray-500 h-full;
-}
-
-.gridRest {
-  @apply bg-gray-700 h-56;
+  @apply hidden;
+  @apply md:mt-10 md:h-[464px] md:grid md:grid-cols-3 md:grid-rows-2 md:gap-4;
 }
 
 .gridCard {
@@ -44,12 +33,6 @@
   background: linear-gradient(0deg, rgba(17,24,39,0.8995973389355743) 0%, rgba(17,24,39,0.7959558823529411) 17%, rgba(255,255,255,0) 100%);
   @apply absolute inset-0;
 }
-
-.grid1 { grid-area: grid-1; }
-.grid2 { grid-area: grid-2; }
-.grid3 { grid-area: grid-3; }
-.grid4 { grid-area: grid-4; }
-.grid5 { grid-area: grid-5; }
 
 /* Remove soon */
 .smallArticleCardImageWrapper {
