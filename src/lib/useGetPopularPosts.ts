@@ -6,7 +6,7 @@ import { fetchAPI } from 'lib/fetchAPI'
 export const getPopularPostsFetcher = async (): Promise<GetPopularPostsResponse> => {
   const res = await fetchAPI({
     query: `
-      query MyQuery {
+      query PopularPosts {
         posts(where: {categoryId: 1516}, first: 4) {
           edges {
             node {

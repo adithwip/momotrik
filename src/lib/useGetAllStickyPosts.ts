@@ -9,7 +9,7 @@ import { fetchAPI } from 'lib/fetchAPI'
 export const getAllStickyPostsFetcher = async (): Promise<AllPostsEdge[]> => {
   const res = await fetchAPI({
     query: `
-      query AllPosts {
+      query AllStickyPosts {
         posts(first: 100, where: {orderby: {field: DATE, order: DESC}}) {
           edges {
             node {

@@ -6,7 +6,7 @@ import { fetchAPI } from 'lib/fetchAPI'
 export const getTrendingPostsFetcher = async (): Promise<GetTrendingPostsResponse> => {
   const res = await fetchAPI({
     query: `
-      query MyQuery {
+      query TrendingPosts {
         posts(where: {categoryId: 1515}, first: 5) {
           edges {
             node {

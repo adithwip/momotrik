@@ -8,7 +8,7 @@ type CategoryName = 'mobil-listrik' | 'motor-listrik' | string | string[] | unde
 export const getPostsByCategoryNameFetcher = async (categoryName: CategoryName): Promise<GetPostsByCategoryNameResponse> => {
   const res = await fetchAPI({
     query: `
-      query postsByCategory($categoryName: String!) {
+      query PostsByCategory($categoryName: String!) {
         posts(where: {categoryName: $categoryName}) {
           edges {
             node {
