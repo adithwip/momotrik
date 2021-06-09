@@ -1,7 +1,6 @@
 import type { Edge } from 'interfaces/lib/getTrendingPosts.interface'
 
 import dynamic from 'next/dynamic'
-import classnames from 'classnames'
 
 const AsideArticleCard = dynamic(() => import('components/Cards/AsideArticleCard'))
 
@@ -16,15 +15,11 @@ const Articles = ({ data }: Props) => {
         Trendings
       </p>
 
-      {data ? data.map(({ node }, index, arr) => {
-        const isNotLastChild = index !== arr.length - 1
-
+      {data ? data.map(({ node }) => {
         return (
           <div
-            className={classnames({
-              "mb-10": isNotLastChild
-            })}
-            key={index}
+            className="mb-10"
+            key={node.id}
           >
             <AsideArticleCard
               slug={node.slug}
@@ -42,13 +37,6 @@ const Articles = ({ data }: Props) => {
         style={{ display: 'block' }}
         data-ad-client="ca-pub-3226350239455992"
         data-ad-slot="8612513575"
-        data-ad-format="auto"
-        data-full-width-responsive="true" />
-
-      <ins className="adsbygoogle"
-        style={{ display: 'block' }}
-        data-ad-client="ca-pub-3226350239455992"
-        data-ad-slot="4480523416"
         data-ad-format="auto"
         data-full-width-responsive="true" />
     </aside>
