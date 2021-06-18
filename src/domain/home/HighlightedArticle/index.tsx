@@ -71,7 +71,7 @@ const HighlightedArticle = ({ data }: Props) => {
 
                   <div className={styles.smallArticleCardImageWrapper}>
                     <Image
-                      priority={index == 1 || index === 2}
+                      priority={index === 1}
                       alt={node.title}
                       src={node!.featuredImage!.node.mediaItemUrl}
                       layout="fill"
