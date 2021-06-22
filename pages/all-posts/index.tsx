@@ -11,16 +11,12 @@ const GeneralFeedback = dynamic(() => import('components/GeneralFeedback'))
 
 import { getAllPostsFetcher, useGetAllPosts } from 'lib/useGetAllPosts'
 
-interface Props {
-  count: number
-}
-
-const AllPostsPage: NextPage<Props> = ({ count }) => {
+const AllPostsPage: NextPage = () => {
   const { getAllPostsData: {
     data,
     isFetching,
     isError
-  } } = useGetAllPosts(count)
+  } } = useGetAllPosts(200)
   const MemoizedArticlesGrid = React.memo(ArticlesGrid)
 
   const renderComponent = () => {
@@ -55,7 +51,6 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       dehydratedState: dehydrate(queryClient),
-      count: 200
     }
   }
 }
