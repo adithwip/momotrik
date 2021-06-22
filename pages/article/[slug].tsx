@@ -1,6 +1,7 @@
 import type { NextPage, GetStaticPaths, GetStaticProps } from 'next'
 import type { GetSinglePostResponse } from 'interfaces/lib/getSinglePost.interface'
 
+import Script from 'next/script'
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 
@@ -39,16 +40,39 @@ const ArticlePage: NextPage<Props> = ({ postData }) => {
   if (postData) {
     const { post } = postData
     return (
-      <Layout
-        article
-        screen="md"
-        title={`${post.title} | Momotrik`}
-        description={stripHtmlTags(post.excerpt)}
-        previewImageUrl={post.featuredImage.node.mediaItemUrl}
-        slug={post.slug}
-      >
-        <Article postData={postData} />
-      </Layout>
+      <>
+        {/* With next/script,
+        you no longer need to wrap scripts in next/head.
+        Further,
+        next/script should not be used in pages/_document.js
+        as next/script has client-side functionality
+        to ensure loading order. */}
+        <Script
+          src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0"
+          nonce="rXnIGc1e"
+          strategy="lazyOnload"
+          crossOrigin="anonymous"
+        />
+        <Script
+          src="https://platform.twitter.com/widgets.js"
+          strategy="lazyOnload"
+        />
+        <Script
+          src="//platform.instagram.com/en_US/embeds.js"
+          strategy="lazyOnload"
+        />
+
+        <Layout
+          article
+          screen="md"
+          title={`${post.title} | Momotrik`}
+          description={stripHtmlTags(post.excerpt)}
+          previewImageUrl={post.featuredImage.node.mediaItemUrl}
+          slug={post.slug}
+        >
+          <Article postData={postData} />
+        </Layout>
+      </>
     )
   }
 
