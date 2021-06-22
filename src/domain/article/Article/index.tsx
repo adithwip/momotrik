@@ -1,7 +1,7 @@
 import type { GetSinglePostResponse } from 'interfaces/lib/getSinglePost.interface'
 
 import Image from 'next/image'
-// import sanitizeHtml, { defaults } from 'sanitize-html'
+import sanitizeHtml, { defaults } from 'sanitize-html'
 
 import Date from 'domain/article/Date'
 import SocialMediaShareButton from 'components/SocialMediaShareButton'
