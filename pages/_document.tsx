@@ -46,10 +46,6 @@ class MyDocument extends Document {
             type="font/woff2"
           />
 
-
-
-
-
           {/* Only run all Google Analytics and Ads trackers in Production Environment */}
           {!isDevelopment && (
             <Fragment>
@@ -87,19 +83,6 @@ class MyDocument extends Document {
           )}
         </Head>
         <body>
-          <script
-            async
-            defer
-            crossOrigin="anonymous"
-            src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0"
-            nonce="rXnIGc1e" />
-
-          <script
-            async
-            src="https://platform.twitter.com/widgets.js"
-            charSet="utf-8" />
-
-          <script async src="//platform.instagram.com/en_US/embeds.js" />
           <Main />
           <NextScript />
         </body>
