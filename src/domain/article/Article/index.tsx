@@ -1,7 +1,8 @@
 import type { GetSinglePostResponse } from 'interfaces/lib/getSinglePost.interface'
 
 import Image from 'next/image'
-import sanitizeHtml, { defaults } from 'sanitize-html'
+// TODO
+// import sanitizeHtml, { defaults } from 'sanitize-html'
 
 import Date from 'domain/article/Date'
 import SocialMediaShareButton from 'components/SocialMediaShareButton'
@@ -66,45 +67,79 @@ const Article = ({ postData }: Props) => {
         <div
           className={styles.content}
           dangerouslySetInnerHTML={{
-            __html: sanitizeHtml(post.content, {
-              /**
-               * <img> tag is not allowed by default
-               * so we need to adjust config and merged it with defaults
-               * see here: https://github.com/apostrophecms/sanitize-html#default-options
-               * 
-               * From the lib maintainer:
-               * "The syntax of poorly closed <p> and <img> elements is cleaned up."
-               * 
-               * So, basically content (by default) from WordPress
-               * is claimed "poorly closed" by them LOL
-               */
-              allowedTags: [...defaults.allowedTags, 'img'],
-              selfClosing: [...defaults.selfClosing, 'img'],
-              allowedAttributes: {
-                ...defaults.allowedAttributes,
-                img: [
-                  'data-attachment-id',
-                  'data-permalink',
-                  'data-orig-file',
-                  'data-orig-size',
-                  'data-comments-opened',
-                  'data-image-meta',
-                  'data-image-title',
-                  'data-image-description',
-                  'data-medium-file',
-                  'data-large-file',
-                  'loading',
-                  'width',
-                  'height',
-                  'src',
-                  'alt',
-                  'srcset',
-                  'sizes',
-                  'data-recalc-dims'
-                ],
-                figure: ['class']
-              }
-            })
+
+            // TODO
+            // In twitter widget
+            // script tag is still presented
+            __html: post.content
+
+            // TODO
+            // Will be commented until further research
+            // Should we actually use sanitizer for HTML that come from WP???
+            
+            // __html: sanitizeHtml(post.content, {
+            //   /**
+            //    * <img> tag is not allowed by default
+            //    * so we need to adjust config and merged it with defaults
+            //    * see here: https://github.com/apostrophecms/sanitize-html#default-options
+            //    * 
+            //    * From the lib maintainer:
+            //    * "The syntax of poorly closed <p> and <img> elements is cleaned up."
+            //    * 
+            //    * So, basically content (by default) from WordPress
+            //    * is claimed "poorly closed" by them LOL
+            //    */
+            //   allowedTags: [...defaults.allowedTags, 'img', 'iframe'],
+            //   selfClosing: [...defaults.selfClosing, 'img'],
+            //   allowedAttributes: {
+            //     ...defaults.allowedAttributes,
+            //     img: [
+            //       'data-attachment-id',
+            //       'data-permalink',
+            //       'data-orig-file',
+            //       'data-orig-size',
+            //       'data-comments-opened',
+            //       'data-image-meta',
+            //       'data-image-title',
+            //       'data-image-description',
+            //       'data-medium-file',
+            //       'data-large-file',
+            //       'loading',
+            //       'width',
+            //       'height',
+            //       'src',
+            //       'alt',
+            //       'srcset',
+            //       'sizes',
+            //       'data-recalc-dims'
+            //     ],
+            //     figure: ['class'],
+            //     iframe: [
+            //       'id',
+            //       'class',
+            //       'src',
+            //       'allowfullscreen',
+            //       'allowtransparency',
+            //       'title',
+            //       'data-tweet-id',
+            //       'data-instgrm-payload-id',
+            //       'width',
+            //       'height',
+            //       'style',
+            //       'sandbox',
+            //       'frameborder',
+            //       'scrolling'
+            //     ],
+            //     div: [
+            //       'class',
+            //       'style',
+            //       'data-href',
+            //       'data-width',
+            //       'fb-xfbml-state',
+            //       'fb-iframe-plugin-query',
+            //     ]
+            //   }
+            // })
           }} />
       </article>
 
