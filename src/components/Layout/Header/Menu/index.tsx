@@ -23,7 +23,7 @@ const Menu = ({ show = false, onClose }: Props) => {
   // In menu items selection
   useEffect(() => {
     onClose()
-  }, [router.query.name])
+  }, [router.query.name, onClose])
 
   return (
     <>

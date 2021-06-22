@@ -5,7 +5,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "type-check": "tsc"
+    "type-check": "tsc",
+    "lint": "next lint"
   },
   "dependencies": {
     "axios": "0.21.1",
@@ -26,6 +27,8 @@
     "@types/react-dom": "17.0.7",
     "@types/sanitize-html": "2.3.1",
     "autoprefixer": "10.2.6",
+    "eslint": "7.29.0",
+    "eslint-config-next": "11.0.0",
     "postcss": "8.3.4",
     "tailwindcss": "2.1.4",
     "typescript": "4.3.2"
