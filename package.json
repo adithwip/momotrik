@@ -11,10 +11,10 @@
   "dependencies": {
     "axios": "0.21.1",
     "classnames": "2.3.1",
-    "next": "11.0.0",
+    "next": "11.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-query": "3.17.2",
+    "react-query": "3.17.3",
     "sanitize-html": "2.4.0"
   },
   "devDependencies": {
@@ -22,15 +22,15 @@
     "@types/classnames": "2.3.1",
     "@types/gtag.js": "^0.0.6",
     "@types/lodash.isempty": "4.4.6",
-    "@types/node": "15.12.4",
+    "@types/node": "15.12.5",
     "@types/react": "17.0.11",
     "@types/react-dom": "17.0.8",
     "@types/sanitize-html": "2.3.1",
     "autoprefixer": "10.2.6",
     "eslint": "7.29.0",
-    "eslint-config-next": "11.0.0",
+    "eslint-config-next": "11.0.1",
     "postcss": "8.3.5",
-    "tailwindcss": "2.2.2",
+    "tailwindcss": "2.2.4",
     "typescript": "4.3.4"
   },
   "license": "MIT"
