@@ -1,10 +1,9 @@
-import { Fragment, useEffect } from 'react'
+import { Fragment } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import classnames from 'classnames'
 
 import NavItem from '../NavItem'
-import { useRouter } from 'next/router'
 
 import navlinks from 'config/navlinks'
 import styles from './Menu.module.css'
@@ -15,16 +14,6 @@ interface Props {
 }
 
 const Menu = ({ show = false, onClose }: Props) => {
-  const router = useRouter()
-
-  // When query params change
-  // Close the Menu
-  // As when in client side, the Menu is not close
-  // In menu items selection
-  useEffect(() => {
-    onClose()
-  }, [router.query.name, onClose])
-
   return (
     <>
       <div onClick={onClose} className={classnames(styles.overlay, {
