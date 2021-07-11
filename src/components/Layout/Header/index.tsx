@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react'
+import { Fragment, useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -18,6 +18,14 @@ const Header = ({ updating }: Props) => {
   const router = useRouter()
   const [show, setShow] = useState(false)
   const [searchTerm, setSearchTerm] = useState('')
+
+  // When query params change
+  // Close the Menu
+  // As when in client side, the Menu is not close
+  // In menu items selection
+  useEffect(() => {
+    setShow(false)
+  }, [router.query.name])
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault()
