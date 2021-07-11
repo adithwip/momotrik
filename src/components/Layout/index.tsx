@@ -1,5 +1,6 @@
 import { ReactNode } from 'react'
 import classnames from 'classnames'
+import { motion } from 'framer-motion'
 
 import Header from './Header'
 import Footer from './Footer'
@@ -42,17 +43,30 @@ const Layout = ({
         previewImageUrl={previewImageUrl}
       />
       <Header updating={updating} />
-      {/* 
-      In this first iteration
-      we use max-w-screen-sm because we still not yet put any Ads.
-      Once we put the Ads, change the max-width accordingly.
-    */}
-      <div className={classnames(
-        styles.mainLayout,
-        `max-w-screen-sm min-h-screen mx-auto md:max-w-screen-${screen}`
-      )}>
-        {children}
-      </div>
+      <motion.div
+        initial="initial"
+        animate="animate"
+        variants={{
+          initial: {
+            opacity: 0,
+          },
+          animate: {
+            opacity: 1,
+          },
+        }}
+      >
+        {/* 
+          In this first iteration
+          we use max-w-screen-sm because we still not yet put any Ads.
+          Once we put the Ads, change the max-width accordingly.
+        */}
+        <div className={classnames(
+          styles.mainLayout,
+          `max-w-screen-sm min-h-screen mx-auto md:max-w-screen-${screen}`
+        )}>
+          {children}
+        </div>
+      </motion.div>
       <Footer
         slug={slug}
         trendingPostsData={getRecentPostsData.data?.posts.edges}
