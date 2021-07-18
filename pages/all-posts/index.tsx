@@ -16,7 +16,7 @@ const AllPostsPage: NextPage = () => {
     data,
     isFetching,
     isError
-  } } = useGetAllPosts(200)
+  } } = useGetAllPosts(200, 'all-posts')
   const MemoizedArticlesGrid = React.memo(ArticlesGrid)
 
   const renderComponent = () => {
