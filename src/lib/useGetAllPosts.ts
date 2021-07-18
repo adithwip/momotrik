@@ -4,6 +4,7 @@ import { useQuery } from "react-query"
 import { fetchAPI } from 'lib/fetchAPI'
 
 type Count = number | undefined
+type Key = string | string[]
 
 /**
  * Exported for dehydrating state
@@ -43,8 +44,8 @@ export const getAllPostsFetcher = async (count?: Count): Promise<GetAllPostsResp
   return res.data.data
 }
 
-export const useGetAllPosts = (count?: Count) => {
-  const { data, isError, isFetching } = useQuery('posts', () => getAllPostsFetcher(count), {
+export const useGetAllPosts = (count?: Count, key: Key = 'posts') => {
+  const { data, isError, isFetching } = useQuery(key, () => getAllPostsFetcher(count), {
     staleTime: 5 * 60 * 1000
   })
 
