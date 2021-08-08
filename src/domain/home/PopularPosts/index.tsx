@@ -24,6 +24,7 @@ const PopularPosts = () => {
               <HighlightCard
                 slug={node.slug}
                 imageSrc={node.featuredImage.node.mediaItemUrl}
+                sizes={node.featuredImage.node.sizes}
                 title={node.title}
                 date={node.date}
                 authorName={node.author.node.name}

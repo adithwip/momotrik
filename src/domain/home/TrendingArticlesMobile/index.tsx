@@ -34,7 +34,8 @@ const TrendingArticlesMobile = () => {
                   <div className={styles.smallArticleCardImageWrapper}>
                     <Image
                       alt={node.title}
-                      src={node!.featuredImage!.node.mediaItemUrl}
+                      src={node.featuredImage.node.mediaItemUrl}
+                      sizes={node.featuredImage.node.sizes}
                       layout="fill"
                       objectFit="cover"
                       objectPosition="center"

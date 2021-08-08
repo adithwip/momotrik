@@ -17,6 +17,7 @@ export const getPopularPostsFetcher = async (): Promise<GetPopularPostsResponse>
               featuredImage {
                 node {
                   mediaItemUrl
+                  sizes(size: THUMBNAIL)
                 }
               }
               author {

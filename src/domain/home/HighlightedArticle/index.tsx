@@ -30,7 +30,8 @@ const HighlightedArticle = ({ data }: Props) => {
                       <Image
                         priority
                         alt="Featured Article Image"
-                        src={node!.featuredImage!.node.mediaItemUrl}
+                        src={node.featuredImage.node.mediaItemUrl}
+                        sizes={node.featuredImage.node.sizes}
                         layout="fill"
                         objectFit="cover"
                         objectPosition="center"
@@ -74,6 +75,7 @@ const HighlightedArticle = ({ data }: Props) => {
                       priority={index === 1}
                       alt={node.title}
                       src={node!.featuredImage!.node.mediaItemUrl}
+                      sizes={node.featuredImage.node.sizes}
                       layout="fill"
                       objectFit="cover"
                       objectPosition="center"
@@ -106,6 +108,7 @@ const HighlightedArticle = ({ data }: Props) => {
                       priority
                       alt="Featured Article Image Grid"
                       src={node!.featuredImage!.node.mediaItemUrl}
+                      sizes={node.featuredImage.node.sizes}
                       layout="fill"
                       objectFit="cover"
                       objectPosition="center"
@@ -131,6 +134,7 @@ const HighlightedArticle = ({ data }: Props) => {
                     priority
                     alt="Featured Article Image Grid"
                     src={node!.featuredImage!.node.mediaItemUrl}
+                    sizes={node.featuredImage.node.sizes}
                     layout="fill"
                     objectFit="cover"
                     objectPosition="center"

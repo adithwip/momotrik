@@ -8,12 +8,13 @@ import styles from './HighlightCard.module.css'
 interface Props {
   slug: string,
   imageSrc: string,
+  sizes: string
   date: string,
   authorName: string,
   title: string
 }
 
-const HighlightCard = ({ slug, imageSrc, date, authorName, title }: Props) => {
+const HighlightCard = ({ slug, imageSrc, sizes, date, authorName, title }: Props) => {
   return (
     <article className={styles.card}>
       <Link href={`/article/${slug}`}>
@@ -22,6 +23,7 @@ const HighlightCard = ({ slug, imageSrc, date, authorName, title }: Props) => {
             priority
             alt="Featured Article Image Grid"
             src={imageSrc}
+            sizes={sizes}
             layout="fill"
             objectFit="cover"
             objectPosition="center"

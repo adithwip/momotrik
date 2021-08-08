@@ -43,11 +43,11 @@ const ArticleCard = ({
             <Image
               alt={`${title} Image`}
               src={mediaItemUrl}
+              sizes={sizes}
               layout="fill"
               objectFit="cover"
               objectPosition="center"
               quality={25}
-              sizes={sizes}
             />
           </div>
 
@@ -70,6 +70,7 @@ const ArticleCard = ({
                 <Image
                   alt={`${title} Image`}
                   src={mediaItemUrl}
+                  sizes={sizes}
                   layout="fill"
                   objectFit="cover"
                   objectPosition="center"
