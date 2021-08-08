@@ -17,7 +17,7 @@ interface Props {
 const HighlightCard = ({ slug, imageSrc, sizes, date, authorName, title }: Props) => {
   return (
     <article className={styles.card}>
-      <Link href={`/article/${slug}`}>
+      <Link prefetch={false} href={`/article/${slug}`}>
         <a>
           <Image
             priority

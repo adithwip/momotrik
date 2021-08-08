@@ -24,7 +24,7 @@ const Menu = ({ show = false, onClose }: Props) => {
       })}>
         <div className="flex flex-col space-y-4">
           <div className="flex justify-between items-center mb-4">
-            <Link href="/">
+            <Link prefetch={false} href="/">
               <a>
                 <div className={styles.logoWrapper}>
                   <Image
