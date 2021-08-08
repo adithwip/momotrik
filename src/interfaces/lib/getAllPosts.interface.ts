@@ -17,7 +17,7 @@ export interface AllPostsNode {
   slug: string
   excerpt: string
   isSticky?:boolean
-  featuredImage?: FeaturedImage
+  featuredImage: FeaturedImage
   author: Author
 }
 
@@ -27,6 +27,7 @@ interface FeaturedImage {
 
 interface FeaturedImageNode {
   mediaItemUrl: string
+  sizes: string
 }
 
 export interface Author {

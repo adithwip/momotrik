@@ -17,6 +17,7 @@ export const getTrendingPostsFetcher = async (): Promise<GetTrendingPostsRespons
               featuredImage {
                 node {
                   mediaItemUrl
+                  sizes(size: THUMBNAIL)
                 }
               }
               author {

@@ -13,6 +13,7 @@ interface Props {
   slug: string,
   title: string,
   mediaItemUrl: string,
+  sizes?: string
   date: string,
   authorName: string,
   excerpt: string
@@ -25,6 +26,7 @@ const ArticleCard = ({
   slug,
   title,
   mediaItemUrl,
+  sizes = '100vw',
   date,
   authorName,
   excerpt
@@ -45,6 +47,7 @@ const ArticleCard = ({
               objectFit="cover"
               objectPosition="center"
               quality={25}
+              sizes={sizes}
             />
           </div>
 

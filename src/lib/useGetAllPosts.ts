@@ -24,6 +24,7 @@ export const getAllPostsFetcher = async (count?: Count): Promise<GetAllPostsResp
               featuredImage {
                 node {
                   mediaItemUrl
+                  sizes(size: THUMBNAIL)
                 }
               }
               author {

@@ -1,9 +1,9 @@
-import type { GetTrendingPostsResponse } from 'interfaces/lib/getTrendingPosts.interface'
+import type { GetRecentPostsResponse } from 'interfaces/lib/getRecentPosts.interface'
 
 import { useQuery } from "react-query"
 import { fetchAPI } from 'lib/fetchAPI'
 
-export const getRecentPostsFetcher = async (): Promise<GetTrendingPostsResponse> => {
+export const getRecentPostsFetcher = async (): Promise<GetRecentPostsResponse> => {
   const res = await fetchAPI({
     query: `
       query RecentPosts {
@@ -17,6 +17,7 @@ export const getRecentPostsFetcher = async (): Promise<GetTrendingPostsResponse>
               featuredImage {
                 node {
                   mediaItemUrl
+                  sizes(size: THUMBNAIL)
                 }
               }
               author {

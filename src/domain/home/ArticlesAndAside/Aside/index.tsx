@@ -1,11 +1,11 @@
-import type { Edge } from 'interfaces/lib/getTrendingPosts.interface'
+import type { TrendingPostsEdge } from 'interfaces/lib/getTrendingPosts.interface'
 
 import dynamic from 'next/dynamic'
 
 const AsideArticleCard = dynamic(() => import('components/Cards/AsideArticleCard'))
 
 interface Props {
-  data: Edge[] | undefined
+  data: TrendingPostsEdge[] | undefined
 }
 
 const Articles = ({ data }: Props) => {
@@ -24,6 +24,7 @@ const Articles = ({ data }: Props) => {
             <AsideArticleCard
               slug={node.slug}
               mediaItemUrl={node.featuredImage.node.mediaItemUrl}
+              sizes={node.featuredImage.node.sizes}
               title={node.title}
               date={node.date}
               authorName={node.author.node.name}

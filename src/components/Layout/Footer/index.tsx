@@ -1,4 +1,4 @@
-import type { Edge } from 'interfaces/lib/getRecentPosts.interface'
+import type { RecentPostsEdge } from 'interfaces/lib/getRecentPosts.interface'
 
 import Image from 'next/image'
 import Link from 'next/link'
@@ -9,12 +9,12 @@ import { formatDate } from 'utils/formatDate'
 import styles from './Footer.module.css'
 
 interface Props {
-  trendingPostsData: Edge[] | undefined,
+  recentPostsData: RecentPostsEdge[] | undefined,
   slug?: string
 }
 
-const Footer = ({ trendingPostsData, slug }: Props) => {
-  const filteredTrendingPostsData = trendingPostsData?.filter(({ node }) => {
+const Footer = ({ recentPostsData, slug }: Props) => {
+  const filteredRecentPostsData = recentPostsData?.filter(({ node }) => {
     return node.slug !== slug
   })
 
@@ -83,7 +83,7 @@ const Footer = ({ trendingPostsData, slug }: Props) => {
         </div>
 
         <div className="flex-1 flex-col order-first mb-12 pb-12 border-b border-white md:border-transparent md:mb-0 md:order-1 md:ml-20 md:pb-0">
-          {filteredTrendingPostsData ? filteredTrendingPostsData.map(({ node }, index, arr) => {
+          {filteredRecentPostsData ? filteredRecentPostsData.map(({ node }, index, arr) => {
 
             // Prevent the current post to available in recent posts cards
             // And prevent to have more than 3 cards
@@ -110,7 +110,8 @@ const Footer = ({ trendingPostsData, slug }: Props) => {
                       <div className={styles.smallArticleCardImageWrapper}>
                         <Image
                           alt={node.title}
-                          src={node!.featuredImage!.node.mediaItemUrl}
+                          src={node.featuredImage.node.mediaItemUrl}
+                          sizes={node.featuredImage.node.sizes}
                           layout="fill"
                           objectFit="cover"
                           objectPosition="center"

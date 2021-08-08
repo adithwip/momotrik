@@ -55,7 +55,7 @@ const Layout = ({
       </div>
       <Footer
         slug={slug}
-        trendingPostsData={getRecentPostsData.data?.posts.edges}
+        recentPostsData={getRecentPostsData.data?.posts.edges}
       />
     </>
 

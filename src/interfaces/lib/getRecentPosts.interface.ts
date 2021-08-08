@@ -3,10 +3,10 @@ export interface GetRecentPostsResponse {
 }
 
 interface Posts {
-  edges: Edge[]
+  edges: RecentPostsEdge[]
 }
 
-export interface Edge {
+export interface RecentPostsEdge {
   node: AllPostsNode
 }
 
@@ -16,7 +16,7 @@ export interface AllPostsNode {
   title: string
   slug: string
   isSticky?:boolean
-  featuredImage?: FeaturedImage
+  featuredImage: FeaturedImage
   author: Author
 }
 
@@ -26,6 +26,7 @@ interface FeaturedImage {
 
 interface FeaturedImageNode {
   mediaItemUrl: string
+  sizes: string
 }
 
 export interface Author {

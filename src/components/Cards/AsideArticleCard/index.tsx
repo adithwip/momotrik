@@ -8,6 +8,7 @@ import styles from './AsideArticleCard.module.css'
 interface Props {
   slug: string,
   mediaItemUrl: string,
+  sizes?: string
   title: string,
   date: string,
   authorName: string
@@ -16,6 +17,7 @@ interface Props {
 const AsideArticleCard = ({
   slug,
   mediaItemUrl,
+  sizes = '100vw',
   title,
   date,
   authorName
@@ -28,6 +30,7 @@ const AsideArticleCard = ({
             <Image
               alt={title}
               src={mediaItemUrl}
+              sizes={sizes}
               layout="fill"
               objectFit="cover"
               objectPosition="center"

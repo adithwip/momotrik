@@ -25,7 +25,8 @@ const Articles = ({ data }: Props) => {
               isNotLastChild={isNotLastChild}
               slug={node.slug}
               title={node.title}
-              mediaItemUrl={node!.featuredImage!.node.mediaItemUrl}
+              mediaItemUrl={node.featuredImage.node.mediaItemUrl}
+              sizes={node.featuredImage.node.sizes}
               date={node.date}
               authorName={node.author.node.name}
               excerpt={node.excerpt}

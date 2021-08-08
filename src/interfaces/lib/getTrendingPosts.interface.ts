@@ -3,10 +3,10 @@ export interface GetTrendingPostsResponse {
 }
 
 interface Posts {
-  edges: Edge[]
+  edges: TrendingPostsEdge[]
 }
 
-export interface Edge {
+export interface TrendingPostsEdge {
   node: Node
 }
 
@@ -25,6 +25,7 @@ interface FeaturedImage {
 
 interface FeaturedImageNode {
   mediaItemUrl: string
+  sizes: string
 }
 
 export interface Author {
