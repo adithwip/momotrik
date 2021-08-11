@@ -95,7 +95,7 @@ const Footer = ({ recentPostsData, slug }: Props) => {
               <Fragment key={index}>
                 {/* // TODO
                 Make it reusable */}
-                <Link prefetch={false} href={`/article/${node.slug}`}>
+                <Link href={`/article/${node.slug}`}>
                   <a>
                     <article className="flex items-center mb-4">
                       <div className="flex flex-col pr-5">

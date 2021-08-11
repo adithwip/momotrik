@@ -23,7 +23,7 @@ const HighlightedArticle = ({ data }: Props) => {
         {data.map(({ node }, index) => {
           if (index === 0) {
             return (
-              <Link prefetch={false} key={node.id} href={`/article/${node.slug}`}>
+              <Link key={node.id} href={`/article/${node.slug}`}>
                 <a>
                   <article className={styles.articleCard}>
                     <div className={styles.imageWrapper}>
@@ -57,7 +57,7 @@ const HighlightedArticle = ({ data }: Props) => {
           // TODO
           // Make it reusable, please! Dear me!
           return (
-            <Link prefetch={false} key={node.id} href={`/article/${node.slug}`}>
+            <Link key={node.id} href={`/article/${node.slug}`}>
               <a>
                 <article className="flex items-center mb-4">
                   <div className="flex flex-col pr-5">
@@ -102,7 +102,7 @@ const HighlightedArticle = ({ data }: Props) => {
           if (index === 0) {
             return (
               <div key={node.id} className={classnames('row-span-2', styles.gridCard)}>
-                <Link prefetch={false} href={`/article/${node.slug}`}>
+                <Link href={`/article/${node.slug}`}>
                   <a>
                     <Image
                       priority
@@ -128,7 +128,7 @@ const HighlightedArticle = ({ data }: Props) => {
 
           return (
             <div key={node.id} className={styles.gridCard}>
-              <Link prefetch={false} href={`/article/${node.slug}`}>
+              <Link href={`/article/${node.slug}`}>
                 <a>
                   <Image
                     priority

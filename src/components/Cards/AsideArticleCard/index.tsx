@@ -24,7 +24,7 @@ const AsideArticleCard = ({
 }: Props) => {
   return (
     <article>
-      <Link prefetch={false} href={`/article/${slug}`}>
+      <Link href={`/article/${slug}`}>
         <a>
           <div className={styles.imageWrapper}>
             <Image

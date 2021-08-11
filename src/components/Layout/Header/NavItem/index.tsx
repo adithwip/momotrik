@@ -17,7 +17,7 @@ const NavItem = ({ label, href }: Props) => {
 const finalHref = href.query?.name ? href : href.pathname
 
   return (
-    <Link prefetch={false} href={finalHref}>
+    <Link href={finalHref}>
       <a className={styles.navItem}>
         {label}
       </a>

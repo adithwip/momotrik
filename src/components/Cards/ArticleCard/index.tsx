@@ -37,7 +37,7 @@ const ArticleCard = ({
       "mb-6 md:mb-12": isNotLastChild,
       "w-full md:min-w-300 md:max-w-300 m-2": isGrid
     })}>
-      <Link prefetch={false} href={`/article/${slug}`}>
+      <Link href={`/article/${slug}`}>
         <a>
           <div className={styles.imageWrapper}>
             <Image
