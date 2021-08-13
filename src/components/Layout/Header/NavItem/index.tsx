@@ -1,10 +1,9 @@
 import Link from 'next/link'
 
-
 interface Props {
-  label: string,
+  label: string
   href: {
-    pathname: string,
+    pathname: string
     query?: {
       [key: string]: string | null
     }
@@ -14,13 +13,11 @@ interface Props {
 import styles from './NavItem.module.css'
 
 const NavItem = ({ label, href }: Props) => {
-const finalHref = href.query?.name ? href : href.pathname
+  const finalHref = href.query?.name ? href : href.pathname
 
   return (
     <Link href={finalHref}>
-      <a className={styles.navItem}>
-        {label}
-      </a>
+      <a className={styles.navItem}>{label}</a>
     </Link>
   )
 }

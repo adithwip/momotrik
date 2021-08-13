@@ -6,11 +6,11 @@ import { formatDate } from 'utils/formatDate'
 import styles from './AsideArticleCard.module.css'
 
 interface Props {
-  slug: string,
-  mediaItemUrl: string,
+  slug: string
+  mediaItemUrl: string
   sizes?: string
-  title: string,
-  date: string,
+  title: string
+  date: string
   authorName: string
 }
 
@@ -20,7 +20,7 @@ const AsideArticleCard = ({
   sizes = '100vw',
   title,
   date,
-  authorName
+  authorName,
 }: Props) => {
   return (
     <article>
@@ -38,9 +38,7 @@ const AsideArticleCard = ({
             />
           </div>
 
-          <p className={styles.articleTitle}>
-            {title}
-          </p>
+          <p className={styles.articleTitle}>{title}</p>
 
           <p className={styles.articleDate}>
             {`${formatDate(date)} | ${authorName}`}

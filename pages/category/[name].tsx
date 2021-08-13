@@ -40,7 +40,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
       { params: { name: 'mobil-listrik' } },
       { params: { name: 'motor-listrik' } },
     ],
-    fallback: true
+    fallback: true,
   }
 }
 
@@ -49,11 +49,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: {
-      postData: res
+      postData: res,
     },
-    revalidate: 1
+    revalidate: 1,
   }
 }
-
 
 export default CategoryPage

@@ -10,14 +10,14 @@ import { useGetRecentPosts } from 'lib/useGetRecentPosts'
 import styles from './Layout.module.css'
 
 type Props = {
-  children: ReactNode,
-  article?: boolean,
+  children: ReactNode
+  article?: boolean
   title: string
-  description?: string,
-  previewImageUrl?: string,
-  pathUrl?: string,
-  updating?: boolean,
-  screen?: 'md' | 'lg',
+  description?: string
+  previewImageUrl?: string
+  pathUrl?: string
+  updating?: boolean
+  screen?: 'md' | 'lg'
   slug?: string
 }
 
@@ -29,7 +29,7 @@ const Layout = ({
   previewImageUrl,
   updating,
   screen = 'lg',
-  slug
+  slug,
 }: Props) => {
   const { getRecentPostsData } = useGetRecentPosts()
 
@@ -47,10 +47,12 @@ const Layout = ({
           we use max-w-screen-sm because we still not yet put any Ads.
           Once we put the Ads, change the max-width accordingly.
         */}
-      <div className={classnames(
-        styles.mainLayout,
-        `max-w-screen-sm min-h-screen mx-auto md:max-w-screen-${screen}`
-      )}>
+      <div
+        className={classnames(
+          styles.mainLayout,
+          `max-w-screen-sm min-h-screen mx-auto md:max-w-screen-${screen}`
+        )}
+      >
         {children}
       </div>
       <Footer
@@ -58,7 +60,6 @@ const Layout = ({
         recentPostsData={getRecentPostsData.data?.posts.edges}
       />
     </>
-
   )
 }
 

@@ -1,11 +1,18 @@
 import type { GetPostsByCategoryNameResponse } from 'interfaces/lib/getPostsByCategoryName.interface'
 
-import { useQuery } from "react-query"
+import { useQuery } from 'react-query'
 import { fetchAPI } from 'lib/fetchAPI'
 
-type CategoryName = 'mobil-listrik' | 'motor-listrik' | string | string[] | undefined
+type CategoryName =
+  | 'mobil-listrik'
+  | 'motor-listrik'
+  | string
+  | string[]
+  | undefined
 
-export const getPostsByCategoryNameFetcher = async (categoryName: CategoryName): Promise<GetPostsByCategoryNameResponse> => {
+export const getPostsByCategoryNameFetcher = async (
+  categoryName: CategoryName
+): Promise<GetPostsByCategoryNameResponse> => {
   const res = await fetchAPI({
     query: `
       query PostsByCategory($categoryName: String!) {
@@ -33,8 +40,8 @@ export const getPostsByCategoryNameFetcher = async (categoryName: CategoryName):
       }    
     `,
     variables: {
-      categoryName
-    }
+      categoryName,
+    },
   })
 
   return res.data.data
@@ -42,7 +49,7 @@ export const getPostsByCategoryNameFetcher = async (categoryName: CategoryName):
 
 export const useGetPostsByCategoryName = (categoryName: CategoryName) => {
   const { data, isError, isFetching, isLoading } = useQuery(
-    ["postsByCategoryName", categoryName],
+    ['postsByCategoryName', categoryName],
     () => getPostsByCategoryNameFetcher(categoryName),
     { staleTime: 5 * 60 * 1000 }
   )
@@ -52,7 +59,7 @@ export const useGetPostsByCategoryName = (categoryName: CategoryName) => {
       data,
       isError,
       isFetching,
-      isLoading
-    }
+      isLoading,
+    },
   } as const
 }

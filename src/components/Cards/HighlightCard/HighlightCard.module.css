@@ -4,8 +4,13 @@
 }
 
 .card:after {
-  content: "";
-  background: linear-gradient(0deg, rgba(17,24,39,0.8995973389355743) 0%, rgba(17,24,39,0.7959558823529411) 17%, rgba(255,255,255,0) 100%);
+  content: '';
+  background: linear-gradient(
+    0deg,
+    rgba(17, 24, 39, 0.8995973389355743) 0%,
+    rgba(17, 24, 39, 0.7959558823529411) 17%,
+    rgba(255, 255, 255, 0) 100%
+  );
   @apply absolute inset-0;
 }
 
@@ -18,6 +23,6 @@
 }
 
 .articleTitle {
-  @apply text-sm text-left font-bold tracking-normal leading-snug text-white; 
+  @apply text-sm text-left font-bold tracking-normal leading-snug text-white;
   @apply md:text-base md:font-bold md:tracking-wide md:leading-snug;
 }

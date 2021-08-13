@@ -22,7 +22,6 @@ class MyDocument extends Document {
     return (
       <Html lang="id">
         <Head>
-
           {/* Custom fonts */}
           <link
             rel="preload"
@@ -59,7 +58,7 @@ class MyDocument extends Document {
                 dangerouslySetInnerHTML={{
                   __html: `
                     (adsbygoogle = window.adsbygoogle || []).push({});
-                  `
+                  `,
                 }}
               />
 
@@ -76,7 +75,7 @@ class MyDocument extends Document {
                     gtag('js', new Date());
                   
                     gtag('config', '${GA_TRACKING_ID}');
-                  `
+                  `,
                 }}
               />
             </Fragment>

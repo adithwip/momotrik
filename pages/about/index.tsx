@@ -15,7 +15,9 @@ const AboutPage: NextPage = () => {
         Tentang Momotrik
       </h1>
       <p className="text-lg p-5 md:text-xl text-center">
-        Momotrik adalah media informasi yang membahas segala seluk beluk tentang mobil listrik, motor listrik, dan skuter listrik. Serta beragam hal tentang gaya hidup kendaraan listrik terbaru
+        Momotrik adalah media informasi yang membahas segala seluk beluk tentang
+        mobil listrik, motor listrik, dan skuter listrik. Serta beragam hal
+        tentang gaya hidup kendaraan listrik terbaru
       </p>
     </Layout>
   )

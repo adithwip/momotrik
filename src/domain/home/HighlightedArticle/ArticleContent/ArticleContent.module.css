@@ -7,6 +7,6 @@
 }
 
 .articleTitle {
-  @apply text-sm text-left font-semibold tracking-normal leading-snug text-white; 
+  @apply text-sm text-left font-semibold tracking-normal leading-snug text-white;
   @apply md:text-base md:font-bold md:tracking-wide md:leading-snug;
 }

@@ -2,9 +2,10 @@ import type { GetAllPostSlugsResponse } from 'interfaces/lib/getAllPostSlugs.int
 
 import { fetchAPI } from 'lib/fetchAPI'
 
-export const getAllPostSlugsFetcher = async (): Promise<GetAllPostSlugsResponse> => {
-  const res = await fetchAPI({
-    query: `
+export const getAllPostSlugsFetcher =
+  async (): Promise<GetAllPostSlugsResponse> => {
+    const res = await fetchAPI({
+      query: `
       {
         posts(first: 10000) {
           edges {
@@ -14,8 +15,8 @@ export const getAllPostSlugsFetcher = async (): Promise<GetAllPostSlugsResponse>
           }
         }
       }
-    `
-  })
+    `,
+    })
 
-  return res.data.data
-}
+    return res.data.data
+  }

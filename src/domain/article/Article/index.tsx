@@ -17,9 +17,7 @@ const Article = ({ postData }: Props) => {
     <main>
       <article>
         <header>
-          <h1 className={styles.articleTitle}>
-            {post.title}
-          </h1>
+          <h1 className={styles.articleTitle}>{post.title}</h1>
 
           <div className={styles.featuredImageWrapper}>
             <Image

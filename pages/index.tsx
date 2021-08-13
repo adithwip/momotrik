@@ -1,18 +1,25 @@
 import type { NextPage, GetStaticProps } from 'next'
 
 import * as React from 'react'
-import { QueryClient } from "react-query"
-import { dehydrate } from "react-query/hydration"
+import { QueryClient } from 'react-query'
+import { dehydrate } from 'react-query/hydration'
 import dynamic from 'next/dynamic'
 
-const HighlightedArticle = dynamic(() => import('domain/home/HighlightedArticle'))
+const HighlightedArticle = dynamic(
+  () => import('domain/home/HighlightedArticle')
+)
 const ArticlesAndAside = dynamic(() => import('domain/home/ArticlesAndAside'))
 const PopularPosts = dynamic(() => import('domain/home/PopularPosts'))
-const TrendingArticlesMobile = dynamic(() => import('domain/home/TrendingArticlesMobile'))
+const TrendingArticlesMobile = dynamic(
+  () => import('domain/home/TrendingArticlesMobile')
+)
 const Layout = dynamic(() => import('components/Layout'))
 
 import { getAllPostsFetcher } from 'lib/useGetAllPosts'
-import { getAllStickyPostsFetcher, useGetAllStickyPosts } from 'lib/useGetAllStickyPosts'
+import {
+  getAllStickyPostsFetcher,
+  useGetAllStickyPosts,
+} from 'lib/useGetAllStickyPosts'
 import { getTrendingPostsFetcher } from 'lib/useGetTrendingPosts'
 import { getPopularPostsFetcher } from 'lib/useGetPopularPosts'
 
@@ -28,7 +35,7 @@ const IndexPage: NextPage = () => {
     >
       {getAllStickyPostsData.data ? (
         <MemoizedHighlightedArticle data={getAllStickyPostsData.data} />
-      ) : null} {/* handle null with proper component // TODO */}
+      ) : null}
       <div className="flex flex-col">
         <TrendingArticlesMobile />
         <ArticlesAndAside />
@@ -41,16 +48,17 @@ const IndexPage: NextPage = () => {
 export const getStaticProps: GetStaticProps = async () => {
   const queryClient = new QueryClient()
   await queryClient.prefetchQuery('posts', () => getAllPostsFetcher())
-  await queryClient.prefetchQuery('stickyPosts', () => getAllStickyPostsFetcher())
+  await queryClient.prefetchQuery('stickyPosts', () =>
+    getAllStickyPostsFetcher()
+  )
   await queryClient.prefetchQuery('trending', () => getTrendingPostsFetcher())
   await queryClient.prefetchQuery('popular', () => getPopularPostsFetcher())
 
   return {
     props: {
-      dehydratedState: dehydrate(queryClient)
-    }
+      dehydratedState: dehydrate(queryClient),
+    },
   }
 }
-
 
 export default IndexPage

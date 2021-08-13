@@ -60,9 +60,7 @@ const Header = ({ updating }: Props) => {
               </a>
             </Link>
           </div>
-          {updating ? (
-            <RefreshSpin />
-          ) : null}
+          {updating ? <RefreshSpin /> : null}
 
           {/* Only showed on Desktop view */}
           <div className="hidden md:block md:flex-1">
@@ -70,12 +68,15 @@ const Header = ({ updating }: Props) => {
               {navlinks.map((link) => {
                 return (
                   <Fragment key={link.label}>
-                    <NavItem label={link.label} href={{
-                      pathname: link.pathname,
-                      query: {
-                        name: link.queryName
-                      }
-                    }} />
+                    <NavItem
+                      label={link.label}
+                      href={{
+                        pathname: link.pathname,
+                        query: {
+                          name: link.queryName,
+                        },
+                      }}
+                    />
                   </Fragment>
                 )
               })}
@@ -162,7 +163,6 @@ const Header = ({ updating }: Props) => {
             </div>
           </button>
           {/* Only showed on mobile view */}
-
         </div>
       </nav>
 

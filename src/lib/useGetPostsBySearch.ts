@@ -1,11 +1,13 @@
 import type { GetPostsBySearchResponse } from 'interfaces/lib/getPostsBySearch.interface'
 
-import { useQuery } from "react-query"
+import { useQuery } from 'react-query'
 import { fetchAPI } from 'lib/fetchAPI'
 
 type QuerySearch = string | string[] | undefined
 
-export const getPostsBySearch = async (search: QuerySearch): Promise<GetPostsBySearchResponse> => {
+export const getPostsBySearch = async (
+  search: QuerySearch
+): Promise<GetPostsBySearchResponse> => {
   const res = await fetchAPI({
     query: `
       query PostsBySearch($search: String!) {
@@ -33,8 +35,8 @@ export const getPostsBySearch = async (search: QuerySearch): Promise<GetPostsByS
       }
     `,
     variables: {
-      search
-    }
+      search,
+    },
   })
 
   return res.data.data
@@ -42,7 +44,7 @@ export const getPostsBySearch = async (search: QuerySearch): Promise<GetPostsByS
 
 export const useGetPostsBySearch = (search: QuerySearch) => {
   const { data, isError, isFetching, isLoading } = useQuery(
-    ["postBySearch", search],
+    ['postBySearch', search],
     () => getPostsBySearch(search),
     { staleTime: 5 * 60 * 1000 }
   )
@@ -52,7 +54,7 @@ export const useGetPostsBySearch = (search: QuerySearch) => {
       data,
       isError,
       isFetching,
-      isLoading
-    }
+      isLoading,
+    },
   } as const
 }

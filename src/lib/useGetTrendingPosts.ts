@@ -3,9 +3,10 @@ import type { GetTrendingPostsResponse } from 'interfaces/lib/getTrendingPosts.i
 import { useQuery } from 'react-query'
 import { fetchAPI } from 'lib/fetchAPI'
 
-export const getTrendingPostsFetcher = async (): Promise<GetTrendingPostsResponse> => {
-  const res = await fetchAPI({
-    query: `
+export const getTrendingPostsFetcher =
+  async (): Promise<GetTrendingPostsResponse> => {
+    const res = await fetchAPI({
+      query: `
       query TrendingPosts {
         posts(where: {categoryId: 1515}, first: 5) {
           edges {
@@ -29,22 +30,26 @@ export const getTrendingPostsFetcher = async (): Promise<GetTrendingPostsRespons
           }
         }
       }
-    `
-  })
+    `,
+    })
 
-  return res.data.data
-}
+    return res.data.data
+  }
 
 export const useGetTrendingPosts = () => {
-  const { data, isError, isFetching } = useQuery('trending', () => getTrendingPostsFetcher(), {
-    staleTime: 5 * 60 * 1000
-  })
+  const { data, isError, isFetching } = useQuery(
+    'trending',
+    () => getTrendingPostsFetcher(),
+    {
+      staleTime: 5 * 60 * 1000,
+    }
+  )
 
   return {
     getTrendingPostsData: {
       data,
       isError,
-      isFetching
-    }
+      isFetching,
+    },
   } as const
 }

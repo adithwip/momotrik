@@ -1,9 +1,11 @@
 import type { GetSinglePostResponse } from 'interfaces/lib/getSinglePost.interface'
 
-import { useQuery } from "react-query"
+import { useQuery } from 'react-query'
 import { fetchAPI } from 'lib/fetchAPI'
 
-export const getSinglePostFetcher = async (slug: string | string[] | undefined): Promise<GetSinglePostResponse> => {
+export const getSinglePostFetcher = async (
+  slug: string | string[] | undefined
+): Promise<GetSinglePostResponse> => {
   const res = await fetchAPI({
     query: `
       fragment PostFields on Post {
@@ -35,8 +37,8 @@ export const getSinglePostFetcher = async (slug: string | string[] | undefined):
     `,
     variables: {
       id: slug,
-      idType: 'SLUG'
-    }
+      idType: 'SLUG',
+    },
   })
 
   return res.data.data
@@ -44,7 +46,7 @@ export const getSinglePostFetcher = async (slug: string | string[] | undefined):
 
 export const useGetSinglePost = (slug: string) => {
   const { data, isError, isFetching, isLoading } = useQuery(
-    ["post", slug],
+    ['post', slug],
     () => getSinglePostFetcher(slug),
     { staleTime: 5 * 60 * 1000 }
   )
@@ -54,7 +56,7 @@ export const useGetSinglePost = (slug: string) => {
       data,
       isError,
       isFetching,
-      isLoading
-    }
+      isLoading,
+    },
   } as const
 }

@@ -13,10 +13,9 @@ import { useGetPostsBySearch } from 'lib/useGetPostsBySearch'
 
 const SearchPage: NextPage = () => {
   const { query } = useRouter()
-  const { getPostsBySearchData: {
-    data,
-    isFetching,
-  } } = useGetPostsBySearch(query.q)
+  const {
+    getPostsBySearchData: { data, isFetching },
+  } = useGetPostsBySearch(query.q)
   const MemoizedArticlesGrid = React.memo(ArticlesGrid)
 
   return (
@@ -26,10 +25,7 @@ const SearchPage: NextPage = () => {
       updating={query.q ? isFetching : false} // Only show spinner if query is not undefined
     >
       {data?.posts.edges.length === 0 && (
-        <GeneralFeedback
-          isError
-          message="Oops, coba cari keyword lain."
-        />
+        <GeneralFeedback isError message="Oops, coba cari keyword lain." />
       )}
 
       {data ? (

@@ -15,7 +15,7 @@ export interface AllPostsNode {
   date: string
   title: string
   slug: string
-  isSticky?:boolean
+  isSticky?: boolean
   featuredImage: FeaturedImage
   author: Author
 }

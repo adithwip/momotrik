@@ -1,11 +1,12 @@
 import type { GetRecentPostsResponse } from 'interfaces/lib/getRecentPosts.interface'
 
-import { useQuery } from "react-query"
+import { useQuery } from 'react-query'
 import { fetchAPI } from 'lib/fetchAPI'
 
-export const getRecentPostsFetcher = async (): Promise<GetRecentPostsResponse> => {
-  const res = await fetchAPI({
-    query: `
+export const getRecentPostsFetcher =
+  async (): Promise<GetRecentPostsResponse> => {
+    const res = await fetchAPI({
+      query: `
       query RecentPosts {
         posts(first: 4, where: {orderby: {field: DATE, order: DESC}}) {
           edges {
@@ -29,22 +30,26 @@ export const getRecentPostsFetcher = async (): Promise<GetRecentPostsResponse> =
           }
         }
       }
-    `
-  })
+    `,
+    })
 
-  return res.data.data
-}
+    return res.data.data
+  }
 
 export const useGetRecentPosts = () => {
-  const { data, isError, isFetching } = useQuery('recent', () => getRecentPostsFetcher(), {
-    staleTime: 5 * 60 * 1000
-  })
+  const { data, isError, isFetching } = useQuery(
+    'recent',
+    () => getRecentPostsFetcher(),
+    {
+      staleTime: 5 * 60 * 1000,
+    }
+  )
 
   return {
     getRecentPostsData: {
       data,
       isError,
-      isFetching
-    }
+      isFetching,
+    },
   } as const
 }

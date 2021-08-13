@@ -9,19 +9,24 @@ import navlinks from 'config/navlinks'
 import styles from './Menu.module.css'
 
 interface Props {
-  show: boolean,
+  show: boolean
   onClose: () => void
 }
 
 const Menu = ({ show = false, onClose }: Props) => {
   return (
     <>
-      <div onClick={onClose} className={classnames(styles.overlay, {
-        [styles.overlayActive]: show
-      })} />
-      <div className={classnames(styles.hidBox, {
-        [styles.active]: show
-      })}>
+      <div
+        onClick={onClose}
+        className={classnames(styles.overlay, {
+          [styles.overlayActive]: show,
+        })}
+      />
+      <div
+        className={classnames(styles.hidBox, {
+          [styles.active]: show,
+        })}
+      >
         <div className="flex flex-col space-y-4">
           <div className="flex justify-between items-center mb-4">
             <Link href="/">
@@ -63,12 +68,15 @@ const Menu = ({ show = false, onClose }: Props) => {
           {navlinks.map((link) => {
             return (
               <Fragment key={link.label}>
-                <NavItem label={link.label} href={{
-                  pathname: link.pathname,
-                  query: {
-                    name: link.queryName
-                  }
-                }} />
+                <NavItem
+                  label={link.label}
+                  href={{
+                    pathname: link.pathname,
+                    query: {
+                      name: link.queryName,
+                    },
+                  }}
+                />
               </Fragment>
             )
           })}

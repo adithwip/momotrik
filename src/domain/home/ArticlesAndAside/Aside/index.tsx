@@ -2,7 +2,9 @@ import type { TrendingPostsEdge } from 'interfaces/lib/getTrendingPosts.interfac
 
 import dynamic from 'next/dynamic'
 
-const AsideArticleCard = dynamic(() => import('components/Cards/AsideArticleCard'))
+const AsideArticleCard = dynamic(
+  () => import('components/Cards/AsideArticleCard')
+)
 
 interface Props {
   data: TrendingPostsEdge[] | undefined
@@ -15,31 +17,32 @@ const Articles = ({ data }: Props) => {
         Trendings
       </p>
 
-      {data ? data.map(({ node }) => {
-        return (
-          <div
-            className="mb-10"
-            key={node.id}
-          >
-            <AsideArticleCard
-              slug={node.slug}
-              mediaItemUrl={node.featuredImage.node.mediaItemUrl}
-              sizes={node.featuredImage.node.sizes}
-              title={node.title}
-              date={node.date}
-              authorName={node.author.node.name}
-            />
-          </div>
-        )
-      }) : null}
+      {data
+        ? data.map(({ node }) => {
+            return (
+              <div className="mb-10" key={node.id}>
+                <AsideArticleCard
+                  slug={node.slug}
+                  mediaItemUrl={node.featuredImage.node.mediaItemUrl}
+                  sizes={node.featuredImage.node.sizes}
+                  title={node.title}
+                  date={node.date}
+                  authorName={node.author.node.name}
+                />
+              </div>
+            )
+          })
+        : null}
 
       {/* Aside Ads placement */}
-      <ins className="adsbygoogle"
+      <ins
+        className="adsbygoogle"
         style={{ display: 'block' }}
         data-ad-client="ca-pub-3226350239455992"
         data-ad-slot="8612513575"
         data-ad-format="auto"
-        data-full-width-responsive="true" />
+        data-full-width-responsive="true"
+      />
     </aside>
   )
 }

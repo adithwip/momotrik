@@ -3,9 +3,10 @@ import type { GetPopularPostsResponse } from 'interfaces/lib/getPopularPosts.int
 import { useQuery } from 'react-query'
 import { fetchAPI } from 'lib/fetchAPI'
 
-export const getPopularPostsFetcher = async (): Promise<GetPopularPostsResponse> => {
-  const res = await fetchAPI({
-    query: `
+export const getPopularPostsFetcher =
+  async (): Promise<GetPopularPostsResponse> => {
+    const res = await fetchAPI({
+      query: `
       query PopularPosts {
         posts(where: {categoryId: 1516}, first: 4) {
           edges {
@@ -29,22 +30,26 @@ export const getPopularPostsFetcher = async (): Promise<GetPopularPostsResponse>
           }
         }
       }
-    `
-  })
+    `,
+    })
 
-  return res.data.data
-}
+    return res.data.data
+  }
 
 export const useGetPopularPosts = () => {
-  const { data, isError, isFetching } = useQuery('popular', () => getPopularPostsFetcher(), {
-    staleTime: 5 * 60 * 1000
-  })
+  const { data, isError, isFetching } = useQuery(
+    'popular',
+    () => getPopularPostsFetcher(),
+    {
+      staleTime: 5 * 60 * 1000,
+    }
+  )
 
   return {
     getPopularPostsData: {
       data,
       isError,
-      isFetching
-    }
+      isFetching,
+    },
   } as const
 }

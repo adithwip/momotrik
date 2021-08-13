@@ -4,21 +4,21 @@ export default [
   {
     pathname,
     queryName: 'mobil-listrik',
-    label: 'Mobil'
+    label: 'Mobil',
   },
   {
     pathname,
     queryName: 'motor-listrik',
-    label: 'Motor'
+    label: 'Motor',
   },
   {
     pathname,
     queryName: 'featured',
-    label: 'Featured'
+    label: 'Featured',
   },
   {
     pathname: '/about',
     queryName: null,
-    label: 'About'
+    label: 'About',
   },
 ]

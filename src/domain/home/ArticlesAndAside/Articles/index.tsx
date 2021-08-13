@@ -37,12 +37,10 @@ const Articles = ({ data }: Props) => {
 
       <div className="w-full text-center mt-12 md:mt-0">
         <Link href="/all-posts">
-          <a className="text-2xl font-bold">
-            Lihat semua artikel
-        </a>
+          <a className="text-2xl font-bold">Lihat semua artikel</a>
         </Link>
       </div>
-    </section >
+    </section>
   )
 }
 

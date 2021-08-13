@@ -1,6 +1,9 @@
-import type { AllPostsNode, AllPostsEdge } from 'interfaces/lib/getAllPosts.interface'
+import type {
+  AllPostsNode,
+  AllPostsEdge,
+} from 'interfaces/lib/getAllPosts.interface'
 
-import { useQuery } from "react-query"
+import { useQuery } from 'react-query'
 import { fetchAPI } from 'lib/fetchAPI'
 
 /**
@@ -34,27 +37,32 @@ export const getAllStickyPostsFetcher = async (): Promise<AllPostsEdge[]> => {
           }
         }
       }
-    `
-  }
-  )
-
-  const filterByIsSticky: AllPostsEdge[] = res.data.data.posts.edges.filter(({ node }: { node: AllPostsNode }) => {
-    return node.isSticky
+    `,
   })
+
+  const filterByIsSticky: AllPostsEdge[] = res.data.data.posts.edges.filter(
+    ({ node }: { node: AllPostsNode }) => {
+      return node.isSticky
+    }
+  )
 
   return filterByIsSticky
 }
 
 export const useGetAllStickyPosts = () => {
-  const { data, isError, isFetching } = useQuery('stickyPosts', () => getAllStickyPostsFetcher(), {
-    staleTime: 5 * 60 * 1000
-  })
+  const { data, isError, isFetching } = useQuery(
+    'stickyPosts',
+    () => getAllStickyPostsFetcher(),
+    {
+      staleTime: 5 * 60 * 1000,
+    }
+  )
 
   return {
     getAllStickyPostsData: {
       data,
       isError,
-      isFetching
-    }
+      isFetching,
+    },
   } as const
 }

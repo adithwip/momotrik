@@ -8,7 +8,9 @@ import styles from './PopularPosts.module.css'
 const HighlightCard = dynamic(() => import('components/Cards/HighlightCard'))
 
 const PopularPosts = () => {
-  const { getPopularPostsData: { data } } = useGetPopularPosts()
+  const {
+    getPopularPostsData: { data },
+  } = useGetPopularPosts()
 
   return (
     <aside className="pl-5 pr-2 md:mb-16">
@@ -17,21 +19,22 @@ const PopularPosts = () => {
       </p>
 
       <div className={classnames(styles.slider)}>
-        {data ? data.posts.edges.map(({ node }, index) => {
-
-          return (
-            <div className={styles.asideCardWrapper} key={index}>
-              <HighlightCard
-                slug={node.slug}
-                imageSrc={node.featuredImage.node.mediaItemUrl}
-                sizes={node.featuredImage.node.sizes}
-                title={node.title}
-                date={node.date}
-                authorName={node.author.node.name}
-              />
-            </div>
-          )
-        }) : null}
+        {data
+          ? data.posts.edges.map(({ node }, index) => {
+              return (
+                <div className={styles.asideCardWrapper} key={index}>
+                  <HighlightCard
+                    slug={node.slug}
+                    imageSrc={node.featuredImage.node.mediaItemUrl}
+                    sizes={node.featuredImage.node.sizes}
+                    title={node.title}
+                    date={node.date}
+                    authorName={node.author.node.name}
+                  />
+                </div>
+              )
+            })
+          : null}
       </div>
     </aside>
   )

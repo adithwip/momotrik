@@ -1,6 +1,6 @@
 import type { GetAllPostsResponse } from 'interfaces/lib/getAllPosts.interface'
 
-import { useQuery } from "react-query"
+import { useQuery } from 'react-query'
 import { fetchAPI } from 'lib/fetchAPI'
 
 type Count = number | undefined
@@ -9,7 +9,9 @@ type Key = string | string[]
 /**
  * Exported for dehydrating state
  */
-export const getAllPostsFetcher = async (count?: Count): Promise<GetAllPostsResponse> => {
+export const getAllPostsFetcher = async (
+  count?: Count
+): Promise<GetAllPostsResponse> => {
   const res = await fetchAPI({
     query: `
       query AllPosts($count: Int = 30) {
@@ -38,23 +40,27 @@ export const getAllPostsFetcher = async (count?: Count): Promise<GetAllPostsResp
       }
     `,
     variables: {
-      count
-    }
+      count,
+    },
   })
 
   return res.data.data
 }
 
 export const useGetAllPosts = (count?: Count, key: Key = 'posts') => {
-  const { data, isError, isFetching } = useQuery(key, () => getAllPostsFetcher(count), {
-    staleTime: 5 * 60 * 1000
-  })
+  const { data, isError, isFetching } = useQuery(
+    key,
+    () => getAllPostsFetcher(count),
+    {
+      staleTime: 5 * 60 * 1000,
+    }
+  )
 
   return {
     getAllPostsData: {
       data,
       isError,
-      isFetching
-    }
+      isFetching,
+    },
   } as const
 }
