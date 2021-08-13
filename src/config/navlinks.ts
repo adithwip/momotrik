@@ -1,6 +1,6 @@
 const pathname = '/category/[name]'
 
-export default [
+const navlinksConfig = [
   {
     pathname,
     queryName: 'mobil-listrik',
@@ -22,3 +22,5 @@ export default [
     label: 'About',
   },
 ]
+
+export default navlinksConfig
