@@ -1,6 +1,5 @@
 import type { DocumentContext } from 'next/document'
 
-import { Fragment } from 'react'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 import { GA_TRACKING_ID } from 'utils/gtag'
@@ -47,7 +46,7 @@ class MyDocument extends Document {
 
           {/* Only run all Google Analytics and Ads trackers in Production Environment */}
           {!isDevelopment && (
-            <Fragment>
+            <>
               {/* Google AdSense script */}
               <script
                 async
@@ -78,7 +77,7 @@ class MyDocument extends Document {
                   `,
                 }}
               />
-            </Fragment>
+            </>
           )}
         </Head>
         <body>
