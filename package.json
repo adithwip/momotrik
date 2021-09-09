@@ -7,31 +7,37 @@
     "start": "next start",
     "type-check": "tsc",
     "lint": "next lint",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "prepare": "husky install",
+    "check:types": "tsc --pretty --noEmit",
+    "check:format": "prettier --check .",
+    "check:lint": "eslint . --ext ts --ext tsx --ext js",
+    "check:all": "yarn check:format && yarn check:lint && yarn check:types && yarn build"
   },
   "dependencies": {
-    "axios": "0.21.1",
+    "axios": "0.21.4",
     "classnames": "2.3.1",
-    "next": "11.1.0",
+    "next": "11.1.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-query": "3.21.0"
+    "react-query": "3.23.1"
   },
   "devDependencies": {
     "@tailwindcss/line-clamp": "0.2.1",
     "@types/classnames": "2.3.1",
     "@types/gtag.js": "^0.0.7",
-    "@types/node": "16.7.5",
-    "@types/react": "17.0.19",
+    "@types/node": "16.9.0",
+    "@types/react": "17.0.20",
     "@types/react-dom": "17.0.9",
-    "autoprefixer": "10.3.3",
+    "autoprefixer": "10.3.4",
     "eslint": "7.32.0",
-    "eslint-config-next": "11.1.0",
+    "eslint-config-next": "11.1.2",
     "eslint-config-prettier": "8.3.0",
     "postcss": "8.3.6",
     "prettier": "2.3.2",
-    "tailwindcss": "2.2.8",
-    "typescript": "4.4.2"
+    "tailwindcss": "2.2.14",
+    "typescript": "4.4.2",
+    "husky": "^7.0.0"
   },
   "license": "MIT"
 }
