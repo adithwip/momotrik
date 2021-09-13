@@ -2,6 +2,7 @@ import type { GetRecentPostsResponse } from 'interfaces/lib/getRecentPosts.inter
 
 import { useQuery } from 'react-query'
 import { fetchAPI } from 'lib/fetchAPI'
+import { staleTime } from 'constants/staleTimes'
 
 export const getRecentPostsFetcher =
   async (): Promise<GetRecentPostsResponse> => {
@@ -41,7 +42,7 @@ export const useGetRecentPosts = () => {
     'recent',
     () => getRecentPostsFetcher(),
     {
-      staleTime: 5 * 60 * 1000,
+      staleTime: staleTime.ONE_DAY,
     }
   )
 

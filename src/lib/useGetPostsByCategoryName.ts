@@ -2,6 +2,7 @@ import type { GetPostsByCategoryNameResponse } from 'interfaces/lib/getPostsByCa
 
 import { useQuery } from 'react-query'
 import { fetchAPI } from 'lib/fetchAPI'
+import { staleTime } from 'constants/staleTimes'
 
 type CategoryName =
   | 'mobil-listrik'
@@ -51,7 +52,7 @@ export const useGetPostsByCategoryName = (categoryName: CategoryName) => {
   const { data, isError, isFetching, isLoading } = useQuery(
     ['postsByCategoryName', categoryName],
     () => getPostsByCategoryNameFetcher(categoryName),
-    { staleTime: 5 * 60 * 1000 }
+    { staleTime: staleTime.ONE_DAY }
   )
 
   return {

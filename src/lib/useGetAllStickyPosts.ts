@@ -5,6 +5,7 @@ import type {
 
 import { useQuery } from 'react-query'
 import { fetchAPI } from 'lib/fetchAPI'
+import { staleTime } from 'constants/staleTimes'
 
 /**
  * Exported for dehydrating state
@@ -54,7 +55,7 @@ export const useGetAllStickyPosts = () => {
     'stickyPosts',
     () => getAllStickyPostsFetcher(),
     {
-      staleTime: 5 * 60 * 1000,
+      staleTime: staleTime.ONE_DAY,
     }
   )
 

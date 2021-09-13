@@ -2,6 +2,7 @@ import type { GetPostsBySearchResponse } from 'interfaces/lib/getPostsBySearch.i
 
 import { useQuery } from 'react-query'
 import { fetchAPI } from 'lib/fetchAPI'
+import { staleTime } from 'constants/staleTimes'
 
 type QuerySearch = string | string[] | undefined
 
@@ -46,7 +47,7 @@ export const useGetPostsBySearch = (search: QuerySearch) => {
   const { data, isError, isFetching, isLoading } = useQuery(
     ['postBySearch', search],
     () => getPostsBySearch(search),
-    { staleTime: 5 * 60 * 1000 }
+    { staleTime: staleTime.ONE_DAY }
   )
 
   return {

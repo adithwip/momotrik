@@ -2,6 +2,7 @@ import type { GetTrendingPostsResponse } from 'interfaces/lib/getTrendingPosts.i
 
 import { useQuery } from 'react-query'
 import { fetchAPI } from 'lib/fetchAPI'
+import { staleTime } from 'constants/staleTimes'
 
 export const getTrendingPostsFetcher =
   async (): Promise<GetTrendingPostsResponse> => {
@@ -41,7 +42,7 @@ export const useGetTrendingPosts = () => {
     'trending',
     () => getTrendingPostsFetcher(),
     {
-      staleTime: 5 * 60 * 1000,
+      staleTime: staleTime.ONE_DAY,
     }
   )
 

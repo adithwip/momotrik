@@ -2,6 +2,7 @@ import type { GetPopularPostsResponse } from 'interfaces/lib/getPopularPosts.int
 
 import { useQuery } from 'react-query'
 import { fetchAPI } from 'lib/fetchAPI'
+import { staleTime } from 'constants/staleTimes'
 
 export const getPopularPostsFetcher =
   async (): Promise<GetPopularPostsResponse> => {
@@ -41,7 +42,7 @@ export const useGetPopularPosts = () => {
     'popular',
     () => getPopularPostsFetcher(),
     {
-      staleTime: 5 * 60 * 1000,
+      staleTime: staleTime.ONE_DAY,
     }
   )
 

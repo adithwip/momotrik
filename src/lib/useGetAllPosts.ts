@@ -2,6 +2,7 @@ import type { GetAllPostsResponse } from 'interfaces/lib/getAllPosts.interface'
 
 import { useQuery } from 'react-query'
 import { fetchAPI } from 'lib/fetchAPI'
+import { staleTime } from 'constants/staleTimes'
 
 type Count = number | undefined
 type Key = string | string[]
@@ -52,7 +53,7 @@ export const useGetAllPosts = (count?: Count, key: Key = 'posts') => {
     key,
     () => getAllPostsFetcher(count),
     {
-      staleTime: 5 * 60 * 1000,
+      staleTime: staleTime.ONE_DAY,
     }
   )
 
