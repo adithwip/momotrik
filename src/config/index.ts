@@ -1,4 +1,4 @@
-export default {
+export const config = {
   originalTitle: 'Momotrik',
   currentURL: 'https://momotrik.com',
   originalImage:
