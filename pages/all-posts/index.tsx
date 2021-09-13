@@ -18,11 +18,13 @@ const AllPostsPage: NextPage = () => {
   const MemoizedArticlesGrid = React.memo(ArticlesGrid)
 
   const renderComponent = () => {
-    if (isError || !data) {
+    if (isError)
       return (
         <GeneralFeedback message="Terjadi kesalahan, mohon memuat ulang." />
       )
-    }
+
+    if (!data)
+      return <GeneralFeedback message="Sedang memuat data. Mohon tunggu!" />
 
     return <MemoizedArticlesGrid postData={data?.posts.edges} />
   }
