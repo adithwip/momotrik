@@ -53,7 +53,7 @@ export const useGetAllPosts = (count?: Count, key: Key = 'posts') => {
     key,
     () => getAllPostsFetcher(count),
     {
-      staleTime: staleTime.ONE_DAY,
+      staleTime: staleTime.FIVE_MINUTES,
     }
   )
 
