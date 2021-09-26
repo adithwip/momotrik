@@ -1,4 +1,4 @@
-import { Fragment, useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -67,17 +67,16 @@ const Header = ({ updating }: Props) => {
             <div className="flex items-center space-x-4 justify-center">
               {navlinks.map((link) => {
                 return (
-                  <Fragment key={link.label}>
-                    <NavItem
-                      label={link.label}
-                      href={{
-                        pathname: link.pathname,
-                        query: {
-                          name: link.queryName,
-                        },
-                      }}
-                    />
-                  </Fragment>
+                  <NavItem
+                    key={link.label}
+                    label={link.label}
+                    href={{
+                      pathname: link.pathname,
+                      query: {
+                        name: link.queryName,
+                      },
+                    }}
+                  />
                 )
               })}
             </div>

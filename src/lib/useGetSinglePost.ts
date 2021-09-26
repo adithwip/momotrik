@@ -2,7 +2,7 @@ import type { GetSinglePostResponse } from 'interfaces/lib/getSinglePost.interfa
 
 import { useQuery } from 'react-query'
 import { fetchAPI } from 'lib/fetchAPI'
-import { staleTime } from 'constants/staleTimes'
+import { staleTime } from 'config/staleTimes'
 
 export const getSinglePostFetcher = async (
   slug: string | string[] | undefined

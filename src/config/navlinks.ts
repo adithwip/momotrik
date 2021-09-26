@@ -13,6 +13,11 @@ const navlinksConfig = [
   },
   {
     pathname,
+    queryName: 'non-elektrik',
+    label: 'Non Elektrik',
+  },
+  {
+    pathname,
     queryName: 'featured',
     label: 'Featured',
   },

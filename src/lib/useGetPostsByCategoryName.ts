@@ -2,7 +2,7 @@ import type { GetPostsByCategoryNameResponse } from 'interfaces/lib/getPostsByCa
 
 import { useQuery } from 'react-query'
 import { fetchAPI } from 'lib/fetchAPI'
-import { staleTime } from 'constants/staleTimes'
+import { staleTime } from 'config/staleTimes'
 
 type CategoryName =
   | 'mobil-listrik'

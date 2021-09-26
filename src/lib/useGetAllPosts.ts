@@ -2,7 +2,7 @@ import type { GetAllPostsResponse } from 'interfaces/lib/getAllPosts.interface'
 
 import { useQuery } from 'react-query'
 import { fetchAPI } from 'lib/fetchAPI'
-import { staleTime } from 'constants/staleTimes'
+import { staleTime } from 'config/staleTimes'
 
 type Count = number | undefined
 type Key = string | string[]

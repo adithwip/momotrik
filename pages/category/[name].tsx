@@ -39,6 +39,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     paths: [
       { params: { name: 'mobil-listrik' } },
       { params: { name: 'motor-listrik' } },
+      { params: { name: 'non-elektrik' } },
     ],
     fallback: true,
   }

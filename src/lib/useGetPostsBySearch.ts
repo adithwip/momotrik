@@ -2,7 +2,7 @@ import type { GetPostsBySearchResponse } from 'interfaces/lib/getPostsBySearch.i
 
 import { useQuery } from 'react-query'
 import { fetchAPI } from 'lib/fetchAPI'
-import { staleTime } from 'constants/staleTimes'
+import { staleTime } from 'config/staleTimes'
 
 type QuerySearch = string | string[] | undefined
 

@@ -5,7 +5,7 @@ import type {
 
 import { useQuery } from 'react-query'
 import { fetchAPI } from 'lib/fetchAPI'
-import { staleTime } from 'constants/staleTimes'
+import { staleTime } from 'config/staleTimes'
 
 /**
  * Exported for dehydrating state
