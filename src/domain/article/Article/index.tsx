@@ -14,7 +14,7 @@ const Article = ({ postData }: Props) => {
   const { post } = postData
 
   return (
-    <main>
+    <>
       <article>
         <header>
           <h1 className={styles.articleTitle}>{post.title}</h1>
@@ -69,7 +69,7 @@ const Article = ({ postData }: Props) => {
       <div className="px-5 my-6">
         <SocialMediaShareButton />
       </div>
-    </main>
+    </>
   )
 }
 
