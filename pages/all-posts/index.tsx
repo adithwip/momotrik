@@ -13,7 +13,7 @@ import { getAllPostsFetcher, useGetAllPosts } from 'lib/useGetAllPosts'
 
 const AllPostsPage: NextPage = () => {
   const {
-    getAllPostsData: { data, isFetching, isError },
+    getAllPostsData: { data, isError },
   } = useGetAllPosts(200, 'all-posts')
   const MemoizedArticlesGrid = React.memo(ArticlesGrid)
 
@@ -33,7 +33,6 @@ const AllPostsPage: NextPage = () => {
     <Layout
       title="Momotrik | Semua Artikel"
       description="Halaman yang menampilkan semua artikel yang ada di Momotrik"
-      updating={isFetching}
     >
       {renderComponent()}
     </Layout>
