@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import classnames from 'classnames'
 
-import NavItem from '../NavItem'
+import NavItem from '../../../desktop/components/NavItem'
 
 import navlinks from 'config/navlinks'
 import styles from './Menu.module.css'

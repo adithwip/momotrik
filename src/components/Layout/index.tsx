@@ -16,7 +16,6 @@ type Props = {
   description?: string
   previewImageUrl?: string
   pathUrl?: string
-  updating?: boolean
   screen?: 'md' | 'lg'
   slug?: string
 }
@@ -27,7 +26,6 @@ const Layout = ({
   title,
   description,
   previewImageUrl,
-  updating,
   screen = 'lg',
   slug,
 }: Props) => {
@@ -41,7 +39,7 @@ const Layout = ({
         description={description}
         previewImageUrl={previewImageUrl}
       />
-      <Header updating={updating} />
+      <Header />
       {/* 
           In this first iteration
           we use max-w-screen-sm because we still not yet put any Ads.

@@ -31,7 +31,6 @@ const IndexPage: NextPage = () => {
     <Layout
       title="Momotrik | Motor, Mobil, Listrik"
       description="Momotrik adalah media informasi yang membahas segala seluk beluk tentang mobil listrik, motor listrik, dan skuter listrik. Serta beragam hal tentang gaya hidup kendaraan listrik terbaru"
-      updating={getAllStickyPostsData.isFetching}
     >
       {getAllStickyPostsData.data ? (
         <MemoizedHighlightedArticle data={getAllStickyPostsData.data} />
