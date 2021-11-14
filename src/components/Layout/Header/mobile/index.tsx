@@ -30,9 +30,9 @@ const MobileHeader = () => {
       `}</style>
       <nav
         id="mobile-nav"
-        className="md:hidden fixed top-0 w-full z-50 bg-primary px-4"
+        className="md:hidden fixed top-0 w-full h-16 z-50 bg-primary px-4"
       >
-        <div className="relative flex justify-center items-center py-2 md:py-4 md:max-w-screen-lg md:mx-auto">
+        <div className="relative flex justify-center items-center h-full">
           <button
             onClick={() => setShow(true)}
             type="button"
