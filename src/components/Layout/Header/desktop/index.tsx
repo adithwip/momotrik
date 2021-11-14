@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import dynamic from 'next/dynamic'
 
-const NavItem = dynamic(() => import('./components/NavItem'))
+const NavItem = dynamic(() => import('../common/NavItem'))
 
 import navlinks from 'config/navlinks'
 import styles from './Header.module.css'
@@ -22,7 +22,7 @@ const DesktopHeader = () => {
   return (
     <nav
       id="desktop-nav"
-      className="hidden md:block fixed top-0 w-full z-50 bg-black px-4"
+      className="hidden md:block fixed top-0 w-full z-50 bg-primary px-4"
     >
       <div className="relative flex justify-center items-center py-2 md:py-4 md:max-w-screen-lg md:mx-auto">
         <div className="flex flex-1 items-center">

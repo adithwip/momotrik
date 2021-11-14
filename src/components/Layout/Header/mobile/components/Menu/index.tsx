@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import classnames from 'classnames'
 
-import NavItem from '../../../desktop/components/NavItem'
+import NavItem from '../../../common/NavItem'
 
 import navlinks from 'config/navlinks'
 import styles from './Menu.module.css'
@@ -17,6 +17,7 @@ const Menu = ({ show = false, onClose }: Props) => {
   return (
     <>
       <div
+        role="button"
         onClick={onClose}
         className={classnames(styles.overlay, {
           [styles.overlayActive]: show,
@@ -27,59 +28,60 @@ const Menu = ({ show = false, onClose }: Props) => {
           [styles.active]: show,
         })}
       >
-        <div className="flex flex-col space-y-4">
-          <div className="flex justify-between items-center mb-4">
-            <Link href="/">
-              <a>
-                <div className={styles.logoWrapper}>
-                  <Image
-                    priority
-                    alt="Momotrik Logo Header"
-                    src="/assets/logo/momotrik_header_logo_white_blue.png"
-                    layout="fill"
-                    objectFit="cover"
-                    objectPosition="center"
-                    quality={25}
-                  />
-                </div>
-              </a>
-            </Link>
-
-            <button
-              onClick={onClose}
-              type="button"
-              className={styles.closeIcon}
-              aria-controls="mobile-menu"
-              aria-expanded="false"
-            >
-              <span className="sr-only">Close mobile header menu</span>
-              <div className={styles.closeWrapper}>
+        <div className="flex flex-col justify-between space-y-4 h-full">
+          <Link href="/">
+            <a>
+              <div className={styles.logoWrapper}>
                 <Image
                   priority
-                  alt="Close Icon"
-                  src="/assets/icons/close_icon.svg"
+                  alt="Momotrik Logo Header"
+                  src="/assets/logo/momotrik_header_logo_white_blue.png"
                   layout="fill"
                   objectFit="cover"
                   objectPosition="center"
+                  quality={25}
                 />
               </div>
-            </button>
-          </div>
-          {navlinks.map((link) => {
-            return (
-              <Fragment key={link.label}>
-                <NavItem
-                  label={link.label}
-                  href={{
-                    pathname: link.pathname,
-                    query: {
-                      name: link.queryName,
-                    },
-                  }}
-                />
-              </Fragment>
-            )
-          })}
+            </a>
+          </Link>
+
+          <nav className="flex flex-col gap-4">
+            {navlinks.map((link) => {
+              return (
+                <Fragment key={link.label}>
+                  <NavItem
+                    label={link.label}
+                    href={{
+                      pathname: link.pathname,
+                      query: {
+                        name: link.queryName,
+                      },
+                    }}
+                  />
+                </Fragment>
+              )
+            })}
+          </nav>
+
+          <button
+            onClick={onClose}
+            type="button"
+            className={styles.closeIcon}
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+          >
+            <span className="sr-only">Close mobile header menu</span>
+            <div className={styles.closeWrapper}>
+              <Image
+                priority
+                alt="Close Icon"
+                src="/assets/icons/close_icon.svg"
+                layout="fill"
+                objectFit="cover"
+                objectPosition="center"
+              />
+            </div>
+          </button>
         </div>
       </div>
     </>
