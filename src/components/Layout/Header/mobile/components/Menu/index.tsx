@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import classnames from 'classnames'
+import clsx from 'clsx'
 
 import NavItem from '../../../common/NavItem'
 
@@ -19,15 +19,9 @@ const Menu = ({ show = false, onClose }: Props) => {
       <div
         role="button"
         onClick={onClose}
-        className={classnames(styles.overlay, {
-          [styles.overlayActive]: show,
-        })}
+        className={clsx(styles.overlay, show && styles.overlayActive)}
       />
-      <div
-        className={classnames(styles.hidBox, {
-          [styles.active]: show,
-        })}
-      >
+      <div className={clsx(styles.hidBox, show && styles.active)}>
         <div className="flex flex-col justify-between space-y-4 h-full">
           <Link href="/">
             <a>
