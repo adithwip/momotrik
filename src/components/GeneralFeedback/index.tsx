@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import classnames from 'classnames'
+import clsx from 'clsx'
 
 interface Props {
   message: string
@@ -23,11 +23,9 @@ const GeneralFeedback = ({ message, isError = false }: Props) => {
       </div>
 
       <p
-        className={classnames(
+        className={clsx(
           'text-lg font-bold tracking-normal leading-normal',
-          {
-            'text-red-600': isError,
-          }
+          isError && 'text-red-600'
         )}
       >
         {message}

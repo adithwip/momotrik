@@ -1,7 +1,6 @@
 import { useGetPopularPosts } from 'lib/useGetPopularPosts'
 
 import dynamic from 'next/dynamic'
-import classnames from 'classnames'
 
 import styles from './PopularPosts.module.css'
 
@@ -18,7 +17,7 @@ const PopularPosts = () => {
         Popular
       </p>
 
-      <div className={classnames(styles.slider)}>
+      <div className={styles.slider}>
         {data
           ? data.posts.edges.map(({ node }, index) => {
               return (

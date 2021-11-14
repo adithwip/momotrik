@@ -2,7 +2,7 @@ import type { AllPostsEdge } from 'interfaces/lib/getAllPosts.interface'
 
 import Image from 'next/image'
 import Link from 'next/link'
-import classnames from 'classnames'
+import clsx from 'clsx'
 
 import ArticleContent from './ArticleContent'
 
@@ -110,7 +110,7 @@ const HighlightedArticle = ({ data }: Props) => {
             return (
               <div
                 key={node.id}
-                className={classnames('row-span-2', styles.gridCard)}
+                className={clsx('row-span-2', styles.gridCard)}
               >
                 <Link href={`/article/${node.slug}`}>
                   <a>

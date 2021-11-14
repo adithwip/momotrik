@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import classnames from 'classnames'
+import clsx from 'clsx'
 
 import { stripHtmlTags } from 'utils/stripHtmlTags'
 import { formatDate } from 'utils/formatDate'
@@ -33,11 +33,12 @@ const ArticleCard = ({
 }: Props) => {
   return (
     <article
-      className={classnames(styles.articleWrapper, {
-        'md:hidden': isHiddenOnDesktopView,
-        'mb-6 md:mb-12': isNotLastChild,
-        'w-full md:min-w-300 md:max-w-300 m-2': isGrid,
-      })}
+      className={clsx(
+        styles.articleWrapper,
+        isHiddenOnDesktopView && 'md:hidden',
+        isNotLastChild && 'mb-6 md:mb-12',
+        isGrid && 'w-full md:min-w-300 md:max-w-300 m-2'
+      )}
     >
       <Link href={`/article/${slug}`}>
         <a>

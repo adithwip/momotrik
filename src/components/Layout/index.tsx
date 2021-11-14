@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import classnames from 'classnames'
+import clsx from 'clsx'
 
 import Header from './Header'
 import Footer from './Footer'
@@ -46,7 +46,7 @@ const Layout = ({
           Once we put the Ads, change the max-width accordingly.
         */}
       <main
-        className={classnames(
+        className={clsx(
           styles.mainLayout,
           `max-w-screen-sm min-h-screen mx-auto md:max-w-screen-${screen}`
         )}
