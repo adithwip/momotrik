@@ -30,47 +30,9 @@ const MobileHeader = () => {
       `}</style>
       <nav
         id="mobile-nav"
-        className="md:hidden fixed top-0 w-full z-50 bg-black px-4"
+        className="md:hidden fixed top-0 w-full z-50 bg-primary px-4"
       >
         <div className="relative flex justify-center items-center py-2 md:py-4 md:max-w-screen-lg md:mx-auto">
-          <div className="flex flex-1 items-center">
-            <Link href="/">
-              <a>
-                <div className={styles.logoWrapper}>
-                  <Image
-                    priority
-                    alt="Momotrik Logo MobileHeader"
-                    src="/assets/logo/momotrik_header_logo_white_blue.png"
-                    layout="fill"
-                    objectFit="cover"
-                    objectPosition="center"
-                    quality={25}
-                  />
-                </div>
-              </a>
-            </Link>
-          </div>
-
-          {/* 📱 Only showed on mobile view 📱 */}
-          <button
-            onClick={() => router.push(`/search`)}
-            type="button"
-            className={styles.mobileNavigationMenu}
-            aria-controls="mobile-menu"
-            aria-expanded="false"
-          >
-            <span className="sr-only">Mobile search for article searching</span>
-            <div className={styles.mobileSearchWrapper}>
-              <Image
-                priority
-                alt="Mobile Search Icon"
-                src="/assets/icons/search_icon_white.svg"
-                layout="fill"
-                objectFit="cover"
-                objectPosition="center"
-              />
-            </div>
-          </button>
           <button
             onClick={() => setShow(true)}
             type="button"
@@ -90,7 +52,44 @@ const MobileHeader = () => {
               />
             </div>
           </button>
-          {/* 📱 Only showed on mobile view 📱 */}
+
+          <div className="flex flex-1 justify-center items-center">
+            <Link href="/">
+              <a>
+                <div className={styles.logoWrapper}>
+                  <Image
+                    priority
+                    alt="Momotrik Logo MobileHeader"
+                    src="/assets/logo/momotrik_header_logo_white_blue.png"
+                    layout="fill"
+                    objectFit="cover"
+                    objectPosition="center"
+                    quality={25}
+                  />
+                </div>
+              </a>
+            </Link>
+          </div>
+
+          <button
+            onClick={() => router.push(`/search`)}
+            type="button"
+            className={styles.mobileNavigationMenu}
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+          >
+            <span className="sr-only">Mobile search for article searching</span>
+            <div className={styles.mobileSearchWrapper}>
+              <Image
+                priority
+                alt="Mobile Search Icon"
+                src="/assets/icons/search_icon_white.svg"
+                layout="fill"
+                objectFit="cover"
+                objectPosition="center"
+              />
+            </div>
+          </button>
         </div>
       </nav>
 
