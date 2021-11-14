@@ -21,27 +21,15 @@ class MyDocument extends Document {
     return (
       <Html lang="id">
         <Head>
-          {/* Custom fonts */}
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
-            rel="preload"
-            href="/fonts/Cairo-Regular.woff2"
-            as="font"
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
             crossOrigin=""
-            type="font/woff2"
           />
           <link
-            rel="preload"
-            href="/fonts/Cairo-SemiBold.woff2"
-            as="font"
-            crossOrigin=""
-            type="font/woff2"
-          />
-          <link
-            rel="preload"
-            href="/fonts/Cairo-Bold.woff2"
-            as="font"
-            crossOrigin=""
-            type="font/woff2"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+            rel="stylesheet"
           />
 
           {/* Only run all Google Analytics and Ads trackers in Production Environment */}
