@@ -142,11 +142,11 @@ const SEO = ({ article, title, description, previewImageUrl }: Props) => {
         href="/favicon-16x16.png"
       />
       <link rel="manifest" href="/manifest.json" />
-      <meta name="msapplication-TileColor" content="#ffffff" />
+      <meta name="msapplication-TileColor" content="#142135" />
       <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
-      <meta name="theme-color" content="#ffffff" />
+      <meta name="theme-color" content="#142135" />
 
-      <meta name="theme-color" content="#000000" />
+      <meta name="theme-color" content="#142135" />
       <meta name="format-detection" content="telephone=no" />
 
       <title>{title}</title>
