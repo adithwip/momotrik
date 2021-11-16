@@ -71,7 +71,7 @@
 
 .content img {
   @apply overflow-hidden bg-gray-200 shadow-md mx-auto;
-  @apply md:rounded-lg;
+  @apply md:rounded;
 }
 
 .content figcaption {
@@ -95,7 +95,7 @@
 }
 
 .content figure ul {
-  @apply flex overflow-x-auto overflow-y-hidden gap-x-4 p-0 rounded-lg;
+  @apply flex overflow-x-auto overflow-y-hidden gap-x-4 p-0 rounded;
 }
 
 .content figure ul li {
@@ -107,12 +107,12 @@
 }
 
 .content figure ul li figure img {
-  @apply object-cover object-center min-w-300 h-60 rounded-lg;
+  @apply object-cover object-center min-w-300 h-60 rounded;
   @apply md:min-w-480 md:h-72;
 }
 
 .content figure div span iframe[class='youtube-player'] {
-  @apply w-full rounded-xl;
+  @apply w-full rounded;
   @apply md:h-80;
 }
 
@@ -127,7 +127,7 @@
 /* Components Styles */
 .featuredImageWrapper {
   @apply relative h-60 w-full overflow-hidden bg-gray-200 shadow-md;
-  @apply xs:h-72 md:h-80 md:rounded-lg;
+  @apply xs:h-72 md:h-80 md:rounded;
 }
 
 .divider {

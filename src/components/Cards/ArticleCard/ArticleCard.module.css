@@ -4,12 +4,12 @@
 }
 
 .imageWrapper {
-  @apply relative w-full rounded-lg shadow overflow-hidden bg-gray-200 hidden;
+  @apply relative w-full rounded shadow overflow-hidden bg-gray-200 hidden;
   @apply md:h-80 md:block;
 }
 
 .mobileImageWrapper {
-  @apply relative h-auto w-28 rounded-lg shadow overflow-hidden bg-gray-200;
+  @apply relative h-auto w-28 rounded shadow overflow-hidden bg-gray-200;
   @apply md:hidden;
 }
 
