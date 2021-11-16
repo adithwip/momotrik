@@ -13,17 +13,6 @@
   @apply mb-16;
 }
 
-.imageWrapper:after {
-  content: '';
-  background: linear-gradient(
-    0deg,
-    rgba(17, 24, 39, 0.8995973389355743) 0%,
-    rgba(17, 24, 39, 0.7959558823529411) 15%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  @apply absolute inset-0;
-}
-
 .gridContainer {
   @apply hidden;
   @apply md:mt-10 md:h-[464px] md:grid md:grid-cols-3 md:grid-rows-2 md:gap-4;
