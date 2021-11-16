@@ -47,7 +47,7 @@ const Footer = ({ recentPostsData, slug }: Props) => {
 
           <div className="flex items-center justify-center md:justify-start">
             <a
-              className="mt-7 text-white p-2 mr-4 rounded-lg bg-gray-600 w-8 h-8 flex justify-center items-center hover:bg-gray-700"
+              className="mt-7 text-white p-2 mr-4 rounded bg-gray-600 w-8 h-8 flex justify-center items-center hover:bg-gray-700"
               href="https://www.instagram.com/momotrik.id/"
               target="_blank"
               rel="noopener noreferrer"
@@ -64,7 +64,7 @@ const Footer = ({ recentPostsData, slug }: Props) => {
               </div>
             </a>
             <a
-              className="mt-7 text-white p-2 rounded-lg bg-gray-600 w-8 h-8 flex justify-center items-center hover:bg-gray-700"
+              className="mt-7 text-white p-2 rounded bg-gray-600 w-8 h-8 flex justify-center items-center hover:bg-gray-700"
               href="https://www.facebook.com/momotrik.ID"
               target="_blank"
               rel="noopener noreferrer"

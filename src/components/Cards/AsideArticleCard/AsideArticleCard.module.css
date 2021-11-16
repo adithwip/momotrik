@@ -1,5 +1,5 @@
 .imageWrapper {
-  @apply relative h-44 w-full rounded-lg shadow overflow-hidden bg-gray-200;
+  @apply relative h-44 w-full rounded shadow overflow-hidden bg-gray-200;
 }
 
 .articleTitle {

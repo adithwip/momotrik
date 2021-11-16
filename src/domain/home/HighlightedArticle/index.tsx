@@ -57,13 +57,13 @@ const HighlightedArticle = ({ data }: Props) => {
           return (
             <Link key={node.id} href={`/article/${node.slug}`}>
               <a>
-                <article className="flex items-center mb-4">
-                  <div className="flex flex-col pr-5">
-                    <p className="text-sm text-gray-900 font-bold leading-normal line-clamp-3">
-                      {node.title}
-                    </p>
-                    <p className={styles.articleDate}>
-                      {`${formatDate(node.date)} | ${node.author.node.name}`}
+                <article className="flex mb-10">
+                  <div className="flex flex-col pr-3">
+                    <p className={styles.smallArticleTitle}>{node.title}</p>
+                    <p className={styles.smallArticleDate}>
+                      {`By ${node.author.node.name}`}
+                      <br />
+                      {`${formatDate(node.date)}`}
                     </p>
                   </div>
 
