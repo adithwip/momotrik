@@ -1,5 +1,5 @@
 .footer {
-  @apply bg-black;
+  @apply bg-primary;
 }
 
 .footerLogoWrapper {
