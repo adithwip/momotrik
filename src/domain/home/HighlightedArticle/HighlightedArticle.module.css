@@ -1,5 +1,5 @@
 .imageWrapper {
-  @apply bg-gray-700 rounded-lg shadow overflow-hidden;
+  @apply bg-gray-700 rounded shadow overflow-hidden;
   @apply relative h-56 w-full;
   @apply xs:h-72 md:h-96;
 }
@@ -45,18 +45,23 @@
 }
 
 /* Remove soon */
+/* TODO: Please make a reusable component! */
 .smallArticleCardImageWrapper {
   @apply relative bg-gray-300 rounded-lg shadow overflow-hidden;
   min-height: 94px;
   min-width: 94px;
 }
 
+.articleTitle {
+  @apply text-3xl text-gray-900 font-bold leading-snug mt-6;
+}
+
 .articleDate {
   @apply text-xs text-gray-900 tracking-wider;
-  @apply mt-5;
+  @apply my-4;
 }
 
 .excerpt {
   @apply text-base text-gray-700;
-  @apply mt-2 line-clamp-3;
+  @apply mt-2 line-clamp-5;
 }
