@@ -39,11 +39,9 @@ const HighlightedArticle = ({ data }: Props) => {
                       />
                     </div>
 
+                    <p className={styles.articleTitle}>{node.title}</p>
                     <p className={styles.articleDate}>
-                      {`${formatDate(node.date)} | ${node.author.node.name}`}
-                    </p>
-                    <p className="text-xl text-gray-900 font-bold leading-normal line-clamp-3 mt-2">
-                      {node.title}
+                      {`By ${node.author.node.name} — ${formatDate(node.date)}`}
                     </p>
                     <p className={styles.excerpt}>
                       {stripHtmlTags(node.excerpt)}
