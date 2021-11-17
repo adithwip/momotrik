@@ -1,7 +1,7 @@
 .hidBox {
   top: -100%;
   transition: top 0.6s cubic-bezier(0.83, 0, 0.17, 1);
-  @apply z-50 fixed opacity-100 bg-primary left-0 right-0 p-5 h-full;
+  @apply z-50 fixed opacity-100 bg-primary-main left-0 right-0 p-5 h-full;
   @apply md:hidden;
 }
 
