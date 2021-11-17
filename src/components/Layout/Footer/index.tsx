@@ -41,7 +41,7 @@ const Footer = ({ recentPostsData, slug }: Props) => {
             </p>
           </div>
 
-          <p className="text-xl text-white text-center font-bold md:text-left">
+          <p className="text-xl text-white text-center font-semibold md:text-left">
             Keep in touch
           </p>
 
@@ -100,7 +100,7 @@ const Footer = ({ recentPostsData, slug }: Props) => {
                       <a>
                         <article className="flex items-center mb-4">
                           <div className="flex flex-col pr-5">
-                            <p className="text-sm text-white font-bold leading-normal line-clamp-3">
+                            <p className="text-sm text-white font-semibold leading-normal line-clamp-3">
                               {node.title}
                             </p>
                             <p className={styles.articleDate}>

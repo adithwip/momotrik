@@ -24,7 +24,7 @@ const GeneralFeedback = ({ message, isError = false }: Props) => {
 
       <p
         className={clsx(
-          'text-lg font-bold tracking-normal leading-normal',
+          'text-lg font-semibold tracking-normal leading-normal',
           isError && 'text-red-600'
         )}
       >

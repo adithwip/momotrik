@@ -59,9 +59,9 @@ const MobileHighlightedArticle = ({ data }: Props) => {
                 <div className="flex flex-col pr-3">
                   <p className={styles.smallArticleTitle}>{node.title}</p>
                   <p className={styles.smallArticleDate}>
-                    {`By ${node.author.node.name}`}
+                    {node.author.node.name}
                     <br />
-                    {`${formatDate(node.date)}`}
+                    {formatDate(node.date)}
                   </p>
                 </div>
 

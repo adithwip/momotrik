@@ -22,7 +22,7 @@ const DesktopHeader = () => {
   return (
     <nav
       id="desktop-nav"
-      className="hidden md:block fixed top-0 w-full z-50 bg-primary px-4"
+      className="hidden md:block fixed top-0 w-full z-50 bg-primary-main px-4"
     >
       <div className="relative flex justify-center items-center py-2 md:py-4 md:max-w-screen-lg md:mx-auto">
         <div className="flex flex-1 items-center">

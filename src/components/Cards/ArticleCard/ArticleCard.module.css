@@ -14,7 +14,7 @@
 }
 
 .articleTitle {
-  @apply text-sm text-left font-bold tracking-normal leading-normal text-gray-900;
+  @apply text-sm text-left font-semibold tracking-normal leading-normal text-gray-900;
   @apply md:text-xl md:leading-tight;
 }
 

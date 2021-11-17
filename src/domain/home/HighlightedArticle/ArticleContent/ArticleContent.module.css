@@ -8,5 +8,5 @@
 
 .articleTitle {
   @apply text-sm text-left font-semibold tracking-normal leading-snug text-white;
-  @apply md:text-base md:font-bold md:tracking-wide md:leading-snug;
+  @apply md:text-base md:font-semibold md:tracking-wide md:leading-snug;
 }

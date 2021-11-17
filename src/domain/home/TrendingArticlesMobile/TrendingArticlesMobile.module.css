@@ -1,21 +1,15 @@
-.slider {
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  @apply overflow-x-auto overflow-y-hidden rounded flex flex-nowrap gap-6 w-full;
-}
-
 .cardWrapper {
   scroll-snap-align: center;
-  @apply min-w-300 rounded;
+  @apply min-w-300 rounded mb-10;
 }
 
 .smallArticleCardImageWrapper {
-  @apply relative bg-gray-300 rounded border border-gray-100 overflow-hidden;
-  min-height: 100px;
-  min-width: 100px;
+  @apply relative bg-gray-300 rounded overflow-hidden;
+  height: 100px;
+  min-width: 142px;
 }
 
 .articleDate {
-  @apply text-xs text-gray-900 tracking-wider;
+  @apply text-xs text-gray-300 tracking-wider;
   @apply mt-5;
 }

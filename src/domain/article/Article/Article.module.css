@@ -42,19 +42,19 @@
 }
 
 .content h2 {
-  @apply text-3xl font-bold mt-12 mb-4 px-5 tracking-wide leading-snug;
+  @apply text-3xl font-semibold mt-12 mb-4 px-5 tracking-wide leading-snug;
 }
 
 .content h3 {
-  @apply text-2xl font-bold mt-8 mb-4 px-5 tracking-wide leading-snug;
+  @apply text-2xl font-semibold mt-8 mb-4 px-5 tracking-wide leading-snug;
 }
 
 .content h4 {
-  @apply text-xl font-bold mt-6 mb-4 px-5 tracking-wide leading-snug;
+  @apply text-xl font-semibold mt-6 mb-4 px-5 tracking-wide leading-snug;
 }
 
 .content h5 {
-  @apply text-base font-bold mt-6 mb-4 px-5 tracking-wide leading-snug;
+  @apply text-base font-semibold mt-6 mb-4 px-5 tracking-wide leading-snug;
 }
 
 .content pre {
@@ -144,7 +144,7 @@
 }
 
 .articleTitle {
-  @apply text-2xl text-left font-bold tracking-normal leading-tight text-gray-900;
+  @apply text-2xl text-left font-semibold tracking-normal leading-tight text-gray-900;
   @apply p-4 mb-3 mt-6;
-  @apply md:text-3xl md:text-center md:font-bold md:tracking-normal md:leading-snug md:mt-12;
+  @apply md:text-3xl md:text-center md:font-semibold md:tracking-normal md:leading-snug md:mt-12;
 }

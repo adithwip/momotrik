@@ -14,7 +14,11 @@ module.exports = {
         sans: ['Inter', ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        primary: '#142135',
+        primary: {
+          main: '#142135',
+          light: '#2c3749',
+          dark: '#121e30',
+        },
       },
       minWidth: {
         unset: 'unset',

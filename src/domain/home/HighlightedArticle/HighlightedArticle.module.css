@@ -5,7 +5,7 @@
 }
 
 .mobileHightlight {
-  @apply p-5 bg-primary;
+  @apply p-5 bg-primary-main;
   @apply md:hidden;
 }
 

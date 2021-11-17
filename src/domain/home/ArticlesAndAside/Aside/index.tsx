@@ -13,7 +13,7 @@ interface Props {
 const Articles = ({ data }: Props) => {
   return (
     <aside className="hidden pl-20 pr-5 pt-10 pb-20 md:flex flex-col md:flex-1">
-      <p className="text-2xl font-bold tracking-wider text-gray-900 mb-8">
+      <p className="text-2xl font-semibold tracking-wider text-gray-900 mb-8">
         Trendings
       </p>
 

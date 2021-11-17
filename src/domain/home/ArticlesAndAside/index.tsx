@@ -11,7 +11,10 @@ const ArticlesAndAside = () => {
   const { getTrendingPostsData } = useGetTrendingPosts()
 
   return (
-    <div className="order-2 md:flex md:order-none">
+    <div
+      id="articles-and-aside-desktop"
+      className="order-2 md:flex md:order-none"
+    >
       {getAllPostsData.data ? (
         <Articles data={getAllPostsData.data.posts.edges} />
       ) : null}
