@@ -12,7 +12,7 @@ const PopularPosts = () => {
   } = useGetPopularPosts()
 
   return (
-    <aside className="px-5 py-10 md:p-4 md:mb-16">
+    <aside id="popular-posts" className="px-5 py-10 md:p-4 md:mb-16">
       <p className="text-2xl text-center font-semibold tracking-wider text-gray-900 mb-10 md:text-left">
         Popular
       </p>

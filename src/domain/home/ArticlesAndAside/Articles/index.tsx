@@ -4,13 +4,20 @@ import { Fragment } from 'react'
 import Link from 'next/link'
 
 import ArticleCard from 'components/Cards/ArticleCard'
+
+import { useMediaQueries } from 'hooks/useMediaQueries'
 interface Props {
   data: AllPostsEdge[]
 }
 
 const Articles = ({ data }: Props) => {
+  const { isMobile } = useMediaQueries()
+
   return (
-    <section className="px-5 pt-10 pb-20 md:flex-2">
+    <section
+      id={`articles-${isMobile ? 'mobile' : 'desktop'}`}
+      className="px-5 pt-10 pb-20 md:flex-2"
+    >
       <p className="text-2xl font-semibold tracking-wider text-gray-900 mb-8">
         All Articles
       </p>
