@@ -28,7 +28,7 @@ const DesktopHeader = () => {
         <div className="flex flex-1 items-center">
           <Link href="/">
             <a>
-              <div className={styles.logoWrapper}>
+              <figure className={styles.logoWrapper}>
                 <Image
                   priority
                   alt="Momotrik Logo DesktopHeader"
@@ -38,7 +38,7 @@ const DesktopHeader = () => {
                   objectPosition="center"
                   quality={25}
                 />
-              </div>
+              </figure>
             </a>
           </Link>
         </div>
@@ -85,7 +85,7 @@ const DesktopHeader = () => {
                 aria-expanded="false"
               >
                 <span className="sr-only">Search article in momotrik</span>
-                <div className={styles.searchWrapper}>
+                <figure className={styles.searchWrapper}>
                   <Image
                     priority
                     alt="Search Icon"
@@ -94,7 +94,7 @@ const DesktopHeader = () => {
                     objectFit="cover"
                     objectPosition="center"
                   />
-                </div>
+                </figure>
               </button>
             </form>
           </div>

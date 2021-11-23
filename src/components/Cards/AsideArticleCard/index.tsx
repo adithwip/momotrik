@@ -26,7 +26,7 @@ const AsideArticleCard = ({
     <article>
       <Link href={`/article/${slug}`}>
         <a>
-          <div className={styles.imageWrapper}>
+          <figure className={styles.imageWrapper}>
             <Image
               alt={title}
               src={mediaItemUrl}
@@ -36,7 +36,7 @@ const AsideArticleCard = ({
               objectPosition="center"
               quality={25}
             />
-          </div>
+          </figure>
 
           <p className={styles.articleTitle}>{title}</p>
 

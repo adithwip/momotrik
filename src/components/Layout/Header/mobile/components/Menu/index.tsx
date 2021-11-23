@@ -25,7 +25,7 @@ const Menu = ({ show = false, onClose }: Props) => {
         <div className="flex flex-col justify-between space-y-4 h-full">
           <Link href="/">
             <a>
-              <div className={styles.logoWrapper}>
+              <figure className={styles.logoWrapper}>
                 <Image
                   priority
                   alt="Momotrik Logo Header"
@@ -35,7 +35,7 @@ const Menu = ({ show = false, onClose }: Props) => {
                   objectPosition="center"
                   quality={25}
                 />
-              </div>
+              </figure>
             </a>
           </Link>
 
@@ -65,7 +65,7 @@ const Menu = ({ show = false, onClose }: Props) => {
             aria-expanded="false"
           >
             <span className="sr-only">Close mobile header menu</span>
-            <div className={styles.closeWrapper}>
+            <figure className={styles.closeWrapper}>
               <Image
                 priority
                 alt="Close Icon"
@@ -74,7 +74,7 @@ const Menu = ({ show = false, onClose }: Props) => {
                 objectFit="cover"
                 objectPosition="center"
               />
-            </div>
+            </figure>
           </button>
         </div>
       </div>

@@ -22,7 +22,7 @@ const Footer = ({ recentPostsData, slug }: Props) => {
     <footer className={styles.footer}>
       <div className="flex flex-col md:flex-row justify-between max-w-screen md:max-w-screen-lg mx-auto py-16 px-5 h-full">
         <div className="flex-1 flex-col md:mr-20">
-          <div className={styles.footerLogoWrapper}>
+          <figure className={styles.footerLogoWrapper}>
             <Image
               alt="Momotrik Logo White Footer"
               src="/assets/logo/momotrik_logo_type_white_footer.png"
@@ -31,7 +31,7 @@ const Footer = ({ recentPostsData, slug }: Props) => {
               objectPosition="center"
               quality={25}
             />
-          </div>
+          </figure>
 
           <div className="mt-7 mb-16">
             <p className="text-white text-sm text-center tracking-wide leading-normal mt-6 md:text-justify">
@@ -52,7 +52,7 @@ const Footer = ({ recentPostsData, slug }: Props) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <div className={styles.igIconWrapper}>
+              <figure className={styles.igIconWrapper}>
                 <Image
                   alt="Instagram Icon White"
                   src="/assets/icons/instagram_white_glyph_icon.svg"
@@ -61,7 +61,7 @@ const Footer = ({ recentPostsData, slug }: Props) => {
                   objectPosition="center"
                   quality={5}
                 />
-              </div>
+              </figure>
             </a>
             <a
               className="mt-7 text-white p-2 rounded bg-gray-600 w-8 h-8 flex justify-center items-center hover:bg-gray-700"
@@ -69,7 +69,7 @@ const Footer = ({ recentPostsData, slug }: Props) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <div className={styles.fbIconWrapper}>
+              <figure className={styles.fbIconWrapper}>
                 <Image
                   alt="Facebook Icon White"
                   src="/assets/icons/facebook_white_glyph_icon.svg"
@@ -78,7 +78,7 @@ const Footer = ({ recentPostsData, slug }: Props) => {
                   objectPosition="center"
                   quality={5}
                 />
-              </div>
+              </figure>
             </a>
           </div>
         </div>
@@ -110,7 +110,9 @@ const Footer = ({ recentPostsData, slug }: Props) => {
                             </p>
                           </div>
 
-                          <div className={styles.smallArticleCardImageWrapper}>
+                          <figure
+                            className={styles.smallArticleCardImageWrapper}
+                          >
                             <Image
                               alt={node.title}
                               src={node.featuredImage.node.mediaItemUrl}
@@ -120,7 +122,7 @@ const Footer = ({ recentPostsData, slug }: Props) => {
                               objectPosition="center"
                               quality={15}
                             />
-                          </div>
+                          </figure>
                         </article>
                       </a>
                     </Link>

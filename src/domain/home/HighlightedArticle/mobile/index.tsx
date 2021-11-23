@@ -24,7 +24,7 @@ const MobileHighlightedArticle = ({ data }: Props) => {
             <Link key={node.id} href={`/article/${node.slug}`}>
               <a>
                 <article className={styles.articleCard}>
-                  <div className={styles.imageWrapper}>
+                  <figure className={styles.imageWrapper}>
                     <Image
                       priority
                       alt="Featured Article Image"
@@ -35,7 +35,7 @@ const MobileHighlightedArticle = ({ data }: Props) => {
                       objectPosition="center"
                       quality={25}
                     />
-                  </div>
+                  </figure>
 
                   <p className={styles.articleTitle}>{node.title}</p>
                   <p className={styles.articleDate}>
