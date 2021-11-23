@@ -38,7 +38,7 @@ const MobileSearch = () => {
           aria-expanded="false"
         >
           <span className="sr-only">Search article in momotrik</span>
-          <div className={styles.searchWrapper}>
+          <figure className={styles.searchWrapper}>
             <Image
               priority
               alt="Search Icon"
@@ -47,7 +47,7 @@ const MobileSearch = () => {
               objectFit="cover"
               objectPosition="center"
             />
-          </div>
+          </figure>
         </button>
       </form>
     </div>

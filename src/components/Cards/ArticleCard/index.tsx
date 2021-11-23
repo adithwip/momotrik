@@ -42,7 +42,7 @@ const ArticleCard = ({
     >
       <Link href={`/article/${slug}`}>
         <a>
-          <div className={styles.imageWrapper}>
+          <figure className={styles.imageWrapper}>
             <Image
               alt={`${title} Image`}
               src={mediaItemUrl}
@@ -52,7 +52,7 @@ const ArticleCard = ({
               objectPosition="center"
               quality={25}
             />
-          </div>
+          </figure>
 
           <div className={styles.titleWrapper}>
             <div className="flex">

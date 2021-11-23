@@ -41,7 +41,7 @@ const MobileHeader = () => {
             aria-expanded="false"
           >
             <span className="sr-only">Open mobile header menu</span>
-            <div className={styles.hamburgerMenuWrapper}>
+            <figure className={styles.hamburgerMenuWrapper}>
               <Image
                 priority
                 alt="Hamburger Icon"
@@ -50,13 +50,13 @@ const MobileHeader = () => {
                 objectFit="cover"
                 objectPosition="center"
               />
-            </div>
+            </figure>
           </button>
 
           <div className="flex flex-1 justify-center items-center">
             <Link href="/">
               <a>
-                <div className={styles.logoWrapper}>
+                <figure className={styles.logoWrapper}>
                   <Image
                     priority
                     alt="Momotrik Logo MobileHeader"
@@ -66,7 +66,7 @@ const MobileHeader = () => {
                     objectPosition="center"
                     quality={25}
                   />
-                </div>
+                </figure>
               </a>
             </Link>
           </div>
@@ -79,7 +79,7 @@ const MobileHeader = () => {
             aria-expanded="false"
           >
             <span className="sr-only">Mobile search for article searching</span>
-            <div className={styles.mobileSearchWrapper}>
+            <figure className={styles.mobileSearchWrapper}>
               <Image
                 priority
                 alt="Mobile Search Icon"
@@ -88,7 +88,7 @@ const MobileHeader = () => {
                 objectFit="cover"
                 objectPosition="center"
               />
-            </div>
+            </figure>
           </button>
         </div>
       </nav>

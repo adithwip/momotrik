@@ -19,7 +19,7 @@ const Article = ({ postData }: Props) => {
         <header>
           <h1 className={styles.articleTitle}>{post.title}</h1>
 
-          <div className={styles.featuredImageWrapper}>
+          <figure className={styles.featuredImageWrapper}>
             <Image
               priority
               alt="Article Header Image"
@@ -28,7 +28,7 @@ const Article = ({ postData }: Props) => {
               objectFit="cover"
               objectPosition="center"
             />
-          </div>
+          </figure>
 
           <div className={styles.divider}>
             <div />
@@ -36,7 +36,7 @@ const Article = ({ postData }: Props) => {
 
           <div className="flex flex-col md:flex md:flex-row md:justify-between md:items-center md:my-2">
             <div className="flex items-center px-5 mt-8">
-              <div className={styles.authorAvatarWrapper}>
+              <figure className={styles.authorAvatarWrapper}>
                 <Image
                   priority
                   alt="Author Avatar Image"
@@ -45,7 +45,7 @@ const Article = ({ postData }: Props) => {
                   objectFit="cover"
                   objectPosition="center"
                 />
-              </div>
+              </figure>
               <div className="flex flex-col ml-4">
                 <p className="text-sm font-semibold text-gray-900 tracking-normal mb-2">
                   {post.author.node.name}

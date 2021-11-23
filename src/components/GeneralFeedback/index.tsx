@@ -11,7 +11,7 @@ import styles from './GeneralFeedback.module.css'
 const GeneralFeedback = ({ message, isError = false }: Props) => {
   return (
     <div className="w-full h-screen flex flex-col justify-center items-center">
-      <div className={styles.illustrationWrapper}>
+      <figure className={styles.illustrationWrapper}>
         <Image
           priority
           alt="Search error illustration"
@@ -20,7 +20,7 @@ const GeneralFeedback = ({ message, isError = false }: Props) => {
           objectFit="cover"
           objectPosition="center"
         />
-      </div>
+      </figure>
 
       <p
         className={clsx(
