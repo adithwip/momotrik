@@ -1,13 +1,13 @@
 .slider {
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  @apply overflow-x-auto overflow-y-hidden rounded flex flex-nowrap w-full md:px-0;
-  @apply md:overflow-hidden;
+  @apply rounded flex flex-nowrap w-full px-0;
+  @apply overflow-hidden;
 }
 
 .asideCardWrapper {
   min-width: 240px;
   scroll-snap-align: center;
   @apply mr-4;
-  @apply md:w-1/4 md:min-w-unset md:mx-2;
+  @apply w-1/4 min-w-unset mx-2;
 }
