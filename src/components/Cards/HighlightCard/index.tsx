@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import clsx from 'clsx'
 
 import { formatDate } from 'utils/formatDate'
 
@@ -8,6 +9,7 @@ import styles from './HighlightCard.module.css'
 interface Props {
   slug: string
   imageSrc: string
+  className?: string
   sizes: string
   date: string
   authorName: string
@@ -18,12 +20,13 @@ const HighlightCard = ({
   slug,
   imageSrc,
   sizes,
+  className,
   date,
   authorName,
   title,
 }: Props) => {
   return (
-    <article className={styles.card}>
+    <article className={clsx(styles.card, className)}>
       <Link href={`/article/${slug}`}>
         <a>
           <Image
