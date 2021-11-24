@@ -22,12 +22,10 @@ import {
 } from 'lib/useGetAllStickyPosts'
 import { getTrendingPostsFetcher } from 'lib/useGetTrendingPosts'
 import { getPopularPostsFetcher } from 'lib/useGetPopularPosts'
-import { useMediaQueries } from 'hooks/useMediaQueries'
 
 const IndexPage: NextPage = () => {
   const { getAllStickyPostsData } = useGetAllStickyPosts()
   const MemoizedHighlightedArticle = React.memo(HighlightedArticle)
-  const { isMobile } = useMediaQueries()
 
   return (
     <Layout
@@ -38,7 +36,7 @@ const IndexPage: NextPage = () => {
         <MemoizedHighlightedArticle data={getAllStickyPostsData.data} />
       ) : null}
       <div className="flex flex-col">
-        {isMobile && <TrendingArticlesMobile />}
+        <TrendingArticlesMobile />
         <ArticlesAndAside />
         <PopularPosts />
       </div>

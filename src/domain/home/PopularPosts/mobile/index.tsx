@@ -9,7 +9,10 @@ const MobilePopularPosts = () => {
     getPopularPostsData: { data },
   } = useGetPopularPosts()
   return (
-    <aside id="popular-posts-mobile" className="bg-primary-light px-5 pt-10">
+    <aside
+      id="popular-posts-mobile"
+      className="bg-primary-light px-5 pt-10 md:hidden"
+    >
       <p className="text-2xl text-center font-semibold tracking-wider text-white mb-10">
         Popular
       </p>
