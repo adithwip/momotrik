@@ -26,7 +26,7 @@ export const getAllStickyPostsFetcher = async (): Promise<AllPostsEdge[]> => {
               featuredImage {
                 node {
                   mediaItemUrl
-                  sizes(size: THUMBNAIL)
+                  sizes(size: POST_THUMBNAIL)
                 }
               }
               author {
