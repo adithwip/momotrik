@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import clsx from 'clsx'
 
 import { formatDate } from 'utils/formatDate'
 
@@ -12,6 +13,7 @@ interface Props {
   title: string
   date: string
   authorName: string
+  className?: string
 }
 
 const AsideArticleCard = ({
@@ -21,9 +23,10 @@ const AsideArticleCard = ({
   title,
   date,
   authorName,
+  className,
 }: Props) => {
   return (
-    <article>
+    <article className={clsx(className)}>
       <Link href={`/article/${slug}`}>
         <a>
           <figure className={styles.imageWrapper}>
