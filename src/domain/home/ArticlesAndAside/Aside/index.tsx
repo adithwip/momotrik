@@ -23,16 +23,16 @@ const Articles = ({ data }: Props) => {
       {data
         ? data.map(({ node }) => {
             return (
-              <div className="mb-10" key={node.id}>
-                <AsideArticleCard
-                  slug={node.slug}
-                  mediaItemUrl={node.featuredImage.node.mediaItemUrl}
-                  sizes={node.featuredImage.node.sizes}
-                  title={node.title}
-                  date={node.date}
-                  authorName={node.author.node.name}
-                />
-              </div>
+              <AsideArticleCard
+                key={node.id}
+                className="mb-10"
+                slug={node.slug}
+                mediaItemUrl={node.featuredImage.node.mediaItemUrl}
+                sizes={node.featuredImage.node.sizes}
+                title={node.title}
+                date={node.date}
+                authorName={node.author.node.name}
+              />
             )
           })
         : null}
