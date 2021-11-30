@@ -6,7 +6,7 @@ import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 
 const Layout = dynamic(() => import('components/Layout'))
-const Article = dynamic(() => import('domain/article/Article'))
+const Article = dynamic(() => import('domain/article'))
 
 import { stripHtmlTags } from 'utils/stripHtmlTags'
 import { getSinglePostFetcher } from 'lib/useGetSinglePost'

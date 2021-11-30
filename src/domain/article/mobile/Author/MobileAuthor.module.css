@@ -1,0 +1,4 @@
+.mobileAuthorAvatarWrapper {
+  @apply relative rounded-full overflow-hidden border border-white;
+  @apply h-10 w-10;
+}

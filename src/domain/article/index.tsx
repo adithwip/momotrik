@@ -2,8 +2,10 @@ import type { GetSinglePostResponse } from 'interfaces/lib/getSinglePost.interfa
 
 import Image from 'next/image'
 
-import Date from 'domain/article/Date'
 import SocialMediaShareButton from 'components/SocialMediaShareButton'
+import DesktopAuthor from './desktop/Author'
+import MobileAuthor from './mobile/Author'
+
 import styles from './Article.module.css'
 
 type Props = {
@@ -18,7 +20,6 @@ const Article = ({ postData }: Props) => {
       <article>
         <header>
           <h1 className={styles.articleTitle}>{post.title}</h1>
-
           <figure className={styles.featuredImageWrapper}>
             <Image
               priority
@@ -28,36 +29,17 @@ const Article = ({ postData }: Props) => {
               objectFit="cover"
               objectPosition="center"
             />
+            <div className="absolute z-10 bottom-0 p-5">
+              <h1 className={styles.mobileArticleTitle}>{post.title}</h1>
+              <MobileAuthor postData={postData} />
+            </div>
           </figure>
 
           <div className={styles.divider}>
             <div />
           </div>
 
-          <div className="flex flex-col md:flex md:flex-row md:justify-between md:items-center md:my-2">
-            <div className="flex items-center px-5 mt-8">
-              <figure className={styles.authorAvatarWrapper}>
-                <Image
-                  priority
-                  alt="Author Avatar Image"
-                  src={post.author.node.avatar.url}
-                  layout="fill"
-                  objectFit="cover"
-                  objectPosition="center"
-                />
-              </figure>
-              <div className="flex flex-col ml-4">
-                <p className="text-sm font-semibold text-gray-900 tracking-normal mb-2">
-                  {post.author.node.name}
-                </p>
-                <Date date={post.date} />
-              </div>
-            </div>
-
-            <div className="px-5 mt-6">
-              <SocialMediaShareButton />
-            </div>
-          </div>
+          <DesktopAuthor postData={postData} />
         </header>
 
         <div
