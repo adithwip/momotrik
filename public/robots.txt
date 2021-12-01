@@ -1,4 +1,5 @@
 Sitemap: https://momotrik.com/sitemap.xml
 
+# Allow all crawlers
 User-agent: *
-Allow: /*
+Allow: /
