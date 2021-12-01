@@ -5,7 +5,7 @@
 */
 
 .content {
-  @apply text-lg leading-relaxed pt-4;
+  @apply text-base leading-relaxed pt-6;
 }
 
 .content p,
@@ -16,7 +16,7 @@
 }
 
 .content a {
-  @apply underline text-indigo-600;
+  @apply underline text-blue-600;
 }
 
 .content ul,
@@ -70,7 +70,7 @@
 }
 
 .content img {
-  @apply overflow-hidden bg-gray-200 shadow-md mx-auto;
+  @apply overflow-hidden rounded bg-gray-200 shadow-md mx-auto;
   @apply md:rounded;
 }
 
@@ -94,20 +94,24 @@
   @apply w-full;
 }
 
-.content figure ul {
-  @apply flex overflow-x-auto overflow-y-hidden gap-x-4 p-0 rounded;
+.content figure[class='wp-block-gallery columns-3 is-cropped'] {
+  @apply p-1 rounded overflow-hidden;
 }
 
-.content figure ul li {
+.content figure ul[class='blocks-gallery-grid'] {
+  @apply flex overflow-x-auto overflow-y-hidden gap-x-4 p-0;
+}
+
+.content figure ul[class='blocks-gallery-grid'] li {
   @apply list-none;
 }
 
-.content figure ul li figure {
+.content figure ul[class='blocks-gallery-grid'] li figure {
   @apply p-0;
 }
 
-.content figure ul li figure img {
-  @apply object-cover object-center min-w-300 h-60 rounded;
+.content figure ul[class='blocks-gallery-grid'] li figure img {
+  @apply object-cover object-center min-w-300 h-52;
   @apply md:min-w-480 md:h-72;
 }
 
@@ -139,15 +143,6 @@
     rgba(255, 255, 255, 0) 100%
   );
   @apply absolute inset-0 md:hidden;
-}
-
-.divider {
-  @apply px-5 w-full;
-}
-
-.divider div {
-  @apply hidden border-b-2 border-gray-900 h-6;
-  @apply md:block;
 }
 
 .authorAvatarWrapper {

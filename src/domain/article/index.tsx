@@ -1,6 +1,8 @@
 import type { GetSinglePostResponse } from 'interfaces/lib/getSinglePost.interface'
 
 import Image from 'next/image'
+import ReactMarkdown from 'react-markdown'
+import rehypeRaw from 'rehype-raw'
 
 import SocialMediaShareButton from 'components/SocialMediaShareButton'
 import DesktopAuthor from './desktop/Author'
@@ -29,23 +31,26 @@ const Article = ({ postData }: Props) => {
               objectFit="cover"
               objectPosition="center"
             />
-            <div className="absolute z-10 bottom-0 p-5">
+            <div className="absolute z-10 bottom-0 p-5 pb-10 md:hidden">
               <h1 className={styles.mobileArticleTitle}>{post.title}</h1>
               <MobileAuthor postData={postData} />
             </div>
           </figure>
 
-          <div className={styles.divider}>
-            <div />
-          </div>
-
           <DesktopAuthor postData={postData} />
         </header>
 
-        <div
-          className={styles.content}
-          dangerouslySetInnerHTML={{ __html: post.content }}
-        />
+        {/*
+          // TODO: Remove this after no critical issue with react-markdown
+          <div
+            className={styles.content}
+            dangerouslySetInnerHTML={{ __html: post.content }}
+          />
+        */}
+
+        <ReactMarkdown className={styles.content} rehypePlugins={[rehypeRaw]}>
+          {post.content}
+        </ReactMarkdown>
       </article>
 
       <div className="px-5 my-6">
