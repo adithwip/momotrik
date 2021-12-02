@@ -48,12 +48,14 @@ const Article = ({ postData }: Props) => {
             >
               <ins
                 className="adsbygoogle"
-                style={{ display: 'block' }}
+                style={{
+                  display: 'inline-block',
+                  width: '100%',
+                  height: '96px',
+                }}
                 data-ad-client="ca-pub-3226350239455992"
                 data-ad-slot="9437095680"
-                data-ad-format="auto"
-                data-full-width-responsive="true"
-              ></ins>
+              />
             </div>
           </div>
         </header>
