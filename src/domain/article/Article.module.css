@@ -5,7 +5,7 @@
 */
 
 .content {
-  @apply text-base leading-relaxed pt-6;
+  @apply text-base leading-relaxed pt-6 md:pt-0;
 }
 
 .content p,
