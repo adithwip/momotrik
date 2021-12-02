@@ -40,6 +40,22 @@ const Article = ({ postData }: Props) => {
           </figure>
 
           <DesktopAuthor postData={postData} />
+
+          <div className="ad-box-wrapper p-4 pb-0">
+            <div
+              id="mobile-article-header-ad-box"
+              className="md:hidden bg-blue-200 rounded h-24 w-full"
+            >
+              <ins
+                className="adsbygoogle"
+                style={{ display: 'block' }}
+                data-ad-client="ca-pub-3226350239455992"
+                data-ad-slot="9437095680"
+                data-ad-format="auto"
+                data-full-width-responsive="true"
+              ></ins>
+            </div>
+          </div>
         </header>
 
         {/*
