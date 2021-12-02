@@ -22,6 +22,24 @@ const Article = ({ postData }: Props) => {
   return (
     <div className="flex flex-col md:flex-row">
       <article className="flex-2">
+        <div className="ad-box-wrapper px-4 py-2">
+          <div
+            id="mobile-article-header-ad-box"
+            className="md:hidden flex justify-center items-center rounded h-16 w-full"
+          >
+            <ins
+              className="adsbygoogle"
+              style={{
+                display: 'inline-block',
+                width: '100%',
+                height: '64px',
+              }}
+              data-ad-client="ca-pub-3226350239455992"
+              data-ad-slot="9437095680"
+            />
+          </div>
+        </div>
+
         <header>
           <h1 className={styles.articleTitle}>{post.title}</h1>
           <figure className={styles.featuredImageWrapper}>
@@ -40,24 +58,6 @@ const Article = ({ postData }: Props) => {
           </figure>
 
           <DesktopAuthor postData={postData} />
-
-          <div className="ad-box-wrapper p-4 pb-0">
-            <div
-              id="mobile-article-header-ad-box"
-              className="md:hidden bg-blue-200 rounded h-24 w-full"
-            >
-              <ins
-                className="adsbygoogle"
-                style={{
-                  display: 'inline-block',
-                  width: '100%',
-                  height: '96px',
-                }}
-                data-ad-client="ca-pub-3226350239455992"
-                data-ad-slot="9437095680"
-              />
-            </div>
-          </div>
         </header>
 
         {/*
