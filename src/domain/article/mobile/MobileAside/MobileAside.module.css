@@ -1,0 +1,4 @@
+.aside {
+  @apply flex flex-col md:hidden;
+  @apply p-4 pt-20;
+}

@@ -153,7 +153,7 @@
 .articleTitle {
   @apply hidden text-2xl text-left font-semibold tracking-normal leading-tight text-gray-900;
   @apply p-4 mb-3 mt-6;
-  @apply md:block md:text-3xl md:text-center md:font-semibold md:tracking-normal md:leading-snug md:mt-12;
+  @apply md:block md:text-4xl md:font-semibold md:tracking-normal md:leading-snug md:mt-12 md:pl-0;
 }
 
 .mobileArticleTitle {

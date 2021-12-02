@@ -4,9 +4,11 @@ import Image from 'next/image'
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
 
-import SocialMediaShareButton from 'components/SocialMediaShareButton'
 import DesktopAuthor from './desktop/Author'
+import DesktopAside from './desktop/DesktopAside'
 import MobileAuthor from './mobile/Author'
+import MobileAside from './mobile/MobileAside'
+import SocialMediaShareButton from 'components/SocialMediaShareButton'
 
 import styles from './Article.module.css'
 
@@ -18,8 +20,8 @@ const Article = ({ postData }: Props) => {
   const { post } = postData
 
   return (
-    <>
-      <article>
+    <div className="flex flex-col md:flex-row">
+      <article className="flex-2">
         <header>
           <h1 className={styles.articleTitle}>{post.title}</h1>
           <figure className={styles.featuredImageWrapper}>
@@ -47,16 +49,17 @@ const Article = ({ postData }: Props) => {
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         */}
-
         <ReactMarkdown className={styles.content} rehypePlugins={[rehypeRaw]}>
           {post.content}
         </ReactMarkdown>
-      </article>
 
-      <div className="px-5 my-6">
-        <SocialMediaShareButton />
-      </div>
-    </>
+        <div className="px-5 my-6">
+          <SocialMediaShareButton />
+        </div>
+      </article>
+      <DesktopAside />
+      <MobileAside />
+    </div>
   )
 }
 
