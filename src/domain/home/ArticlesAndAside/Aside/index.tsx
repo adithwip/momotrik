@@ -44,7 +44,7 @@ const Articles = ({ data }: Props) => {
         data-ad-client="ca-pub-3226350239455992"
         data-ad-slot="8612513575"
         data-ad-format="auto"
-        data-full-width-responsive="true"
+        data-full-width-responsive={true}
       />
     </aside>
   )
