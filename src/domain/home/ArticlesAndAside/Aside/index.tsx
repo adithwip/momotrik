@@ -10,11 +10,11 @@ interface Props {
   data: TrendingPostsEdge[] | undefined
 }
 
-const Articles = ({ data }: Props) => {
+const DesktopHomepageArticle = ({ data }: Props) => {
   return (
     <aside
       id="aside-desktop"
-      className="hidden pl-20 pr-5 pt-10 pb-20 md:flex flex-col md:flex-1"
+      className="hidden pl-10 pr-5 pt-10 pb-20 md:flex flex-col flex-1"
     >
       <p className="text-2xl font-semibold tracking-wider text-gray-900 mb-8">
         Trendings
@@ -37,7 +37,7 @@ const Articles = ({ data }: Props) => {
           })
         : null}
 
-      {/* Aside Ads placement */}
+      {/* DesktopHomepageArticle Ads placement */}
       <ins
         className="adsbygoogle"
         style={{ display: 'block' }}
@@ -50,4 +50,4 @@ const Articles = ({ data }: Props) => {
   )
 }
 
-export default Articles
+export default DesktopHomepageArticle

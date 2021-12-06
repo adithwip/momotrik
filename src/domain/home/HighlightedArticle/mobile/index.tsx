@@ -2,9 +2,10 @@ import type { AllPostsEdge } from 'interfaces/lib/getAllPosts.interface'
 
 import Image from 'next/image'
 import Link from 'next/link'
+import ReactMarkdown from 'react-markdown'
+import rehypeRaw from 'rehype-raw'
 
 import { formatDate } from 'utils/formatDate'
-import { stripHtmlTags } from 'utils/stripHtmlTags'
 
 import styles from '../HighlightedArticle.module.css'
 
@@ -41,9 +42,13 @@ const MobileHighlightedArticle = ({ data }: Props) => {
                   <p className={styles.articleDate}>
                     {`By ${node.author.node.name} — ${formatDate(node.date)}`}
                   </p>
-                  <p className={styles.excerpt}>
-                    {stripHtmlTags(node.excerpt)}
-                  </p>
+
+                  <ReactMarkdown
+                    className={styles.excerpt}
+                    rehypePlugins={[rehypeRaw]}
+                  >
+                    {node.excerpt}
+                  </ReactMarkdown>
                 </article>
               </a>
             </Link>

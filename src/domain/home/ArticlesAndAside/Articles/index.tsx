@@ -19,7 +19,7 @@ const Articles = ({ data }: Props) => {
       className="px-5 pt-10 pb-20 md:flex-2"
     >
       <p className="text-2xl font-semibold tracking-wider text-gray-900 mb-8">
-        All Articles
+        Artikel Baru
       </p>
 
       {data.map(({ node }, index, arr) => {
