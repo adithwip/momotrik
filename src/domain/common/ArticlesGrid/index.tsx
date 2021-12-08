@@ -20,7 +20,7 @@ interface Props {
 
 const ArticlesGrid = ({ postData }: Props) => {
   return (
-    <main className="flex flex-wrap py-5 px-2">
+    <main className="flex flex-wrap justify-between p-5">
       {postData.map(
         ({
           node,

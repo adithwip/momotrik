@@ -20,7 +20,7 @@
 .titleWrapper {
   @apply bottom-2 left-2 right-2;
   @apply bg-white;
-  @apply md:py-5;
+  @apply md:py-4;
 }
 
 .excerpt {

@@ -38,7 +38,7 @@ const ArticleCard = ({
         styles.articleWrapper,
         isHiddenOnDesktopView && 'md:hidden',
         isNotLastChild && 'mb-6 md:mb-0',
-        isGrid && 'w-full md:min-w-300 md:max-w-300 m-2'
+        isGrid && 'w-full md:max-w-md'
       )}
     >
       <Link href={`/article/${slug}`}>
