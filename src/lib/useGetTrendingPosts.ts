@@ -8,30 +8,30 @@ export const getTrendingPostsFetcher =
   async (): Promise<GetTrendingPostsResponse> => {
     const res = await fetchAPI({
       query: `
-      query TrendingPosts {
-        posts(where: {categoryId: 1515}, first: 5) {
-          edges {
-            node {
-              id
-              date
-              slug
-              title
-              featuredImage {
-                node {
-                  mediaItemUrl
-                  sizes(size: THUMBNAIL)
+        query TrendingPosts {
+          posts(where: {categoryId: 11}, first: 5) {
+            edges {
+              node {
+                id
+                date
+                slug
+                title
+                featuredImage {
+                  node {
+                    mediaItemUrl
+                    sizes(size: THUMBNAIL)
+                  }
                 }
-              }
-              author {
-                node {
-                  name
+                author {
+                  node {
+                    name
+                  }
                 }
               }
             }
           }
         }
-      }
-    `,
+      `,
     })
 
     return res.data.data

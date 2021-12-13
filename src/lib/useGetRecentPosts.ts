@@ -8,30 +8,30 @@ export const getRecentPostsFetcher =
   async (): Promise<GetRecentPostsResponse> => {
     const res = await fetchAPI({
       query: `
-      query RecentPosts {
-        posts(first: 4, where: {orderby: {field: DATE, order: DESC}}) {
-          edges {
-            node {
-              id
-              date
-              title
-              slug
-              featuredImage {
-                node {
-                  mediaItemUrl
-                  sizes(size: THUMBNAIL)
+        query RecentPosts {
+          posts(first: 4, where: {orderby: {field: DATE, order: DESC}}) {
+            edges {
+              node {
+                id
+                date
+                title
+                slug
+                featuredImage {
+                  node {
+                    mediaItemUrl
+                    sizes(size: THUMBNAIL)
+                  }
                 }
-              }
-              author {
-                node {
-                  name
+                author {
+                  node {
+                    name
+                  }
                 }
               }
             }
           }
         }
-      }
-    `,
+      `,
     })
 
     return res.data.data

@@ -8,30 +8,30 @@ export const getPopularPostsFetcher =
   async (): Promise<GetPopularPostsResponse> => {
     const res = await fetchAPI({
       query: `
-      query PopularPosts {
-        posts(where: {categoryId: 1516}, first: 4) {
-          edges {
-            node {
-              id
-              date
-              slug
-              title
-              featuredImage {
-                node {
-                  mediaItemUrl
-                  sizes(size: POST_THUMBNAIL)
+        query PopularPosts {
+          posts(where: {categoryId: 8}, first: 4) {
+            edges {
+              node {
+                id
+                date
+                slug
+                title
+                featuredImage {
+                  node {
+                    mediaItemUrl
+                    sizes(size: POST_THUMBNAIL)
+                  }
                 }
-              }
-              author {
-                node {
-                  name
+                author {
+                  node {
+                    name
+                  }
                 }
               }
             }
           }
         }
-      }
-    `,
+      `,
     })
 
     return res.data.data
