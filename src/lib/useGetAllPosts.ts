@@ -27,7 +27,7 @@ export const getAllPostsFetcher = async (
               featuredImage {
                 node {
                   mediaItemUrl
-                  sizes(size: POST_THUMBNAIL)
+                  sizes(size: THUMBNAIL)
                 }
               }
               author {
