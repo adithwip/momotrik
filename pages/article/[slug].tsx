@@ -4,6 +4,8 @@ import type { GetSinglePostResponse } from 'interfaces/lib/getSinglePost.interfa
 import Script from 'next/script'
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
+import { QueryClient } from 'react-query'
+import { dehydrate } from 'react-query/hydration'
 
 const Layout = dynamic(() => import('components/Layout'))
 const Article = dynamic(() => import('domain/article'))
@@ -11,6 +13,8 @@ const Article = dynamic(() => import('domain/article'))
 import { stripHtmlTags } from 'utils/stripHtmlTags'
 import { getSinglePostFetcher } from 'lib/useGetSinglePost'
 import { getAllPostSlugsFetcher } from 'lib/useGetAllPostSlugs'
+import { getRecentPostsFetcher } from 'lib/useGetRecentPosts'
+import { getTrendingPostsFetcher } from 'lib/useGetTrendingPosts'
 
 type Props = {
   postData: GetSinglePostResponse
@@ -101,12 +105,16 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const queryClient = new QueryClient()
+  await queryClient.prefetchQuery('recent', () => getRecentPostsFetcher())
+  await queryClient.prefetchQuery('trending', () => getTrendingPostsFetcher())
   const res = await getSinglePostFetcher(params?.slug)
 
   return {
     props: {
       postData: res,
       slug: params?.slug,
+      dehydratedState: dehydrate(queryClient),
     },
     revalidate: 1,
   }
