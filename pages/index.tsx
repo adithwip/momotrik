@@ -22,6 +22,7 @@ import {
 } from 'lib/useGetAllStickyPosts'
 import { getTrendingPostsFetcher } from 'lib/useGetTrendingPosts'
 import { getPopularPostsFetcher } from 'lib/useGetPopularPosts'
+import { getRecentPostsFetcher } from 'lib/useGetRecentPosts'
 
 const IndexPage: NextPage = () => {
   const { getAllStickyPostsData } = useGetAllStickyPosts()
@@ -52,6 +53,7 @@ export const getStaticProps: GetStaticProps = async () => {
   )
   await queryClient.prefetchQuery('trending', () => getTrendingPostsFetcher())
   await queryClient.prefetchQuery('popular', () => getPopularPostsFetcher())
+  await queryClient.prefetchQuery('recent', () => getRecentPostsFetcher())
 
   return {
     props: {
