@@ -19,7 +19,7 @@ export const getPopularPostsFetcher =
                 featuredImage {
                   node {
                     mediaItemUrl
-                    sizes(size: THUMBNAIL)
+                    sizes(size: MEDIUM_LARGE)
                   }
                 }
                 author {

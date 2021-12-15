@@ -19,7 +19,7 @@ export const getTrendingPostsFetcher =
                 featuredImage {
                   node {
                     mediaItemUrl
-                    sizes(size: THUMBNAIL)
+                    sizes(size: MEDIUM_LARGE)
                   }
                 }
                 author {
