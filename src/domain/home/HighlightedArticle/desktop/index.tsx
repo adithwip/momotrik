@@ -19,7 +19,7 @@ const DesktopHighlightedArticle = ({ data }: Props) => {
         if (index === 0) {
           return (
             <div key={node.id} className={clsx('row-span-2', styles.gridCard)}>
-              <Link href={`/article/${node.slug}`}>
+              <Link href={`/artikel/${node.slug}`}>
                 <a>
                   <Image
                     priority
@@ -45,7 +45,7 @@ const DesktopHighlightedArticle = ({ data }: Props) => {
 
         return (
           <div key={node.id} className={styles.gridCard}>
-            <Link href={`/article/${node.slug}`}>
+            <Link href={`/artikel/${node.slug}`}>
               <a>
                 <Image
                   priority

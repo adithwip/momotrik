@@ -22,7 +22,7 @@ const MobileHighlightedArticle = ({ data }: Props) => {
       {data.map(({ node }, index) => {
         if (index === 0) {
           return (
-            <Link key={node.id} href={`/article/${node.slug}`}>
+            <Link key={node.id} href={`/artikel/${node.slug}`}>
               <a>
                 <article className={styles.articleCard}>
                   <figure className={styles.imageWrapper}>
@@ -58,7 +58,7 @@ const MobileHighlightedArticle = ({ data }: Props) => {
         // TODO
         // Make it reusable, please! Dear me!
         return (
-          <Link key={node.id} href={`/article/${node.slug}`}>
+          <Link key={node.id} href={`/artikel/${node.slug}`}>
             <a>
               <article className="flex mb-10">
                 <div className="flex flex-col pr-3">

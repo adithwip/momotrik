@@ -27,7 +27,7 @@ const HighlightCard = ({
 }: Props) => {
   return (
     <article className={clsx(styles.card, className)}>
-      <Link href={`/article/${slug}`}>
+      <Link href={`/artikel/${slug}`}>
         <a>
           <Image
             priority
