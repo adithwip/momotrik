@@ -41,7 +41,7 @@ const ArticleCard = ({
         isGrid && 'w-full md:max-w-md'
       )}
     >
-      <Link href={`/article/${slug}`}>
+      <Link href={`/artikel/${slug}`}>
         <a>
           <div className={styles.titleWrapper}>
             <div className="flex">

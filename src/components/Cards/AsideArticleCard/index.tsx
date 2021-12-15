@@ -27,7 +27,7 @@ const AsideArticleCard = ({
 }: Props) => {
   return (
     <article className={clsx(className)}>
-      <Link href={`/article/${slug}`}>
+      <Link href={`/artikel/${slug}`}>
         <a>
           <figure className={styles.imageWrapper}>
             <Image

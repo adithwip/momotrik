@@ -87,7 +87,7 @@ const Footer = ({ recentPostsData, slug }: Props) => {
           {filteredRecentPostsData?.map(({ node }, index) => {
             return (
               <Fragment key={index}>
-                <Link href={`/article/${node.slug}`}>
+                <Link href={`/artikel/${node.slug}`}>
                   <a>
                     <article className="flex items-center mb-4">
                       <div className="flex flex-col pr-5">
