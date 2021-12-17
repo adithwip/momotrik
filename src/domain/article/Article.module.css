@@ -120,6 +120,11 @@
   @apply md:h-80;
 }
 
+.content div[class='ast-oembed-container'] iframe {
+  @apply w-full rounded;
+  @apply md:h-80;
+}
+
 .content figure div[class='wp-block-embed__wrapper'] {
   @apply text-center;
 }
