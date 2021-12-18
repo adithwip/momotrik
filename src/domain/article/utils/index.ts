@@ -1,9 +1,11 @@
-const sanitizeHTMLString = (htmlString: string) => htmlString.replace(/\n/g, '')
+const sanitizeHTMLString = (htmlString: string) =>
+  htmlString.replace(/\n/g, '').replace(/\&nbsp;/g, '')
 const parseHTMLString = (htmlString: string) => {
   return htmlString
     .split('</p>')
     .map((htmlString) => htmlString + '</p>')
     .filter((html) => html !== '</p>')
+    .filter((html) => html !== '<p></p>')
 }
 const splitHTMLArrayToHalf = (htmlList: string[]) => {
   const half = Math.ceil(htmlList.length / 2)
