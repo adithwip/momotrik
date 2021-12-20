@@ -166,3 +166,8 @@
   @apply md:hidden;
   @apply mb-5;
 }
+
+.article {
+  @apply flex-2;
+  max-width: 700px;
+}
