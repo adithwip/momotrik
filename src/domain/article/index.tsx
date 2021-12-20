@@ -43,7 +43,7 @@ const Article = ({ postData }: Props) => {
 
   return (
     <div className="flex flex-col md:flex-row">
-      <article className="flex-2">
+      <article className={styles.article}>
         <div className="ad-box-wrapper px-4 py-2">
           <div
             id="mobile-article-header-ad-box"
