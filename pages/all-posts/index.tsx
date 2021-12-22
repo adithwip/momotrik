@@ -41,7 +41,7 @@ const AllPostsPage: NextPage = () => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const queryClient = new QueryClient()
-  await queryClient.prefetchQuery('posts', () => getAllPostsFetcher(200))
+  await queryClient.prefetchQuery('all-posts', () => getAllPostsFetcher(200))
 
   return {
     props: {
