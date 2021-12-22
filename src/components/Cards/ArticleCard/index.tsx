@@ -35,6 +35,7 @@ const ArticleCard = ({
   return (
     <article
       className={clsx(
+        'article-wrapper',
         styles.articleWrapper,
         isHiddenOnDesktopView && 'md:hidden',
         isNotLastChild && 'mb-6 md:mb-0',
@@ -42,11 +43,14 @@ const ArticleCard = ({
       )}
     >
       <Link href={`/artikel/${slug}`}>
-        <a>
+        <a className="article-link">
           <div className={styles.titleWrapper}>
             <div className="flex">
-              <figure className={styles.imageWrapper}>
+              <figure
+                className={clsx('article-image-wrapper', styles.imageWrapper)}
+              >
                 <Image
+                  className="article-image"
                   alt={`${title} Image`}
                   src={mediaItemUrl}
                   sizes={sizes}
@@ -57,14 +61,24 @@ const ArticleCard = ({
                 />
               </figure>
               <div className="flex flex-col flex-1 pl-4">
-                <p className={styles.articleTitle}>{title}</p>
-
-                <p className={styles.articleDate}>
-                  {`${formatDate(date)} | ${authorName}`}
+                <p className={clsx('article-title', styles.articleTitle)}>
+                  {title}
                 </p>
 
+                <div
+                  className={clsx(
+                    'article-date-author-wrapper',
+                    styles.articleDate
+                  )}
+                >
+                  <time className="article-date" dateTime={date}>
+                    {formatDate(date)}
+                  </time>
+                  <span className="article-author">{' | ' + authorName}</span>
+                </div>
+
                 <ReactMarkdown
-                  className={styles.excerpt}
+                  className={clsx('article-excerpt', styles.excerpt)}
                   rehypePlugins={[rehypeRaw]}
                 >
                   {excerpt}
