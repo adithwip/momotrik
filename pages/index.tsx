@@ -5,6 +5,8 @@ import { QueryClient } from 'react-query'
 import { dehydrate } from 'react-query/hydration'
 import dynamic from 'next/dynamic'
 
+import { generateRssFeed } from 'utils/generateRssFeed'
+
 const HighlightedArticle = dynamic(
   () => import('domain/home/HighlightedArticle')
 )
@@ -46,6 +48,8 @@ const IndexPage: NextPage = () => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
+  await generateRssFeed()
+
   const queryClient = new QueryClient()
   await queryClient.prefetchQuery('posts', () => getAllPostsFetcher())
   await queryClient.prefetchQuery('stickyPosts', () =>
