@@ -35,6 +35,8 @@ export const generateRssFeed = async () => {
     },
   })
 
+  feed.addCategory('Electric vehicles')
+
   edges.forEach(
     ({
       node: { date, title, slug, excerpt, categories, featuredImage, author },
