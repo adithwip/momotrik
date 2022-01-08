@@ -25,7 +25,6 @@ export const getAllPostsForRssFeed =
               featuredImage {
                 node {
                   mediaItemUrl
-                  sizes(size: MEDIUM_LARGE)
                 }
               }
               author {
