@@ -39,7 +39,6 @@ interface FeaturedImage {
 
 interface FeaturedImageNode {
   mediaItemUrl: string
-  sizes: string
 }
 
 export interface Author {
