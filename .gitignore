@@ -36,3 +36,9 @@ yarn-error.log*
 
 # typescript
 tsconfig.tsbuildinfo
+
+# RSS related files
+# Will be build again in deployment
+atom.xml
+feed.json
+rss.xml
