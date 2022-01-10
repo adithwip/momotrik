@@ -120,6 +120,14 @@
   @apply md:h-80;
 }
 
+/*
+  To overried element.style to this class,
+  that inherited from WP editor generated HTML
+*/
+.content figure[class='wp-caption aligncenter'] {
+  width: 100% !important;
+}
+
 .content div[class='ast-oembed-container'] iframe {
   @apply w-full rounded;
   @apply md:h-80;
