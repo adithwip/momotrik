@@ -1,6 +1,14 @@
 module.exports = {
   images: {
-    domains: ['momotrik.host', 'secure.gravatar.com'],
+    domains: [
+      'momotrik.host',
+      'secure.gravatar.com',
+      // This is the domain for image host
+      // that comes from Instagram API
+      // via the RapidAPI
+      'scontent-lax3-2.cdninstagram.com',
+      'scontent-lax3-1.cdninstagram.com',
+    ],
     deviceSizes: [425, 640, 768, 1024, 1280, 1536],
     formats: ['image/avif', 'image/webp'],
   },
