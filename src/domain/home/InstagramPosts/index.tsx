@@ -13,7 +13,7 @@ export const InstagramMediasContext = React.createContext([] as Edge[])
 const InstagramPosts = ({ instagramMedias }: Props) => {
   return (
     <InstagramMediasContext.Provider value={instagramMedias}>
-      <DesktopInstagramPosts />
+      {/* <DesktopInstagramPosts /> */}
       <MobileInstagramPosts />
     </InstagramMediasContext.Provider>
   )
