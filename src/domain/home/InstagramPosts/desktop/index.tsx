@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import Image from 'next/image'
 
 import { InstagramMediasContext } from '../index'
+import SocialMediaShareButton from 'components/SocialMediaShareButton'
 
 const DesktopInstagramPosts = () => {
   const instagramMedias = useContext(InstagramMediasContext)
@@ -12,14 +13,13 @@ const DesktopInstagramPosts = () => {
         Instagram Momotrik
       </p>
 
-      <div className="grid grid-cols-3 gap-8">
+      <div className="grid grid-cols-3 gap-8 w-">
         {instagramMedias.slice(0, 6).map(({ node }) => (
           <figure
             key={node.id}
             className="relative bg-gray-200 rounded overflow-hidden h-80 w-full"
           >
             <Image
-              className="object-cover"
               src={node.display_url}
               alt={`Momotrik instagram post. With ID: ${node.id}`}
               layout="fill"
@@ -29,6 +29,9 @@ const DesktopInstagramPosts = () => {
             />
           </figure>
         ))}
+      </div>
+      <div className="w-96 mx-auto mt-10">
+        <SocialMediaShareButton instagram />
       </div>
     </aside>
   )

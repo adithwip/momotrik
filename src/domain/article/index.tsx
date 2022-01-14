@@ -105,7 +105,7 @@ const Article = ({ postData }: Props) => {
         </ReactMarkdown>
 
         <div className="px-5 my-6">
-          <SocialMediaShareButton />
+          <SocialMediaShareButton facebook />
         </div>
       </article>
       <DesktopAside data={filteredTrendingPostsData} />

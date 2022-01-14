@@ -1,5 +1,15 @@
 .button {
-  @apply inline-flex justify-center items-center w-full border-2 border-blue-500 shadow-sm bg-blue-100 text-sm font-medium text-blue-700;
+  @apply inline-flex justify-center items-center w-full border-2  shadow-sm  text-sm font-semibold;
   @apply px-4 py-2 rounded;
-  @apply hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-blue-100 focus:ring-indigo-500;
+}
+
+.instagram {
+  @apply border-fuchsia-500 bg-fuchsia-800 text-white;
+  @apply md:bg-fuchsia-100 md:text-fuchsia-800;
+  @apply hover:bg-fuchsia-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-fuchsia-100 focus:ring-indigo-500;
+}
+
+.facebook {
+  @apply border-blue-500 bg-blue-100 text-blue-700;
+  @apply hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-blue-100 focus:ring-indigo-500;
 }
