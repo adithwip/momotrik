@@ -1,0 +1,4 @@
+.figure {
+  @apply relative w-52 h-52 rounded overflow-hidden bg-gray-200;
+  min-width: 208px;
+}
