@@ -36,7 +36,7 @@ const DesktopAuthor = ({ postData }: Props) => {
       </div>
 
       <div className="hideen px-5 mt-6">
-        <SocialMediaShareButton />
+        <SocialMediaShareButton facebook />
       </div>
     </div>
   )
