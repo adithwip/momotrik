@@ -21,7 +21,7 @@ const MobileInstagramPosts = () => {
       </p>
 
       <div className="flex gap-4 overflow-x-auto">
-        {instagramMedias.slice(0, 6).map(({ node }) => (
+        {instagramMedias.map(({ node }) => (
           <figure key={node.id} className={styles.figure}>
             <Image
               src={replaceInstagramCdnSubdomain(node.display_url)}
