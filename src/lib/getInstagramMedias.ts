@@ -18,7 +18,7 @@ export const getInstagramMedias = async (): Promise<
       },
       params: {
         user_id: 44778586320, // Momotrik Instagram user_id,
-        batch_size: 5,
+        batch_size: 6,
       },
     })
 
