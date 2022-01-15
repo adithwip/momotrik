@@ -1,8 +1,10 @@
-/* eslint-disable @next/next/no-img-element */
 import { useContext } from 'react'
+import Image from 'next/image'
 
 import { InstagramMediasContext } from '../index'
 import SocialMediaShareButton from 'components/SocialMediaShareButton'
+
+import { replaceInstagramCdnSubdomain } from 'utils/replaceInstagramCdnSubdomain'
 
 import styles from './MobileInstagramPosts.module.css'
 
@@ -20,12 +22,16 @@ const MobileInstagramPosts = () => {
 
       <div className="flex gap-4 overflow-x-auto">
         {instagramMedias.slice(0, 6).map(({ node }) => (
-          <img
-            key={node.id}
-            className={styles.figure}
-            src={node.display_url}
-            alt={`Momotrik instagram post. With ID: ${node.id}`}
-          />
+          <figure key={node.id} className={styles.figure}>
+            <Image
+              src={replaceInstagramCdnSubdomain(node.display_url)}
+              alt={`Momotrik instagram post. With ID: ${node.id}`}
+              layout="fill"
+              objectFit="cover"
+              objectPosition="center"
+              quality={25}
+            />
+          </figure>
         ))}
       </div>
 
