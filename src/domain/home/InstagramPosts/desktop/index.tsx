@@ -4,6 +4,8 @@ import Image from 'next/image'
 import { InstagramMediasContext } from '../index'
 import SocialMediaShareButton from 'components/SocialMediaShareButton'
 
+import { replaceInstagramCdnSubdomain } from 'utils/replaceInstagramCdnSubdomain'
+
 const DesktopInstagramPosts = () => {
   const instagramMedias = useContext(InstagramMediasContext)
 
@@ -20,7 +22,7 @@ const DesktopInstagramPosts = () => {
             className="relative bg-gray-200 rounded overflow-hidden h-80 w-full"
           >
             <Image
-              src={node.display_url}
+              src={replaceInstagramCdnSubdomain(node.display_url)}
               alt={`Momotrik instagram post. With ID: ${node.id}`}
               layout="fill"
               objectFit="cover"
