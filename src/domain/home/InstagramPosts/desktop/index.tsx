@@ -16,7 +16,7 @@ const DesktopInstagramPosts = () => {
       </p>
 
       <div className="grid grid-cols-3 gap-8 w-">
-        {instagramMedias.map(({ node }) => (
+        {instagramMedias.slice(0, 6).map(({ node }) => (
           <figure
             key={node.id}
             className="relative bg-gray-200 rounded overflow-hidden h-80 w-full"

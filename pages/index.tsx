@@ -9,6 +9,8 @@ import dynamic from 'next/dynamic'
 import { getInstagramMedias } from 'lib/getInstagramMedias'
 import { generateRssFeed } from 'utils/generateRssFeed'
 
+import { instagramMediasMocks } from 'mocks/instagramMedias'
+
 const HighlightedArticle = dynamic(
   () => import('domain/home/HighlightedArticle')
 )
@@ -73,9 +75,23 @@ export const getStaticProps: GetStaticProps = async () => {
    * No React Query needed
    */
   try {
-    const res = await getInstagramMedias()
+    /**
+     * Only fetch data from instagram API we use on development
+     * It will cost us more if we're not doing this that way
+     */
+    if (process.env.NODE_ENV === 'development') {
+      console.info(
+        'Info: Use instagram media data with mock data in Development'
+      )
+      instagramMedias = instagramMediasMocks
+    } else {
+      console.info(
+        'Info: Use instagram media data with real data in Production'
+      )
+      const res = await getInstagramMedias()
 
-    instagramMedias = res.data.data.user.edge_owner_to_timeline_media.edges
+      instagramMedias = res.data.data.user.edge_owner_to_timeline_media.edges
+    }
   } catch (error) {
     throw new Error(
       `Error: GET Instragram medias at [getStaticProps]: ${error}`
