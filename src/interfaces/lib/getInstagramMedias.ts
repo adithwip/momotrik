@@ -36,7 +36,7 @@ interface Node {
   should_log_client_event: boolean
   tracking_token: string
   edge_media_to_tagged_user: EdgeMediaToTaggedUser
-  accessibility_caption: any
+  accessibility_caption?: any
   edge_media_to_caption: EdgeMediaToCaption
   shortcode: string
   edge_media_to_comment: EdgeMediaToComment
@@ -157,7 +157,7 @@ interface Node4 {
   should_log_client_event: boolean
   tracking_token: string
   edge_media_to_tagged_user: EdgeMediaToTaggedUser2
-  accessibility_caption: any
+  accessibility_caption?: any
 }
 
 interface Dimensions2 {
