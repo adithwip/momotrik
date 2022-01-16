@@ -45,7 +45,7 @@ interface Node {
   taken_at_timestamp: number
   edge_media_preview_like: EdgeMediaPreviewLike
   gating_info: any
-  media_preview?: string
+  media_preview?: string | null | undefined
   owner: Owner2
   location: any
   viewer_has_liked: boolean
