@@ -23,7 +23,7 @@ const DesktopInstagramPosts = () => {
           >
             <Image
               src={replaceInstagramCdnSubdomain(node.display_url)}
-              alt={`Momotrik instagram post. With ID: ${node.id}`}
+              alt={`Momotrik instagram post. Url: ${node.display_url}`}
               layout="fill"
               objectFit="cover"
               objectPosition="center"
