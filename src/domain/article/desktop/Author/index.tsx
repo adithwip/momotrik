@@ -15,8 +15,8 @@ const DesktopAuthor = ({ postData }: Props) => {
   const { post } = postData
 
   return (
-    <div className="hidden md:flex md:flex-row md:justify-between md:items-center md:my-2">
-      <div className="flex items-center px-5 mt-8">
+    <div className="hidden md:my-2 md:flex md:flex-row md:items-center md:justify-between">
+      <div className="mt-8 flex items-center px-5">
         <figure className={styles.authorAvatarWrapper}>
           <Image
             priority
@@ -27,15 +27,15 @@ const DesktopAuthor = ({ postData }: Props) => {
             objectPosition="center"
           />
         </figure>
-        <div className="flex flex-col ml-4">
-          <p className="text-sm font-semibold text-gray-900 tracking-normal mb-2">
+        <div className="ml-4 flex flex-col">
+          <p className="mb-2 text-sm font-semibold tracking-normal text-gray-900">
             {post.author.node.name}
           </p>
           <Date date={post.date} />
         </div>
       </div>
 
-      <div className="hideen px-5 mt-6">
+      <div className="hideen mt-6 px-5">
         <SocialMediaShareButton facebook />
       </div>
     </div>

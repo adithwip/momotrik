@@ -1,11 +1,11 @@
 .imageWrapper {
-  @apply bg-gray-700 rounded shadow overflow-hidden;
+  @apply overflow-hidden rounded bg-gray-700 shadow;
   @apply relative h-48 w-full;
-  @apply xs:h-72 md:h-96;
+  @apply md:h-96 xs:h-72;
 }
 
 .mobileHightlight {
-  @apply p-5 bg-primary-main;
+  @apply bg-primary-main p-5;
   @apply md:hidden;
 }
 
@@ -15,11 +15,11 @@
 
 .gridContainer {
   @apply hidden;
-  @apply md:mt-10 md:h-[464px] md:grid md:grid-cols-3 md:grid-rows-2 md:gap-4;
+  @apply md:mt-10 md:grid md:h-[464px] md:grid-cols-3 md:grid-rows-2 md:gap-4;
 }
 
 .gridCard {
-  @apply relative rounded overflow-hidden;
+  @apply relative overflow-hidden rounded;
 }
 
 .gridCard:after {
@@ -36,26 +36,26 @@
 /* Remove soon */
 /* TODO: Please make a reusable component! */
 .smallArticleCardImageWrapper {
-  @apply relative bg-gray-300 rounded shadow overflow-hidden;
+  @apply relative overflow-hidden rounded bg-gray-300 shadow;
   height: 100px;
   min-width: 134px;
 }
 
 .articleTitle {
-  @apply text-3xl text-white font-semibold leading-tight tracking-normal mt-6;
+  @apply mt-6 text-3xl font-semibold leading-tight tracking-normal text-white;
 }
 
 .smallArticleTitle {
-  @apply text-lg text-white font-semibold leading-tight tracking-normal;
+  @apply text-lg font-semibold leading-tight tracking-normal text-white;
 }
 
 .articleDate {
-  @apply text-xs text-gray-300 tracking-wider;
+  @apply text-xs tracking-wider text-gray-300;
   @apply my-4;
 }
 
 .smallArticleDate {
-  @apply text-xs text-gray-300 tracking-wider;
+  @apply text-xs tracking-wider text-gray-300;
   @apply mt-4;
 }
 

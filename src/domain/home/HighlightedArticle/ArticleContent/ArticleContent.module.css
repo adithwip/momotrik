@@ -1,12 +1,12 @@
 .articleContent {
-  @apply absolute inset-0 z-10 h-full flex flex-col justify-end p-4;
+  @apply absolute inset-0 z-10 flex h-full flex-col justify-end p-4;
 }
 
 .articleDate {
-  @apply text-sm text-left text-white tracking-wider mb-2;
+  @apply mb-2 text-left text-sm tracking-wider text-white;
 }
 
 .articleTitle {
-  @apply text-sm text-left font-semibold tracking-normal leading-snug text-white;
-  @apply md:text-base md:font-semibold md:tracking-wide md:leading-snug;
+  @apply text-left text-sm font-semibold leading-snug tracking-normal text-white;
+  @apply md:text-base md:font-semibold md:leading-snug md:tracking-wide;
 }

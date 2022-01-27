@@ -16,7 +16,7 @@
 }
 
 .content a {
-  @apply underline text-blue-600;
+  @apply text-blue-600 underline;
 }
 
 .content ul,
@@ -42,23 +42,23 @@
 }
 
 .content h2 {
-  @apply text-3xl font-semibold mt-12 mb-4 px-5 tracking-wide leading-snug;
+  @apply mt-12 mb-4 px-5 text-3xl font-semibold leading-snug tracking-wide;
 }
 
 .content h3 {
-  @apply text-2xl font-semibold mt-8 mb-4 px-5 tracking-wide leading-snug;
+  @apply mt-8 mb-4 px-5 text-2xl font-semibold leading-snug tracking-wide;
 }
 
 .content h4 {
-  @apply text-xl font-semibold mt-6 mb-4 px-5 tracking-wide leading-snug;
+  @apply mt-6 mb-4 px-5 text-xl font-semibold leading-snug tracking-wide;
 }
 
 .content h5 {
-  @apply text-base font-semibold mt-6 mb-4 px-5 tracking-wide leading-snug;
+  @apply mt-6 mb-4 px-5 text-base font-semibold leading-snug tracking-wide;
 }
 
 .content pre {
-  @apply whitespace-pre overflow-x-auto p-4 text-sm leading-tight border border-gray-400 bg-gray-100;
+  @apply overflow-x-auto whitespace-pre border border-gray-400 bg-gray-100 p-4 text-sm leading-tight;
 }
 
 .content code {
@@ -70,16 +70,16 @@
 }
 
 .content img {
-  @apply overflow-hidden rounded bg-gray-200 shadow-md mx-auto;
+  @apply mx-auto overflow-hidden rounded bg-gray-200 shadow-md;
   @apply md:rounded;
 }
 
 .content figcaption {
-  @apply text-center text-xs mt-2 px-8;
+  @apply mt-2 px-8 text-center text-xs;
 }
 
 .content blockquote {
-  @apply border-l-4 border-gray-500 bg-gray-200 italic ml-0 py-4 px-6;
+  @apply ml-0 border-l-4 border-gray-500 bg-gray-200 py-4 px-6 italic;
 }
 
 .content blockquote p {
@@ -95,11 +95,11 @@
 }
 
 .content figure[class='wp-block-gallery columns-3 is-cropped'] {
-  @apply p-1 rounded overflow-hidden;
+  @apply overflow-hidden rounded p-1;
 }
 
 .content figure ul[class='blocks-gallery-grid'] {
-  @apply flex overflow-x-auto overflow-y-hidden gap-x-4 p-0;
+  @apply flex gap-x-4 overflow-x-auto overflow-y-hidden p-0;
 }
 
 .content figure ul[class='blocks-gallery-grid'] li {
@@ -111,8 +111,8 @@
 }
 
 .content figure ul[class='blocks-gallery-grid'] li figure img {
-  @apply object-cover object-center min-w-300 h-52;
-  @apply md:min-w-480 md:h-72;
+  @apply h-52 min-w-300 object-cover object-center;
+  @apply md:h-72 md:min-w-480;
 }
 
 .content figure div span iframe[class='youtube-player'] {
@@ -144,7 +144,7 @@
 /* Components Styles */
 .featuredImageWrapper {
   @apply relative h-72 w-full overflow-hidden bg-gray-200 shadow-md;
-  @apply xs:h-72 md:h-80 md:rounded;
+  @apply md:h-80 md:rounded xs:h-72;
 }
 
 .featuredImageWrapper:after {
@@ -159,18 +159,18 @@
 }
 
 .authorAvatarWrapper {
-  @apply relative rounded-full overflow-hidden border-2 border-gray-900;
+  @apply relative overflow-hidden rounded-full border-2 border-gray-900;
   @apply h-14 w-14;
 }
 
 .articleTitle {
-  @apply hidden text-2xl text-left font-semibold tracking-normal leading-tight text-gray-900;
-  @apply p-4 mb-3 mt-6;
-  @apply md:block md:text-4xl md:font-semibold md:tracking-normal md:leading-snug md:mt-12 md:pl-0;
+  @apply hidden text-left text-2xl font-semibold leading-tight tracking-normal text-gray-900;
+  @apply mb-3 mt-6 p-4;
+  @apply md:mt-12 md:block md:pl-0 md:text-4xl md:font-semibold md:leading-snug md:tracking-normal;
 }
 
 .mobileArticleTitle {
-  @apply text-2xl text-left font-semibold text-white;
+  @apply text-left text-2xl font-semibold text-white;
   @apply md:hidden;
   @apply mb-5;
 }

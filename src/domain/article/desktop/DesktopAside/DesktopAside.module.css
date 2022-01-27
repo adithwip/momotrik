@@ -1,5 +1,5 @@
 .aside {
   @apply hidden;
-  @apply md:flex flex-col flex-1;
-  @apply pl-12 mt-48;
+  @apply flex-1 flex-col md:flex;
+  @apply mt-48 pl-12;
 }

@@ -14,9 +14,9 @@ const DesktopHomepageArticle = ({ data }: Props) => {
   return (
     <aside
       id="aside-desktop"
-      className="hidden pl-10 pr-5 pt-10 pb-20 md:flex flex-col flex-1"
+      className="hidden flex-1 flex-col pl-10 pr-5 pt-10 pb-20 md:flex"
     >
-      <p className="text-2xl font-semibold tracking-wider text-gray-900 mb-8">
+      <p className="mb-8 text-2xl font-semibold tracking-wider text-gray-900">
         Trendings
       </p>
 

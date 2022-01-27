@@ -48,7 +48,7 @@ const Layout = ({
       <main
         className={clsx(
           styles.mainLayout,
-          `max-w-screen-sm min-h-screen mx-auto md:max-w-screen-${screen}`
+          `mx-auto min-h-screen max-w-screen-sm md:max-w-screen-${screen}`
         )}
       >
         {children}

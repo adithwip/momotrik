@@ -22,9 +22,9 @@ const DesktopHeader = () => {
   return (
     <nav
       id="desktop-nav"
-      className="hidden md:block fixed top-0 w-full z-50 bg-primary-main px-4"
+      className="fixed top-0 z-50 hidden w-full bg-primary-main px-4 md:block"
     >
-      <div className="relative flex justify-center items-center py-2 md:py-4 md:max-w-screen-lg md:mx-auto">
+      <div className="relative flex items-center justify-center py-2 md:mx-auto md:max-w-screen-lg md:py-4">
         <div className="flex flex-1 items-center">
           <Link href="/">
             <a>
@@ -44,7 +44,7 @@ const DesktopHeader = () => {
         </div>
 
         <div className="hidden md:block md:flex-1">
-          <div className="flex items-center space-x-4 justify-center">
+          <div className="flex items-center justify-center space-x-4">
             {navlinks.map((link) => {
               return (
                 <NavItem
@@ -66,7 +66,7 @@ const DesktopHeader = () => {
           <div className="flex justify-end text-white">
             <form
               onSubmit={handleSearch}
-              className="flex relative justify-center items-center"
+              className="relative flex items-center justify-center"
             >
               <input
                 required

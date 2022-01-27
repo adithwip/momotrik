@@ -20,7 +20,7 @@ const Footer = ({ recentPostsData, slug }: Props) => {
 
   return (
     <footer className={styles.footer}>
-      <div className="flex flex-col md:flex-row justify-between max-w-screen md:max-w-screen-lg mx-auto py-16 px-5 h-full">
+      <div className="max-w-screen mx-auto flex h-full flex-col justify-between py-16 px-5 md:max-w-screen-lg md:flex-row">
         <div className="flex-1 flex-col md:mr-20">
           <figure className={styles.footerLogoWrapper}>
             <Image
@@ -34,20 +34,20 @@ const Footer = ({ recentPostsData, slug }: Props) => {
           </figure>
 
           <div className="mt-7 mb-16">
-            <p className="text-white text-sm text-center tracking-wide leading-normal mt-6 md:text-justify">
+            <p className="mt-6 text-center text-sm leading-normal tracking-wide text-white md:text-justify">
               Momotrik adalah media informasi yang membahas segala seluk beluk
               tentang mobil listrik, motor listrik, dan skuter listrik. Serta
               beragam hal tentang gaya hidup kendaraan listrik terbaru
             </p>
           </div>
 
-          <p className="text-xl text-white text-center font-semibold md:text-left">
+          <p className="text-center text-xl font-semibold text-white md:text-left">
             Keep in touch
           </p>
 
           <div className="flex items-center justify-center md:justify-start">
             <a
-              className="mt-7 text-white p-2 mr-4 rounded bg-gray-600 w-8 h-8 flex justify-center items-center hover:bg-gray-700"
+              className="mt-7 mr-4 flex h-8 w-8 items-center justify-center rounded bg-gray-600 p-2 text-white hover:bg-gray-700"
               href="https://www.instagram.com/momotrik.id/"
               target="_blank"
               rel="noopener noreferrer"
@@ -64,7 +64,7 @@ const Footer = ({ recentPostsData, slug }: Props) => {
               </figure>
             </a>
             <a
-              className="mt-7 text-white p-2 rounded bg-gray-600 w-8 h-8 flex justify-center items-center hover:bg-gray-700"
+              className="mt-7 flex h-8 w-8 items-center justify-center rounded bg-gray-600 p-2 text-white hover:bg-gray-700"
               href="https://www.facebook.com/momotrik.ID"
               target="_blank"
               rel="noopener noreferrer"
@@ -83,15 +83,15 @@ const Footer = ({ recentPostsData, slug }: Props) => {
           </div>
         </div>
 
-        <div className="flex-1 flex-col order-first mb-12 pb-12 border-b border-white md:border-transparent md:mb-0 md:order-1 md:ml-20 md:pb-0">
+        <div className="order-first mb-12 flex-1 flex-col border-b border-white pb-12 md:order-1 md:mb-0 md:ml-20 md:border-transparent md:pb-0">
           {filteredRecentPostsData?.map(({ node }, index) => {
             return (
               <Fragment key={index}>
                 <Link href={`/artikel/${node.slug}`}>
                   <a>
-                    <article className="flex items-center mb-4">
+                    <article className="mb-4 flex items-center">
                       <div className="flex flex-col pr-5">
-                        <p className="text-sm text-white font-semibold leading-normal line-clamp-3">
+                        <p className="text-sm font-semibold leading-normal text-white line-clamp-3">
                           {node.title}
                         </p>
                         <p className={styles.articleDate}>

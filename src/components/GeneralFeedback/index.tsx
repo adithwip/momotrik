@@ -10,7 +10,7 @@ import styles from './GeneralFeedback.module.css'
 
 const GeneralFeedback = ({ message, isError = false }: Props) => {
   return (
-    <div className="w-full h-screen flex flex-col justify-center items-center">
+    <div className="flex h-screen w-full flex-col items-center justify-center">
       <figure className={styles.illustrationWrapper}>
         <Image
           priority
@@ -24,7 +24,7 @@ const GeneralFeedback = ({ message, isError = false }: Props) => {
 
       <p
         className={clsx(
-          'text-lg font-semibold tracking-normal leading-normal',
+          'text-lg font-semibold leading-normal tracking-normal',
           isError && 'text-red-600'
         )}
       >

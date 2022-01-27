@@ -1,7 +1,7 @@
 .slider {
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  @apply rounded flex flex-nowrap w-full px-0;
+  @apply flex w-full flex-nowrap rounded px-0;
   @apply overflow-hidden;
 }
 
@@ -9,5 +9,5 @@
   min-width: 240px;
   scroll-snap-align: center;
   @apply mr-4;
-  @apply w-1/4 min-w-unset mx-2;
+  @apply mx-2 w-1/4 min-w-unset;
 }

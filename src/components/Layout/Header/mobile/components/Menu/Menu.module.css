@@ -1,7 +1,7 @@
 .hidBox {
   top: -100%;
   transition: top 0.6s cubic-bezier(0.83, 0, 0.17, 1);
-  @apply z-50 fixed opacity-100 bg-primary-main left-0 right-0 p-5 h-full;
+  @apply fixed left-0 right-0 z-50 h-full bg-primary-main p-5 opacity-100;
   @apply md:hidden;
 }
 
@@ -13,7 +13,7 @@
 .overlay {
   top: -100%;
   transition: opacity 1s cubic-bezier(0.87, 0, 0.13, 1);
-  @apply z-50 fixed inset-x-0 bottom-0 opacity-0 h-0 bg-gray-900;
+  @apply fixed inset-x-0 bottom-0 z-50 h-0 bg-gray-900 opacity-0;
 }
 
 .overlayActive {
@@ -34,7 +34,7 @@
 }
 
 .closeIcon {
-  @apply inline-flex items-center justify-center p-2 rounded;
-  @apply hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-blue-800 focus:ring-white;
+  @apply inline-flex items-center justify-center rounded p-2;
+  @apply hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-800;
   @apply md:hidden;
 }

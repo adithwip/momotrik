@@ -14,9 +14,9 @@ const MobileInstagramPosts = () => {
   return (
     <aside
       id="instagram-posts-desktop"
-      className="px-4 md:hidden mb-16 order-3"
+      className="order-3 mb-16 px-4 md:hidden"
     >
-      <p className="text-2xl font-semibold tracking-wider text-gray-900 mb-10 text-left">
+      <p className="mb-10 text-left text-2xl font-semibold tracking-wider text-gray-900">
         Instagram Momotrik
       </p>
 

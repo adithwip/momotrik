@@ -13,7 +13,7 @@ const MobileAuthor = ({ postData }: Props) => {
   const { post } = postData
 
   return (
-    <div className="flex justify-between items-center md:hidden">
+    <div className="flex items-center justify-between md:hidden">
       <figure className={styles.mobileAuthorAvatarWrapper}>
         <Image
           priority
@@ -25,7 +25,7 @@ const MobileAuthor = ({ postData }: Props) => {
         />
       </figure>
       <div className="flex-1">
-        <span className="text-sm text-white ml-4">{`${post.author.node.name} — `}</span>
+        <span className="ml-4 text-sm text-white">{`${post.author.node.name} — `}</span>
         <time className="text-sm text-white" dateTime={post.date}>
           {formatDate(post.date)}
         </time>
