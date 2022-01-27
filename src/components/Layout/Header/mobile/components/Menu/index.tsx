@@ -22,7 +22,7 @@ const Menu = ({ show = false, onClose }: Props) => {
         className={clsx(styles.overlay, show && styles.overlayActive)}
       />
       <div className={clsx(styles.hidBox, show && styles.active)}>
-        <div className="flex flex-col justify-between space-y-4 h-full">
+        <div className="flex h-full flex-col justify-between space-y-4">
           <Link href="/">
             <a>
               <figure className={styles.logoWrapper}>

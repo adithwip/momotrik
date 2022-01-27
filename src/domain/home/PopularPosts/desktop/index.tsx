@@ -10,8 +10,8 @@ const DesktopPopularPosts = () => {
   } = useGetPopularPosts()
 
   return (
-    <aside id="popular-posts-desktop" className="p-4 mb-16 hidden md:block">
-      <p className="text-2xl font-semibold tracking-wider text-gray-900 mb-10 text-left">
+    <aside id="popular-posts-desktop" className="mb-16 hidden p-4 md:block">
+      <p className="mb-10 text-left text-2xl font-semibold tracking-wider text-gray-900">
         Popular
       </p>
 

@@ -3,17 +3,17 @@
 }
 
 .imageWrapper {
-  @apply relative h-24 w-36 rounded shadow overflow-hidden bg-gray-200;
+  @apply relative h-24 w-36 overflow-hidden rounded bg-gray-200 shadow;
   @apply md:h-auto md:w-64;
 }
 
 .articleTitle {
-  @apply text-base text-left font-semibold tracking-normal leading-normal text-gray-900;
+  @apply text-left text-base font-semibold leading-normal tracking-normal text-gray-900;
   @apply md:text-xl md:leading-tight;
 }
 
 .articleDate {
-  @apply text-xs text-left text-gray-900 tracking-wider;
+  @apply text-left text-xs tracking-wider text-gray-900;
   @apply mt-3;
 }
 

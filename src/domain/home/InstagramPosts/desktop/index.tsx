@@ -10,16 +10,16 @@ const DesktopInstagramPosts = () => {
   const instagramMedias = useContext(InstagramMediasContext)
 
   return (
-    <aside id="instagram-posts-desktop" className="py-4 hidden md:block mb-16">
-      <p className="text-2xl font-semibold tracking-wider text-gray-900 mb-10 text-left">
+    <aside id="instagram-posts-desktop" className="mb-16 hidden py-4 md:block">
+      <p className="mb-10 text-left text-2xl font-semibold tracking-wider text-gray-900">
         Instagram Momotrik
       </p>
 
-      <div className="grid grid-cols-3 gap-8 w-">
+      <div className="w- grid grid-cols-3 gap-8">
         {instagramMedias.slice(0, 6).map(({ node }) => (
           <figure
             key={node.id}
-            className="relative bg-gray-200 rounded overflow-hidden h-80 w-full"
+            className="relative h-80 w-full overflow-hidden rounded bg-gray-200"
           >
             <Image
               src={replaceInstagramCdnSubdomain(node.display_url)}
@@ -32,7 +32,7 @@ const DesktopInstagramPosts = () => {
           </figure>
         ))}
       </div>
-      <div className="w-96 mx-auto mt-10">
+      <div className="mx-auto mt-10 w-96">
         <SocialMediaShareButton instagram />
       </div>
     </aside>

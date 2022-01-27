@@ -30,9 +30,9 @@ const MobileHeader = () => {
       `}</style>
       <nav
         id="mobile-nav"
-        className="md:hidden fixed top-0 w-full h-16 z-50 bg-primary-main px-4"
+        className="fixed top-0 z-50 h-16 w-full bg-primary-main px-4 md:hidden"
       >
-        <div className="relative flex justify-center items-center h-full">
+        <div className="relative flex h-full items-center justify-center">
           <button
             onClick={() => setShow(true)}
             type="button"
@@ -53,7 +53,7 @@ const MobileHeader = () => {
             </figure>
           </button>
 
-          <div className="flex flex-1 justify-center items-center">
+          <div className="flex flex-1 items-center justify-center">
             <Link href="/">
               <a>
                 <figure className={styles.logoWrapper}>

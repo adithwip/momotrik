@@ -40,7 +40,7 @@ const HighlightCard = ({
             quality={25}
           />
 
-          <div className="absolute left-4 top-4 shadow bg-white p-1 rounded">
+          <div className="absolute left-4 top-4 rounded bg-white p-1 shadow">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5 text-red-400"

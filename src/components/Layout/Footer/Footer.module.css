@@ -1,5 +1,5 @@
 .footer {
-  @apply bg-primary-main relative top-16;
+  @apply relative top-16 bg-primary-main;
 }
 
 .footerLogoWrapper {
@@ -21,12 +21,12 @@
 }
 
 .smallArticleCardImageWrapper {
-  @apply relative bg-gray-300 rounded overflow-hidden;
+  @apply relative overflow-hidden rounded bg-gray-300;
   min-height: 94px;
   min-width: 94px;
 }
 
 .articleDate {
-  @apply text-xs text-white tracking-wider;
+  @apply text-xs tracking-wider text-white;
   @apply mt-3;
 }

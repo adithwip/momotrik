@@ -1,15 +1,15 @@
 .cardWrapper {
   scroll-snap-align: center;
-  @apply min-w-300 rounded mb-10;
+  @apply mb-10 min-w-300 rounded;
 }
 
 .smallArticleCardImageWrapper {
-  @apply relative bg-gray-300 rounded overflow-hidden;
+  @apply relative overflow-hidden rounded bg-gray-300;
   height: 100px;
   min-width: 142px;
 }
 
 .articleDate {
-  @apply text-xs text-gray-300 tracking-wider;
+  @apply text-xs tracking-wider text-gray-300;
   @apply mt-5;
 }

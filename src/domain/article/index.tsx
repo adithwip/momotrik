@@ -47,7 +47,7 @@ const Article = ({ postData }: Props) => {
         <div className="ad-box-wrapper px-4 py-2">
           <div
             id="mobile-article-header-ad-box"
-            className="md:hidden flex justify-center items-center rounded h-16 w-full"
+            className="flex h-16 w-full items-center justify-center rounded md:hidden"
           >
             <ins
               className="adsbygoogle"
@@ -73,7 +73,7 @@ const Article = ({ postData }: Props) => {
               objectFit="cover"
               objectPosition="center"
             />
-            <div className="absolute z-10 bottom-0 p-5 pb-10 md:hidden">
+            <div className="absolute bottom-0 z-10 p-5 pb-10 md:hidden">
               <h1 className={styles.mobileArticleTitle}>{title}</h1>
               <MobileAuthor postData={postData} />
             </div>
@@ -85,14 +85,14 @@ const Article = ({ postData }: Props) => {
         <ReactMarkdown className={styles.content} rehypePlugins={[rehypeRaw]}>
           {firstHalf}
         </ReactMarkdown>
-        <ul className="py-4 px-5 pl-10 flex flex-col gap-4 list-disc list-outside">
+        <ul className="flex list-outside list-disc flex-col gap-4 py-4 px-5 pl-10">
           {filteredRecentPostsData?.map(({ node }, index) => {
             if (index > 2) return null
 
             return (
               <li key={index}>
                 <Link href={`/artikel/${node.slug}`}>
-                  <a className="text-base font-semibold text-blue-600 leading-normal line-clamp-3">
+                  <a className="text-base font-semibold leading-normal text-blue-600 line-clamp-3">
                     {node.title}
                   </a>
                 </Link>
@@ -104,7 +104,7 @@ const Article = ({ postData }: Props) => {
           {secondHalf}
         </ReactMarkdown>
 
-        <div className="px-5 my-6">
+        <div className="my-6 px-5">
           <SocialMediaShareButton facebook />
         </div>
       </article>

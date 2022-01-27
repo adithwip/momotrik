@@ -46,7 +46,7 @@ const SocialMediaShareButton = ({
         styles.button,
         facebook && styles.facebook,
         instagram && styles.instagram,
-        'md:hover:scale-105 md:transition-all'
+        'md:transition-all md:hover:scale-105'
       )}
     >
       <span className="sr-only">Button for Facebook social sharing</span>

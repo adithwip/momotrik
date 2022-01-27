@@ -60,7 +60,7 @@ const ArticleCard = ({
                   quality={25}
                 />
               </figure>
-              <div className="flex flex-col flex-1 pl-4">
+              <div className="flex flex-1 flex-col pl-4">
                 <p className={clsx('article-title', styles.articleTitle)}>
                   {title}
                 </p>

@@ -13,7 +13,7 @@ const MobilePopularPosts = () => {
       id="popular-posts-mobile"
       className="bg-primary-main px-5 pt-10 md:hidden"
     >
-      <p className="text-2xl text-center font-semibold tracking-wider text-white mb-10">
+      <p className="mb-10 text-center text-2xl font-semibold tracking-wider text-white">
         Artikel Populer
       </p>
 

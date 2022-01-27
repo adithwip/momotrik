@@ -60,7 +60,7 @@ const MobileHighlightedArticle = ({ data }: Props) => {
         return (
           <Link key={node.id} href={`/artikel/${node.slug}`}>
             <a>
-              <article className="flex mb-10">
+              <article className="mb-10 flex">
                 <div className="flex flex-col pr-3">
                   <p className={styles.smallArticleTitle}>{node.title}</p>
                   <p className={styles.smallArticleDate}>
@@ -82,7 +82,7 @@ const MobileHighlightedArticle = ({ data }: Props) => {
                     quality={15}
                   />
 
-                  <div className="absolute left-2 top-2 shadow bg-white p-1 rounded">
+                  <div className="absolute left-2 top-2 rounded bg-white p-1 shadow">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-4 w-4 text-yellow-400"

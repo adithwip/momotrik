@@ -17,8 +17,8 @@
 }
 
 .mobileNavigationMenu {
-  @apply inline-flex items-center justify-center p-2 rounded;
-  @apply hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-blue-800 focus:ring-white;
+  @apply inline-flex items-center justify-center rounded p-2;
+  @apply hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-800;
   @apply md:hidden;
 }
 
@@ -29,11 +29,11 @@
 }
 
 .search {
-  @apply flex-1 appearance-none w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-md rounded-l text-sm;
-  @apply focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent;
+  @apply w-full flex-1 appearance-none rounded-l bg-white py-2 px-4 text-sm text-gray-700 placeholder-gray-400 shadow-md;
+  @apply focus:border-transparent focus:outline-none focus:ring-1 focus:ring-blue-500;
 }
 
 .searchButton {
-  @apply bg-white py-2 px-4 rounded-r;
+  @apply rounded-r bg-white py-2 px-4;
   @apply hover:bg-gray-100;
 }

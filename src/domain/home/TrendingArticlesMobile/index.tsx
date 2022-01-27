@@ -15,15 +15,15 @@ const TrendingArticlesMobile = () => {
   return (
     <section
       id="trending-articles-mobile"
-      className="px-5 pt-10 bg-primary-dark md:hidden"
+      className="bg-primary-dark px-5 pt-10 md:hidden"
     >
-      <div className="flex justify-center items-center mb-8">
-        <p className="text-2xl font-semibold tracking-wider text-white mr-5">
+      <div className="mb-8 flex items-center justify-center">
+        <p className="mr-5 text-2xl font-semibold tracking-wider text-white">
           Artikel Trending
         </p>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6 text-green-400 bg-white p-1 rounded"
+          className="h-6 w-6 rounded bg-white p-1 text-green-400"
           viewBox="0 0 20 20"
           fill="currentColor"
         >
@@ -53,8 +53,8 @@ const TrendingArticlesMobile = () => {
                           quality={15}
                         />
                       </figure>
-                      <div className="flex flex-col pl-4 border-gray-400">
-                        <p className="text-base text-white font-semibold leading-tight tracking-normal">
+                      <div className="flex flex-col border-gray-400 pl-4">
+                        <p className="text-base font-semibold leading-tight tracking-normal text-white">
                           {node.title}
                         </p>
                         <p className={styles.articleDate}>

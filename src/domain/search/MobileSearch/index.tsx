@@ -16,10 +16,10 @@ const MobileSearch = () => {
   }
 
   return (
-    <div className="w-full h-screen px-4 pb-4 pt-10 md:hidden">
+    <div className="h-screen w-full px-4 pb-4 pt-10 md:hidden">
       <form
         onSubmit={handleSearch}
-        className="flex relative justify-center items-center"
+        className="relative flex items-center justify-center"
       >
         <input
           required
