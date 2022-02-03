@@ -32,23 +32,9 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
 
-          {/* Only run all Google Adsense and Tag Manager in Production Environment */}
+          {/* Only run Google and Tag Manager noscript in Production Environment */}
           {!isDevelopment && (
             <>
-              {/* Google AdSense script */}
-              <script
-                async
-                data-ad-client="ca-pub-3226350239455992"
-                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-              />
-              <script
-                dangerouslySetInnerHTML={{
-                  __html: `
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                  `,
-                }}
-              />
-
               {/* Google Tag Manager */}
               <noscript>
                 <iframe
