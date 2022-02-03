@@ -2,11 +2,13 @@ import type { AppProps } from 'next/app'
 
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
+import Script from 'next/script'
+
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
 import { Hydrate } from 'react-query/hydration'
 
-import * as gtag from 'utils/gtag'
+import { GTM_ID, pageview } from 'utils/gtm'
 
 import 'tailwindcss/tailwind.css'
 
@@ -15,33 +17,38 @@ const queryClient = new QueryClient()
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
 
-  /**
-   * We follow guides from this repo
-   * Repo: https://github.com/montezume/nextjs-google-analytics
-   * Repo: https://github.com/vercel/next.js/tree/canary/examples/with-google-analytics
-   * Medium Article: https://medium.com/frontend-digest/using-nextjs-with-google-analytics-and-typescript-620ba2359dea
-   */
   useEffect(() => {
-    // Only trigger Google Analytics on production environment
     if (process.env.NODE_ENV === 'production') {
-      const handleRouteChange = (url: URL) => {
-        gtag.pageview(url)
-      }
-      router.events.on('routeChangeComplete', handleRouteChange)
-
+      router.events.on('routeChangeComplete', pageview)
       return () => {
-        router.events.off('routeChangeComplete', handleRouteChange)
+        router.events.off('routeChangeComplete', pageview)
       }
     }
   }, [router.events])
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <Hydrate state={pageProps.dehydratedState}>
-        <Component {...pageProps} />
-      </Hydrate>
-      <ReactQueryDevtools />
-    </QueryClientProvider>
+    <>
+      {/* Google Tag Manager - Global base code */}
+      <Script
+        id="google-tag-manager-script"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer', '${GTM_ID}');
+          `,
+        }}
+      />
+      <QueryClientProvider client={queryClient}>
+        <Hydrate state={pageProps.dehydratedState}>
+          <Component {...pageProps} />
+        </Hydrate>
+        <ReactQueryDevtools />
+      </QueryClientProvider>
+    </>
   )
 }
 
