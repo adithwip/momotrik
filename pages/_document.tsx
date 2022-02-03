@@ -2,7 +2,7 @@ import type { DocumentContext } from 'next/document'
 
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
-import { GA_TRACKING_ID } from 'utils/gtag'
+import { GTM_ID } from 'utils/gtm'
 
 /**
  * We follow this guide for only trigger GA in Production env
@@ -32,7 +32,7 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
 
-          {/* Only run all Google Analytics and Ads trackers in Production Environment */}
+          {/* Only run all Google Adsense and Tag Manager in Production Environment */}
           {!isDevelopment && (
             <>
               {/* Google AdSense script */}
@@ -49,22 +49,15 @@ class MyDocument extends Document {
                 }}
               />
 
-              {/* Global site tag (gtag.js) - Google Analytics */}
-              <script
-                async
-                src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-              />
-              <script
-                dangerouslySetInnerHTML={{
-                  __html: `
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){dataLayer.push(arguments);}
-                    gtag('js', new Date());
-                  
-                    gtag('config', '${GA_TRACKING_ID}');
-                  `,
-                }}
-              />
+              {/* Google Tag Manager */}
+              <noscript>
+                <iframe
+                  src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+                  height="0"
+                  width="0"
+                  style={{ display: 'none', visibility: 'hidden' }}
+                />
+              </noscript>
             </>
           )}
         </Head>
