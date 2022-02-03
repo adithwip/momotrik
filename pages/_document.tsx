@@ -1,6 +1,7 @@
 import type { DocumentContext } from 'next/document'
 
 import Document, { Html, Head, Main, NextScript } from 'next/document'
+import { Partytown } from '@builder.io/partytown/react'
 
 import { GA_TRACKING_ID } from 'utils/gtag'
 
@@ -21,6 +22,13 @@ class MyDocument extends Document {
     return (
       <Html lang="id">
         <Head>
+          {/*
+            What is this?
+            Context: https://github.com/BuilderIO/partytown/wiki/Getting-Started#react
+            Context: https://blog.logrocket.com/using-web-workers-boost-third-party-script-performance/
+          */}
+          <Partytown />
+
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
             rel="preconnect"
@@ -40,6 +48,7 @@ class MyDocument extends Document {
                 async
                 data-ad-client="ca-pub-3226350239455992"
                 src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+                type="text/partytown" // part of the Partytown React integration
               />
               <script
                 dangerouslySetInnerHTML={{
@@ -47,12 +56,14 @@ class MyDocument extends Document {
                     (adsbygoogle = window.adsbygoogle || []).push({});
                   `,
                 }}
+                type="text/partytown"
               />
 
               {/* Global site tag (gtag.js) - Google Analytics */}
               <script
                 async
                 src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+                type="text/partytown"
               />
               <script
                 dangerouslySetInnerHTML={{
@@ -64,6 +75,7 @@ class MyDocument extends Document {
                     gtag('config', '${GA_TRACKING_ID}');
                   `,
                 }}
+                type="text/partytown"
               />
             </>
           )}
