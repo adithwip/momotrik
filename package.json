@@ -3,8 +3,9 @@
   "version": "2.0.1",
   "scripts": {
     "dev": "next",
-    "build": "next build",
+    "build": "yarn run partytown && next build",
     "start": "next start",
+    "partytown": "partytown copylib public/~partytown",
     "type-check": "tsc",
     "lint": "next lint",
     "format": "prettier --write .",
@@ -15,6 +16,7 @@
     "check:all": "yarn check:format && yarn check:lint && yarn check:types && yarn build"
   },
   "dependencies": {
+    "@builder.io/partytown": "0.2.4",
     "axios": "0.25.0",
     "clsx": "1.1.1",
     "eslint": "8.7.0",
