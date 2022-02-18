@@ -1,4 +1,5 @@
 module.exports = {
+  swcMinify: true, // Opt-in SWC for minification
   images: {
     domains: [
       'momotrik.host',
