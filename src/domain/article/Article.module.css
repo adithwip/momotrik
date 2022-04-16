@@ -42,19 +42,19 @@
 }
 
 .content h2 {
-  @apply mt-12 mb-4 px-5 text-3xl font-semibold leading-snug tracking-wide;
+  @apply mt-12 mb-4 px-5 text-3xl font-bold leading-snug tracking-wide;
 }
 
 .content h3 {
-  @apply mt-8 mb-4 px-5 text-2xl font-semibold leading-snug tracking-wide;
+  @apply mt-8 mb-4 px-5 text-2xl font-bold leading-snug tracking-wide;
 }
 
 .content h4 {
-  @apply mt-6 mb-4 px-5 text-xl font-semibold leading-snug tracking-wide;
+  @apply mt-6 mb-4 px-5 text-xl font-bold leading-snug tracking-wide;
 }
 
 .content h5 {
-  @apply mt-6 mb-4 px-5 text-base font-semibold leading-snug tracking-wide;
+  @apply mt-6 mb-4 px-5 text-base font-bold leading-snug tracking-wide;
 }
 
 .content pre {
@@ -164,13 +164,13 @@
 }
 
 .articleTitle {
-  @apply hidden text-left text-2xl font-semibold leading-tight tracking-normal text-gray-900;
+  @apply hidden text-left text-2xl font-bold leading-tight tracking-wide text-gray-900;
   @apply mb-3 mt-6 p-4;
-  @apply md:mt-12 md:block md:pl-0 md:text-4xl md:font-semibold md:leading-snug md:tracking-normal;
+  @apply md:mt-12 md:block md:pl-0 md:text-4xl md:font-bold md:leading-snug md:tracking-wide;
 }
 
 .mobileArticleTitle {
-  @apply text-left text-2xl font-semibold text-white;
+  @apply text-left text-2xl font-bold text-white;
   @apply md:hidden;
   @apply mb-5;
 }

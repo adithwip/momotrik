@@ -27,6 +27,6 @@
 }
 
 .articleDate {
-  @apply text-xs tracking-wider text-white;
+  @apply text-xs tracking-wide text-white;
   @apply mt-3;
 }

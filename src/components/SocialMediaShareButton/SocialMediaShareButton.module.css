@@ -1,5 +1,5 @@
 .button {
-  @apply inline-flex w-full items-center justify-center border-2 text-xs font-semibold shadow-sm;
+  @apply inline-flex w-full items-center justify-center border-2 text-xs font-bold shadow-sm;
   @apply rounded px-4 py-2;
 }
 

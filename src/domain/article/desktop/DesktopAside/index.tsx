@@ -15,7 +15,7 @@ type Props = {
 const DesktopAside = ({ data }: Props) => {
   return (
     <aside id="article-aside-desktop" className={styles.aside}>
-      <p className="mb-8 text-2xl font-semibold tracking-wider text-gray-900">
+      <p className="mb-8 text-2xl font-bold tracking-wide text-gray-900">
         Artikel Trending
       </p>
 

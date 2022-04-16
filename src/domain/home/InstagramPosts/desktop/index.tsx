@@ -11,7 +11,7 @@ const DesktopInstagramPosts = () => {
 
   return (
     <aside id="instagram-posts-desktop" className="mb-16 hidden py-4 md:block">
-      <p className="mb-10 text-left text-2xl font-semibold tracking-wider text-gray-900">
+      <p className="mb-10 text-left text-2xl font-bold tracking-wide text-gray-900">
         Instagram Momotrik
       </p>
 

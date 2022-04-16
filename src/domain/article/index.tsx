@@ -92,7 +92,7 @@ const Article = ({ postData }: Props) => {
             return (
               <li key={index}>
                 <Link href={`/artikel/${node.slug}`}>
-                  <a className="text-base font-semibold leading-normal text-blue-600 line-clamp-3">
+                  <a className="text-base font-bold leading-normal text-blue-600 line-clamp-3">
                     {node.title}
                   </a>
                 </Link>

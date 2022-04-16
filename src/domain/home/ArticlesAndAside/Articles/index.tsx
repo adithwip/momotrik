@@ -18,7 +18,7 @@ const Articles = ({ data }: Props) => {
       id={`articles-${isMobile ? 'mobile' : 'desktop'}`}
       className="px-5 pt-10 pb-20 md:flex-2"
     >
-      <p className="mb-8 text-2xl font-semibold tracking-wider text-gray-900">
+      <p className="mb-8 text-2xl font-bold tracking-wide text-gray-900">
         Artikel Baru
       </p>
 
@@ -44,7 +44,7 @@ const Articles = ({ data }: Props) => {
 
       <div className="mt-12 w-full text-center md:mt-0">
         <Link href="/all-posts">
-          <a className="text-2xl font-semibold">Lihat semua artikel</a>
+          <a className="text-2xl font-bold">Lihat semua artikel</a>
         </Link>
       </div>
     </section>
