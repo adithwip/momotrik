@@ -6,12 +6,9 @@ type Props = {
 
 const Date = ({ date }: Props) => {
   return (
-    <p className="text-sm tracking-wide text-blue-900">
-      Published:
-      <time className="text-sm" dateTime={date}>
-        {` ${formatDate(date)}`}
-      </time>
-    </p>
+    <time className="text-xs tracking-wide text-blue-900" dateTime={date}>
+      {` ${formatDate(date)}`}
+    </time>
   )
 }
 
