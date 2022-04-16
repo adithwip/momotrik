@@ -6,4 +6,4 @@ export const pageview = (url: URL) => {
     event: 'pageview',
     page: url,
   })
-} 
+}

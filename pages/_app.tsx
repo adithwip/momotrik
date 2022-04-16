@@ -4,9 +4,8 @@ import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Script from 'next/script'
 
-import { QueryClient, QueryClientProvider } from 'react-query'
+import { QueryClient, QueryClientProvider, Hydrate } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
-import { Hydrate } from 'react-query/hydration'
 
 import { GTM_ID, pageview } from 'utils/gtm'
 

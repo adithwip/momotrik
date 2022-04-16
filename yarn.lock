@@ -2545,10 +2545,10 @@ react-markdown@8.0.0:
     unist-util-visit "^4.0.0"
     vfile "^5.0.0"
 
-react-query@3.34.16:
-  version "3.34.16"
-  resolved "https://registry.yarnpkg.com/react-query/-/react-query-3.34.16.tgz#279ea180bcaeaec49c7864b29d1711ee9f152594"
-  integrity sha512-7FvBvjgEM4YQ8nPfmAr+lJfbW95uyW/TVjFoi2GwCkF33/S8ajx45tuPHPFGWs4qYwPy1mzwxD4IQfpUDrefNQ==
+react-query@3.34.20:
+  version "3.34.20"
+  resolved "https://registry.yarnpkg.com/react-query/-/react-query-3.34.20.tgz#649e83073b7e3350cd3fc78f8b2370e9252c4a64"
+  integrity sha512-I0nGBu/4bebKodwwHSFmdMCjgx4bAjn2p5OQRFIlGX7GhVAyTWGRWEWAP3+KG06bb062HPOMqcy9jw086snfQg==
   dependencies:
     "@babel/runtime" "^7.5.5"
     broadcast-channel "^3.4.1"
