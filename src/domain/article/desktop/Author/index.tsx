@@ -15,8 +15,8 @@ const DesktopAuthor = ({ postData }: Props) => {
   const { post } = postData
 
   return (
-    <div className="hidden md:my-2 md:flex md:flex-row md:items-center md:justify-between">
-      <div className="mt-8 flex items-center px-5">
+    <div className="hidden md:mt-6 md:flex md:flex-row md:items-center md:justify-between md:gap-2">
+      <div className="flex flex-1 items-center">
         <figure className={styles.authorAvatarWrapper}>
           <Image
             priority
@@ -35,8 +35,9 @@ const DesktopAuthor = ({ postData }: Props) => {
         </div>
       </div>
 
-      <div className="hideen mt-6 px-5">
+      <div className="flex flex-1 flex-col items-center justify-between gap-2">
         <SocialMediaShareButton facebook />
+        <SocialMediaShareButton twitter />
       </div>
     </div>
   )

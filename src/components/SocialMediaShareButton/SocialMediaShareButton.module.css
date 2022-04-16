@@ -1,20 +1,20 @@
 .button {
-  @apply inline-flex w-full items-center justify-center border-2  text-sm  font-semibold shadow-sm;
+  @apply inline-flex w-full items-center justify-center border-2 text-xs font-semibold shadow-sm;
   @apply rounded px-4 py-2;
 }
 
 .instagram {
-  @apply border-fuchsia-500 bg-fuchsia-800 text-white;
+  @apply border-fuchsia-800 bg-fuchsia-800 text-white;
   @apply md:bg-fuchsia-100 md:text-fuchsia-800;
   @apply hover:bg-fuchsia-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-fuchsia-100;
 }
 
 .facebook {
-  @apply border-blue-500 bg-blue-100 text-blue-700;
-  @apply hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-blue-100;
+  @apply border-blue-600 bg-blue-600 text-white;
+  @apply hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-blue-100;
 }
 
 .twitter {
-  @apply border-blue-400 bg-blue-400 text-black;
-  @apply hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-blue-100;
+  @apply border-blue-400 bg-blue-400 text-white;
+  @apply hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-blue-100;
 }
