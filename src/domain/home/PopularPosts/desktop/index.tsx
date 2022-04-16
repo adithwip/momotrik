@@ -11,7 +11,7 @@ const DesktopPopularPosts = () => {
 
   return (
     <aside id="popular-posts-desktop" className="mb-16 hidden p-4 md:block">
-      <p className="mb-10 text-left text-2xl font-semibold tracking-wider text-gray-900">
+      <p className="mb-10 text-left text-2xl font-bold tracking-wide text-gray-900">
         Popular
       </p>
 

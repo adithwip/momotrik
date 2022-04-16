@@ -3,11 +3,11 @@
 }
 
 .articleTitle {
-  @apply text-left text-lg font-semibold leading-tight tracking-normal text-gray-900;
+  @apply text-left text-lg font-bold leading-tight tracking-wide text-gray-900;
   @apply pt-5;
 }
 
 .articleDate {
-  @apply text-left text-xs tracking-wider text-blue-700;
+  @apply text-left text-xs tracking-wide text-blue-700;
   @apply mt-3;
 }

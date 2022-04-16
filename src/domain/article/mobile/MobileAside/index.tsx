@@ -15,7 +15,7 @@ type Props = {
 const MobileAside = ({ data }: Props) => {
   return (
     <aside id="article-aside-mobile" className={styles.aside}>
-      <p className="mb-8 text-3xl font-semibold tracking-wider text-gray-900">
+      <p className="mb-8 text-3xl font-bold tracking-wide text-gray-900">
         Baca Juga
       </p>
 

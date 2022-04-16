@@ -28,7 +28,7 @@ const DesktopAuthor = ({ postData }: Props) => {
           />
         </figure>
         <div className="ml-4 flex flex-col">
-          <p className="mb-2 text-sm font-semibold tracking-normal text-gray-900">
+          <p className="mb-2 text-sm font-bold tracking-wide text-gray-900">
             {post.author.node.name}
           </p>
           <Date date={post.date} />

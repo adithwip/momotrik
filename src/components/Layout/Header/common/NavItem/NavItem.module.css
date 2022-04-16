@@ -1,4 +1,4 @@
 .navItem {
-  @apply whitespace-nowrap rounded px-2 py-1 font-semibold tracking-wider text-white;
+  @apply whitespace-nowrap rounded px-2 py-1 font-bold tracking-wide text-white;
   @apply hover:bg-gray-700 hover:text-white;
 }

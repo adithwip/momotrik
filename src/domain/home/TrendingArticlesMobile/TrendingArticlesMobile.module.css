@@ -10,6 +10,6 @@
 }
 
 .articleDate {
-  @apply text-xs tracking-wider text-gray-300;
+  @apply text-xs tracking-wide text-gray-300;
   @apply mt-5;
 }

@@ -18,7 +18,7 @@ const TrendingArticlesMobile = () => {
       className="bg-primary-dark px-5 pt-10 md:hidden"
     >
       <div className="mb-8 flex items-center justify-center">
-        <p className="mr-5 text-2xl font-semibold tracking-wider text-white">
+        <p className="mr-5 text-2xl font-bold tracking-wide text-white">
           Artikel Trending
         </p>
         <svg
@@ -54,7 +54,7 @@ const TrendingArticlesMobile = () => {
                         />
                       </figure>
                       <div className="flex flex-col border-gray-400 pl-4">
-                        <p className="text-base font-semibold leading-tight tracking-normal text-white">
+                        <p className="text-base font-bold leading-tight tracking-wide text-white">
                           {node.title}
                         </p>
                         <p className={styles.articleDate}>
