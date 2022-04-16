@@ -106,6 +106,7 @@ const Article = ({ postData }: Props) => {
 
         <div className="my-6 px-5">
           <SocialMediaShareButton facebook />
+          <SocialMediaShareButton twitter />
         </div>
       </article>
       <DesktopAside data={filteredTrendingPostsData} />

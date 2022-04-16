@@ -2,24 +2,29 @@ import clsx from 'clsx'
 
 import FacebookIcon from './FacebookIcon'
 import InstagramIcon from './InstagramIcon'
+import TwitterIcon from './TwitterIcon'
 
 import styles from './SocialMediaShareButton.module.css'
 
-type Props =
-  | { facebook: boolean; instagram?: boolean }
-  | { facebook?: boolean; instagram: boolean }
+type Props = { facebook?: boolean; instagram?: boolean; twitter?: boolean }
+
+const CURRENT_URL = window.location.href
 
 const SocialMediaShareButton = ({
   facebook = false,
   instagram = false,
+  twitter = false
 }: Props) => {
   const handleFacebookShare = () => {
-    const currentHref = window.location.href
-    const fbSharerUrl = `https://www.facebook.com/sharer/sharer.php?u=${currentHref}`
+    const fbSharerUrl = `https://www.facebook.com/sharer/sharer.php?u=${CURRENT_URL}`
 
     window.open(fbSharerUrl, '_blank', 'noreferrer')
   }
+  const handleTwitterShare = () => {
+    const twShareUrl = `https://twitter.com/intent/tweet?url=${CURRENT_URL}`
 
+    window.open(twShareUrl, '_blank', 'noreferrer')
+  }
   const handleInstagramRedirection = () => {
     window.open(
       'https://www.instagram.com/momotrik.id/',
@@ -33,6 +38,8 @@ const SocialMediaShareButton = ({
       handleFacebookShare()
     } else if (instagram) {
       handleInstagramRedirection()
+    } else if (twitter) {
+      handleTwitterShare()
     } else {
       return
     }
@@ -46,6 +53,7 @@ const SocialMediaShareButton = ({
         styles.button,
         facebook && styles.facebook,
         instagram && styles.instagram,
+        twitter && styles.twitter,
         'md:transition-all md:hover:scale-105'
       )}
     >
@@ -62,6 +70,13 @@ const SocialMediaShareButton = ({
           Follow Momotrik di Instagram
         </>
       )}
+      {twitter && (
+        <>
+          <TwitterIcon />
+          Bagikan artikel ke Twitter
+        </>
+      )}
+
     </button>
   )
 }
