@@ -1,27 +1,30 @@
+import type { Props } from './SocialMediaShareButton.types'
+
+import { useEffect, useState } from 'react'
 import clsx from 'clsx'
 
-import FacebookIcon from './FacebookIcon'
-import InstagramIcon from './InstagramIcon'
-import TwitterIcon from './TwitterIcon'
+import { FacebookIcon, InstagramIcon, TwitterIcon } from './Icons'
 
 import styles from './SocialMediaShareButton.module.css'
-
-type Props = { facebook?: boolean; instagram?: boolean; twitter?: boolean }
-
-const CURRENT_URL = window.location.href
 
 const SocialMediaShareButton = ({
   facebook = false,
   instagram = false,
-  twitter = false
+  twitter = false,
 }: Props) => {
+  const [currentUrl, setCurrentUrl] = useState('')
+
+  useEffect(() => {
+    setCurrentUrl(window.location.href)
+  }, [])
+
   const handleFacebookShare = () => {
-    const fbSharerUrl = `https://www.facebook.com/sharer/sharer.php?u=${CURRENT_URL}`
+    const fbSharerUrl = `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`
 
     window.open(fbSharerUrl, '_blank', 'noreferrer')
   }
   const handleTwitterShare = () => {
-    const twShareUrl = `https://twitter.com/intent/tweet?url=${CURRENT_URL}`
+    const twShareUrl = `https://twitter.com/intent/tweet?url=${currentUrl}`
 
     window.open(twShareUrl, '_blank', 'noreferrer')
   }
@@ -61,7 +64,7 @@ const SocialMediaShareButton = ({
       {facebook && (
         <>
           <FacebookIcon />
-          Bagikan artikel ke Facebook
+          Share ke Facebook
         </>
       )}
       {instagram && (
@@ -73,10 +76,9 @@ const SocialMediaShareButton = ({
       {twitter && (
         <>
           <TwitterIcon />
-          Bagikan artikel ke Twitter
+          Share ke Twitter
         </>
       )}
-
     </button>
   )
 }
