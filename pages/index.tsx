@@ -2,8 +2,7 @@ import type { NextPage, GetStaticProps } from 'next'
 import type { Edge } from 'interfaces/lib/getInstagramMedias'
 
 import * as React from 'react'
-import { QueryClient } from 'react-query'
-import { dehydrate } from 'react-query/hydration'
+import { QueryClient, dehydrate } from 'react-query'
 import dynamic from 'next/dynamic'
 
 import { getInstagramMedias } from 'lib/getInstagramMedias'

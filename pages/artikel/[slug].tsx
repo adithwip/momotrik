@@ -4,8 +4,7 @@ import type { GetSinglePostResponse } from 'interfaces/lib/getSinglePost.interfa
 import Script from 'next/script'
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
-import { QueryClient } from 'react-query'
-import { dehydrate } from 'react-query/hydration'
+import { QueryClient, dehydrate } from 'react-query'
 
 const Layout = dynamic(() => import('components/Layout'))
 const Article = dynamic(() => import('domain/article'))
