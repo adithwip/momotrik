@@ -9,11 +9,12 @@ const ArticlesGrid = dynamic(() => import('domain/common/ArticlesGrid'))
 const GeneralFeedback = dynamic(() => import('components/GeneralFeedback'))
 
 import { getAllPostsFetcher, useGetAllPosts } from 'lib/useGetAllPosts'
+import { QUERY_KEYS } from 'config/queryKeys'
 
 const AllPostsPage: NextPage = () => {
   const {
     getAllPostsData: { data, isError },
-  } = useGetAllPosts(200, 'all-posts')
+  } = useGetAllPosts(200, QUERY_KEYS['allPosts'])
   const MemoizedArticlesGrid = React.memo(ArticlesGrid)
 
   const renderComponent = () => {
@@ -40,7 +41,9 @@ const AllPostsPage: NextPage = () => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const queryClient = new QueryClient()
-  await queryClient.prefetchQuery('all-posts', () => getAllPostsFetcher(200))
+  await queryClient.prefetchQuery(QUERY_KEYS['allPosts'], () =>
+    getAllPostsFetcher(200)
+  )
 
   return {
     props: {

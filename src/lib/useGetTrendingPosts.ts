@@ -4,6 +4,8 @@ import { useQuery } from 'react-query'
 import { fetchAPI } from 'lib/fetchAPI'
 import { staleTime } from 'config/staleTimes'
 
+import { QUERY_KEYS } from 'config/queryKeys'
+
 export const getTrendingPostsFetcher =
   async (): Promise<GetTrendingPostsResponse> => {
     const res = await fetchAPI({
@@ -39,7 +41,7 @@ export const getTrendingPostsFetcher =
 
 export const useGetTrendingPosts = () => {
   const { data, isError, isFetching } = useQuery(
-    'trending',
+    QUERY_KEYS['trending'],
     () => getTrendingPostsFetcher(),
     {
       staleTime: staleTime.ONE_DAY,

@@ -4,6 +4,8 @@ import { useQuery } from 'react-query'
 import { fetchAPI } from 'lib/fetchAPI'
 import { staleTime } from 'config/staleTimes'
 
+import { QUERY_KEYS } from 'config/queryKeys'
+
 export const getRecentPostsFetcher =
   async (): Promise<GetRecentPostsResponse> => {
     const res = await fetchAPI({
@@ -39,7 +41,7 @@ export const getRecentPostsFetcher =
 
 export const useGetRecentPosts = () => {
   const { data, isError, isFetching } = useQuery(
-    'recent',
+    QUERY_KEYS['recent'],
     () => getRecentPostsFetcher(),
     {
       staleTime: staleTime.ONE_DAY,

@@ -7,6 +7,8 @@ import { useQuery } from 'react-query'
 import { fetchAPI } from 'lib/fetchAPI'
 import { staleTime } from 'config/staleTimes'
 
+import { QUERY_KEYS } from 'config/queryKeys'
+
 /**
  * Exported for dehydrating state
  */
@@ -52,7 +54,7 @@ export const getAllStickyPostsFetcher = async (): Promise<AllPostsEdge[]> => {
 
 export const useGetAllStickyPosts = () => {
   const { data, isError, isFetching } = useQuery(
-    'stickyPosts',
+    QUERY_KEYS['stickyPosts'],
     () => getAllStickyPostsFetcher(),
     {
       staleTime: staleTime.ONE_DAY,

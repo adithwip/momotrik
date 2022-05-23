@@ -4,6 +4,8 @@ import { useQuery } from 'react-query'
 import { fetchAPI } from 'lib/fetchAPI'
 import { staleTime } from 'config/staleTimes'
 
+import { QUERY_KEYS } from 'config/queryKeys'
+
 export const getPopularPostsFetcher =
   async (): Promise<GetPopularPostsResponse> => {
     const res = await fetchAPI({
@@ -39,7 +41,7 @@ export const getPopularPostsFetcher =
 
 export const useGetPopularPosts = () => {
   const { data, isError, isFetching } = useQuery(
-    'popular',
+    QUERY_KEYS['popular'],
     () => getPopularPostsFetcher(),
     {
       staleTime: staleTime.ONE_DAY,

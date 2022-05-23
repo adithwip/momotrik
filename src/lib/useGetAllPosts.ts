@@ -1,11 +1,13 @@
 import type { GetAllPostsResponse } from 'interfaces/lib/getAllPosts.interface'
+import type { QueryKey } from 'react-query'
 
 import { useQuery } from 'react-query'
 import { fetchAPI } from 'lib/fetchAPI'
 import { staleTime } from 'config/staleTimes'
 
+import { QUERY_KEYS } from 'config/queryKeys'
+
 type Count = number | undefined
-type Key = string | string[]
 
 /**
  * Exported for dehydrating state
@@ -48,7 +50,7 @@ export const getAllPostsFetcher = async (
   return res.data.data
 }
 
-export const useGetAllPosts = (count?: Count, key: Key = 'posts') => {
+export const useGetAllPosts = (count?: Count, key: QueryKey = QUERY_KEYS['posts']) => {
   const { data, isError, isFetching } = useQuery(
     key,
     () => getAllPostsFetcher(count),
