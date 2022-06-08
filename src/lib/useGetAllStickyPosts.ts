@@ -58,10 +58,13 @@ export const useGetAllStickyPosts = () => {
       staleTime: staleTime.ONE_DAY,
     }
   )
+  console.log("🚀 ~ file: useGetAllStickyPosts.ts ~ line 55 ~ useGetAllStickyPosts ~ data", data)
+
+  // const topFiveData = [...data.data].slice(0, 5)
 
   return {
     getAllStickyPostsData: {
-      data,
+      data: data?.slice(0, 5),
       isError,
       isFetching,
     },
