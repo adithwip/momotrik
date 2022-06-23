@@ -1,1 +1,1 @@
-export { default } from './SocialMediaProfile.component';
+export { default } from './SocialMediaProfile.component'
