@@ -9,13 +9,17 @@
   @apply md:hidden;
 }
 
+.desktopHighlight {
+  @apply md:mt-5;
+}
+
 .articleCard {
   @apply mb-16;
 }
 
 .gridContainer {
   @apply hidden;
-  @apply md:mt-10 md:grid md:h-[464px] md:grid-cols-3 md:grid-rows-2 md:gap-4;
+  @apply md:grid md:h-[464px] md:grid-cols-3 md:grid-rows-2 md:gap-4;
 }
 
 .gridCard {

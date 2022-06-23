@@ -5,7 +5,7 @@ import styles from './SocialMediaProfile.module.css'
 
 const SocialMediaProfile = () => {
   return (
-    <div className="mb-5 flex items-center justify-between gap-1">
+    <div className="mb-5 md:mb-4 flex items-center justify-between gap-1 md:gap-4">
       <a
         className={clsx(styles.button, styles.twitter)}
         href="https://twitter.com/momotrik"
