@@ -5,6 +5,7 @@ import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
 
+import SocialMediaProfile from 'components/SocialMediaProfile'
 import { formatDate } from 'utils/formatDate'
 
 import styles from '../HighlightedArticle.module.css'
@@ -19,6 +20,7 @@ const MobileHighlightedArticle = ({ data }: Props) => {
       id="highlighted-article-mobile"
       className={styles.mobileHightlight}
     >
+      <SocialMediaProfile />
       {data.map(({ node }, index) => {
         if (index === 0) {
           return (

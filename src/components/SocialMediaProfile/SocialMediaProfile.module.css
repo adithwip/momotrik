@@ -1,0 +1,22 @@
+.button {
+  @apply inline-flex w-full items-center justify-center text-xs font-bold shadow-sm;
+  @apply px-4 py-2;
+}
+
+.instagram {
+  @apply border-fuchsia-800 bg-fuchsia-800 text-white;
+  @apply rounded-tl-md rounded-bl-md;
+  @apply md:bg-fuchsia-100 md:text-fuchsia-800;
+  @apply hover:bg-fuchsia-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-fuchsia-100;
+}
+
+.facebook {
+  @apply border-blue-600 bg-blue-600 text-white;
+  @apply rounded-tr-md rounded-br-md;
+  @apply hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-blue-100;
+}
+
+.twitter {
+  @apply border-blue-400 bg-blue-400 text-white;
+  @apply hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-blue-100;
+}
