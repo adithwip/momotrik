@@ -12,10 +12,7 @@ const MobileInstagramPosts = () => {
   const instagramMedias = useContext(InstagramMediasContext)
 
   return (
-    <aside
-      id="instagram-posts-desktop"
-      className="order-3 mb-16 px-4 md:hidden"
-    >
+    <aside id="instagram-posts-mobile" className="order-3 px-4 py-10 md:hidden">
       <p className="mb-10 text-left text-2xl font-bold tracking-wide text-gray-900">
         Instagram Momotrik
       </p>
