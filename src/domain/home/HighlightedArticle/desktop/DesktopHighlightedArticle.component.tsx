@@ -7,6 +7,7 @@ import clsx from 'clsx'
 import ArticleContent from '../ArticleContent'
 import SocialMediaProfile from 'components/SocialMediaProfile'
 
+import { useMediaQueries } from 'hooks/useMediaQueries'
 import styles from '../HighlightedArticle.module.css'
 
 interface Props {
@@ -14,9 +15,14 @@ interface Props {
 }
 
 const DesktopHighlightedArticle = ({ data }: Props) => {
+  const { isDesktop } = useMediaQueries()
+
   return (
-    <section id="highlighted-article-desktop" className={styles.desktopHighlight}>
-      <SocialMediaProfile />
+    <section
+      id="highlighted-article-desktop"
+      className={styles.desktopHighlight}
+    >
+      {isDesktop ? <SocialMediaProfile /> : null}
       <div className={styles.gridContainer}>
         {data.map(({ node }, index) => {
           if (index === 0) {

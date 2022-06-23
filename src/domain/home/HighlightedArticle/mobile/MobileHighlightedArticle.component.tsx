@@ -8,6 +8,7 @@ import rehypeRaw from 'rehype-raw'
 import SocialMediaProfile from 'components/SocialMediaProfile'
 import { formatDate } from 'utils/formatDate'
 
+import { useMediaQueries } from 'hooks/useMediaQueries'
 import styles from '../HighlightedArticle.module.css'
 
 interface Props {
@@ -15,12 +16,14 @@ interface Props {
 }
 
 const MobileHighlightedArticle = ({ data }: Props) => {
+  const { isMobile } = useMediaQueries()
+
   return (
     <section
       id="highlighted-article-mobile"
       className={styles.mobileHightlight}
     >
-      <SocialMediaProfile />
+      {isMobile ? <SocialMediaProfile /> : null}
       {data.map(({ node }, index) => {
         if (index === 0) {
           return (
