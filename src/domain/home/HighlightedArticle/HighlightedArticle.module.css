@@ -10,7 +10,7 @@
 }
 
 .desktopHighlight {
-  @apply md:mt-5;
+  @apply md:mt-5 md:px-5;
 }
 
 .articleCard {
